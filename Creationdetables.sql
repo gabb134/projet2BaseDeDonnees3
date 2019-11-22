@@ -26,18 +26,7 @@ drop table PrixDepensesAbonnements
 
 drop table TypesAbonnement
 drop table Provinces
-/*
 
-
-
-
-
-
-
-
-
-
-*/
 
 print '=============================Création des tables ==========================='
 print 'Création table Provinces'
@@ -56,8 +45,8 @@ print 'Création table PrixDepensesAbonnements'
 create table PrixDepensesAbonnements(
 NoTypeAbonnement int foreign key(NoTypeAbonnement) references TypesAbonnement(No) not null,
 Annee int not null,
-Prix int not null,
-DepensesObligatoires varchar(50),
+Prix money not null,
+DepensesObligatoires money not null,
 Remarque varchar(50),
 constraint pk_PrixDepensesAbonnements primary key(NoTypeAbonnement,Annee)
 )
@@ -76,7 +65,7 @@ Ville varchar(50) not null,
 IdProvince char(2) COLLATE Latin1_General_CS_AS constraint CK_Idprov2 check (IdProvince IN ('AB','BC','PE','MB','NB','NS','NU','ON','QC','SK','NL','YT','NT')) foreign key(IdProvince) references Provinces(Id) not null,
 CodePostal varchar(6) not null,
 Telephone varchar(10) not null,
-Cellulaire varchar(10) not null,
+Cellulaire varchar(10) ,
 Courriel varchar(50) not null,
 NoTypeAbonnement int not null foreign key(NoTypeAbonnement) references TypesAbonnement(No),
 Remarque varchar(50)
@@ -131,7 +120,7 @@ Ville varchar(50) not null,
 IdProvince char(2) COLLATE Latin1_General_CS_AS constraint CK_Idprov check (IdProvince IN ('AB','BC','PE','MB','NB','NS','NU','ON','QC','SK','NL','YT','NT')) foreign key(IdProvince) references Provinces(Id) not null,
 CodePostal varchar(6) not null,
 Telephone varchar(10) not null,
-Cellulaire varchar(10) not null,
+Cellulaire varchar(10),
 Courriel varchar(50) not null,
 SalaireHoraire int not null,
 NoTypeEmploye int foreign key(NoTypeEmploye) references TypesEmploye(No) not null,
@@ -141,7 +130,7 @@ Remarque varchar(50)
 print 'Création table Services'
 create table Services(
 No int primary key(No) not null,
-TypesService int not null,
+TypesService varchar(50) not null,
 NoEmploye int not null foreign key(NoEmploye) references Employes(No),
 Remarque varchar(50)
 )
@@ -166,3 +155,61 @@ Remarque varchar(50)
 
 
 print '=============================Remplissage des tables ==========================='
+
+
+Print  'Remplissage de la TABLE Provinces'
+insert into Provinces (Id,Nom)values('AB','Alberta')
+insert into Provinces (Id,Nom)values('BC','Colombie-Britanique')
+insert into Provinces (Id,Nom)values('MB','Manitoba')
+insert into Provinces (Id,Nom)values('NB','Nouveau-Brunswick')
+insert into Provinces (Id,Nom)values('NL','Terre-Neuve et Labrador')
+insert into Provinces (Id,Nom)values('NT','Territoires du Nord-Ouest')
+insert into Provinces (Id,Nom)values('NS','Nouvelle-Écosse')
+insert into Provinces (Id,Nom)values('NU','Nunavut')
+insert into Provinces (Id,Nom)values('ON','Ontario')
+insert into Provinces (Id,Nom)values('PE','Île-du-Prince-Édouard')
+insert into Provinces (Id,Nom)values('QC','Quebéc')
+insert into Provinces (Id,Nom)values('SK','Saskatchewan')
+insert into Provinces (Id,Nom)values('YT','Territoire du Yukon')
+
+Print  'Remplissage de la TABLE TypesEmploye'
+insert into TypesEmploye (No,Description) values(1,'Administrateur')
+insert into TypesEmploye (No,Description) values(2,'Direction')
+insert into TypesEmploye (No,Description) values(3,'Propriétaire d''un club')
+insert into TypesEmploye (No,Description) values(4,'Employe d''un club')
+insert into TypesEmploye (No,Description) values(5,'Employé Pro-Shop')
+insert into TypesEmploye (No,Description) values(6,'Employe d''un restaurant')
+insert into TypesEmploye (No,Description) values(7,'Professeur de golf')
+
+
+
+
+Print  'Remplissage de la TABLE Employes(le premier Employe est l''administrateur)...'
+insert into Employes values(1,'Admin-21','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','5149721014','admin@gmail.com',15,1,'test')
+
+Print  'Remplissage de la TABLE Terrains'
+insert into Terrains (No,Nom,NombreTrous,Description) values(1,'terrain1',18,'ceci est le terrain 1')
+insert into Terrains (No,Nom,NombreTrous,Description) values(2,'terrain2',18,'ceci est le terrain 2')
+insert into Terrains (No,Nom,NombreTrous,Description) values(3,'terrain3',18,'ceci est le terrain 3')
+insert into Terrains (No,Nom,NombreTrous,Description) values(4,'terrain4',9,'ceci est le terrain 4')
+insert into Terrains (No,Nom,NombreTrous,Description) values(5,'terrain5',9,'ceci est le terrain 5')
+insert into Terrains (No,Nom,NombreTrous,Description) values(6,'terrain6',9,'ceci est le terrain 6')
+
+
+Print  'Remplissage de la TABLE TypesAbonnement'
+
+insert into TypesAbonnement (No,Description) values(1,'Personne seule')
+insert into TypesAbonnement (No,Description) values(2,'Âge d''or')
+insert into TypesAbonnement (No,Description) values(3,'Couple')
+insert into TypesAbonnement (No,Description) values(4,'Famille (couple + 1 enfant)')
+insert into TypesAbonnement (No,Description) values(5,'Famille (couple + 2 enfants)')
+insert into TypesAbonnement (No,Description) values(6,'Famille (couple + 3 enfants ou plus)')
+
+
+Print  'Remplissage de la TABLE PrixDepensesAbonnements'
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(1,2018,850,400)
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(2,2018,500,400)
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(3,2018,1200,700)
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(4,2018,1700,700)
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(5,2018,1900,700)
+insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(6,2018,2100,700)
