@@ -186,6 +186,7 @@ insert into TypesEmploye (No,Description) values(7,'Professeur de golf')
 
 Print  'Remplissage de la TABLE Employes(le premier Employe est l''administrateur)...'
 insert into Employes values(1,'Admin-21','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','5149721014','admin@gmail.com',15,1,'test')
+insert into Employes values(2,'klk1234','test','test','F',21,1,'test','test','QC','H9H1V2','5149721014','5149721014','tes@gmail.com',15,2,'test')
 
 Print  'Remplissage de la TABLE Terrains'
 insert into Terrains (No,Nom,NombreTrous,Description) values(1,'terrain1',18,'ceci est le terrain 1')

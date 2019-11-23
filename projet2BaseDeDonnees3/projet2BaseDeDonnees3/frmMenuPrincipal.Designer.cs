@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnMiseAJourAbonnes = new System.Windows.Forms.Button();
+            this.btnAbonnement = new System.Windows.Forms.Button();
+            this.btnModifPrix = new System.Windows.Forms.Button();
+            this.btnReabonnement = new System.Windows.Forms.Button();
             this.btnGestionEmployes = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnReabonnement = new System.Windows.Forms.Button();
-            this.btnModifPrix = new System.Windows.Forms.Button();
-            this.btnAbonnement = new System.Windows.Forms.Button();
-            this.btnMiseAJourAbonnes = new System.Windows.Forms.Button();
-            this.btnInscriptionPartie = new System.Windows.Forms.Button();
-            this.btnVisualisationStats = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnInscriptionDepense = new System.Windows.Forms.Button();
             this.btnVisualisationRpports = new System.Windows.Forms.Button();
+            this.btnInscriptionDepense = new System.Windows.Forms.Button();
+            this.btnVisualisationStats = new System.Windows.Forms.Button();
+            this.btnInscriptionPartie = new System.Windows.Forms.Button();
+            this.btnDeconnexion = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -54,12 +55,48 @@
             this.groupBox1.Controls.Add(this.btnReabonnement);
             this.groupBox1.Controls.Add(this.btnGestionEmployes);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(32, 59);
+            this.groupBox1.Location = new System.Drawing.Point(32, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 253);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestions et abonnements";
+            // 
+            // btnMiseAJourAbonnes
+            // 
+            this.btnMiseAJourAbonnes.Location = new System.Drawing.Point(269, 116);
+            this.btnMiseAJourAbonnes.Name = "btnMiseAJourAbonnes";
+            this.btnMiseAJourAbonnes.Size = new System.Drawing.Size(217, 40);
+            this.btnMiseAJourAbonnes.TabIndex = 4;
+            this.btnMiseAJourAbonnes.Text = "Mise à jour des abonnés";
+            this.btnMiseAJourAbonnes.UseVisualStyleBackColor = true;
+            // 
+            // btnAbonnement
+            // 
+            this.btnAbonnement.Location = new System.Drawing.Point(269, 50);
+            this.btnAbonnement.Name = "btnAbonnement";
+            this.btnAbonnement.Size = new System.Drawing.Size(217, 40);
+            this.btnAbonnement.TabIndex = 3;
+            this.btnAbonnement.Text = "Abonnement";
+            this.btnAbonnement.UseVisualStyleBackColor = true;
+            // 
+            // btnModifPrix
+            // 
+            this.btnModifPrix.Location = new System.Drawing.Point(146, 178);
+            this.btnModifPrix.Name = "btnModifPrix";
+            this.btnModifPrix.Size = new System.Drawing.Size(215, 40);
+            this.btnModifPrix.TabIndex = 2;
+            this.btnModifPrix.Text = "Modification des prix";
+            this.btnModifPrix.UseVisualStyleBackColor = true;
+            // 
+            // btnReabonnement
+            // 
+            this.btnReabonnement.Location = new System.Drawing.Point(21, 116);
+            this.btnReabonnement.Name = "btnReabonnement";
+            this.btnReabonnement.Size = new System.Drawing.Size(217, 40);
+            this.btnReabonnement.TabIndex = 1;
+            this.btnReabonnement.Text = "Réabonnement";
+            this.btnReabonnement.UseVisualStyleBackColor = true;
             // 
             // btnGestionEmployes
             // 
@@ -77,95 +114,12 @@
             this.groupBox2.Controls.Add(this.btnVisualisationStats);
             this.groupBox2.Controls.Add(this.btnInscriptionPartie);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(568, 59);
+            this.groupBox2.Location = new System.Drawing.Point(568, 75);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(507, 253);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inscriptions et visualisations";
-            // 
-            // btnReabonnement
-            // 
-            this.btnReabonnement.Location = new System.Drawing.Point(21, 116);
-            this.btnReabonnement.Name = "btnReabonnement";
-            this.btnReabonnement.Size = new System.Drawing.Size(217, 40);
-            this.btnReabonnement.TabIndex = 1;
-            this.btnReabonnement.Text = "Réabonnement";
-            this.btnReabonnement.UseVisualStyleBackColor = true;
-            // 
-            // btnModifPrix
-            // 
-            this.btnModifPrix.Location = new System.Drawing.Point(146, 178);
-            this.btnModifPrix.Name = "btnModifPrix";
-            this.btnModifPrix.Size = new System.Drawing.Size(215, 40);
-            this.btnModifPrix.TabIndex = 2;
-            this.btnModifPrix.Text = "Modification des prix";
-            this.btnModifPrix.UseVisualStyleBackColor = true;
-            // 
-            // btnAbonnement
-            // 
-            this.btnAbonnement.Location = new System.Drawing.Point(269, 50);
-            this.btnAbonnement.Name = "btnAbonnement";
-            this.btnAbonnement.Size = new System.Drawing.Size(217, 40);
-            this.btnAbonnement.TabIndex = 3;
-            this.btnAbonnement.Text = "Abonnement";
-            this.btnAbonnement.UseVisualStyleBackColor = true;
-            // 
-            // btnMiseAJourAbonnes
-            // 
-            this.btnMiseAJourAbonnes.Location = new System.Drawing.Point(269, 116);
-            this.btnMiseAJourAbonnes.Name = "btnMiseAJourAbonnes";
-            this.btnMiseAJourAbonnes.Size = new System.Drawing.Size(217, 40);
-            this.btnMiseAJourAbonnes.TabIndex = 4;
-            this.btnMiseAJourAbonnes.Text = "Mise à jour des abonnés";
-            this.btnMiseAJourAbonnes.UseVisualStyleBackColor = true;
-            // 
-            // btnInscriptionPartie
-            // 
-            this.btnInscriptionPartie.Location = new System.Drawing.Point(17, 61);
-            this.btnInscriptionPartie.Name = "btnInscriptionPartie";
-            this.btnInscriptionPartie.Size = new System.Drawing.Size(226, 40);
-            this.btnInscriptionPartie.TabIndex = 1;
-            this.btnInscriptionPartie.Text = "Inscription partie de golf";
-            this.btnInscriptionPartie.UseVisualStyleBackColor = true;
-            // 
-            // btnVisualisationStats
-            // 
-            this.btnVisualisationStats.Location = new System.Drawing.Point(17, 136);
-            this.btnVisualisationStats.Name = "btnVisualisationStats";
-            this.btnVisualisationStats.Size = new System.Drawing.Size(226, 40);
-            this.btnVisualisationStats.TabIndex = 2;
-            this.btnVisualisationStats.Text = "Visualisation des stats";
-            this.btnVisualisationStats.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(390, 364);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(149, 53);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Déconnexion";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(568, 364);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(149, 53);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Quitter";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // btnInscriptionDepense
-            // 
-            this.btnInscriptionDepense.Location = new System.Drawing.Point(265, 61);
-            this.btnInscriptionDepense.Name = "btnInscriptionDepense";
-            this.btnInscriptionDepense.Size = new System.Drawing.Size(228, 40);
-            this.btnInscriptionDepense.TabIndex = 3;
-            this.btnInscriptionDepense.Text = "Inscription dépense";
-            this.btnInscriptionDepense.UseVisualStyleBackColor = true;
             // 
             // btnVisualisationRpports
             // 
@@ -176,13 +130,73 @@
             this.btnVisualisationRpports.Text = "Visualisation des rapports";
             this.btnVisualisationRpports.UseVisualStyleBackColor = true;
             // 
+            // btnInscriptionDepense
+            // 
+            this.btnInscriptionDepense.Location = new System.Drawing.Point(265, 61);
+            this.btnInscriptionDepense.Name = "btnInscriptionDepense";
+            this.btnInscriptionDepense.Size = new System.Drawing.Size(228, 40);
+            this.btnInscriptionDepense.TabIndex = 3;
+            this.btnInscriptionDepense.Text = "Inscription dépense";
+            this.btnInscriptionDepense.UseVisualStyleBackColor = true;
+            // 
+            // btnVisualisationStats
+            // 
+            this.btnVisualisationStats.Location = new System.Drawing.Point(17, 136);
+            this.btnVisualisationStats.Name = "btnVisualisationStats";
+            this.btnVisualisationStats.Size = new System.Drawing.Size(226, 40);
+            this.btnVisualisationStats.TabIndex = 2;
+            this.btnVisualisationStats.Text = "Visualisation des stats";
+            this.btnVisualisationStats.UseVisualStyleBackColor = true;
+            // 
+            // btnInscriptionPartie
+            // 
+            this.btnInscriptionPartie.Location = new System.Drawing.Point(17, 61);
+            this.btnInscriptionPartie.Name = "btnInscriptionPartie";
+            this.btnInscriptionPartie.Size = new System.Drawing.Size(226, 40);
+            this.btnInscriptionPartie.TabIndex = 1;
+            this.btnInscriptionPartie.Text = "Inscription partie de golf";
+            this.btnInscriptionPartie.UseVisualStyleBackColor = true;
+            // 
+            // btnDeconnexion
+            // 
+            this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeconnexion.Location = new System.Drawing.Point(390, 364);
+            this.btnDeconnexion.Name = "btnDeconnexion";
+            this.btnDeconnexion.Size = new System.Drawing.Size(149, 53);
+            this.btnDeconnexion.TabIndex = 5;
+            this.btnDeconnexion.Text = "Déconnexion";
+            this.btnDeconnexion.UseVisualStyleBackColor = true;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
+            // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitter.Location = new System.Drawing.Point(568, 364);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(149, 53);
+            this.btnQuitter.TabIndex = 6;
+            this.btnQuitter.Text = "Quitter";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(384, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(334, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Gestion de Clubs de golf";
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 445);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnQuitter);
+            this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -191,6 +205,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,9 +220,10 @@
         private System.Windows.Forms.Button btnReabonnement;
         private System.Windows.Forms.Button btnVisualisationStats;
         private System.Windows.Forms.Button btnInscriptionPartie;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnDeconnexion;
+        private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnVisualisationRpports;
         private System.Windows.Forms.Button btnInscriptionDepense;
+        private System.Windows.Forms.Label label1;
     }
 }

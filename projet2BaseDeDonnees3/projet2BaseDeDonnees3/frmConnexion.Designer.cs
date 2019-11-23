@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConnexion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,10 @@
             this.tbMotDePasse = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConnexion = new System.Windows.Forms.Button();
+            this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,11 +99,19 @@
             this.btnConnexion.UseVisualStyleBackColor = true;
             this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
+            // employesBindingSource
+            // 
+            this.employesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Employes);
+            // 
+            // errMessage
+            // 
+            this.errMessage.ContainerControl = this;
+            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 227);
+            this.ClientSize = new System.Drawing.Size(384, 218);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbMotDePasse);
@@ -109,6 +122,9 @@
             this.MaximizeBox = false;
             this.Name = "frmConnexion";
             this.Text = "Autentification";
+            this.Load += new System.EventHandler(this.frmConnexion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,6 +138,8 @@
         private System.Windows.Forms.TextBox tbMotDePasse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConnexion;
+        private System.Windows.Forms.BindingSource employesBindingSource;
+        private System.Windows.Forms.ErrorProvider errMessage;
     }
 }
 
