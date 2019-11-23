@@ -8,22 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace projet2BaseDeDonnees3
 {
-    public partial class frmConnexion : Form
+    public partial class frmMenuPrincipal : Form
     {
-        DataClasses1DataContext monDataContext = new DataClasses1DataContext();
-
-        public frmConnexion()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
         }
 
-        private void btnConnexion_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

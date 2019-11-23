@@ -109,7 +109,7 @@ Remarque varchar(50)
 print 'Création table Employes'
 create table Employes(
 No int primary key(No) not null,
-MotDePasse varchar(8) not null,
+MotDePasse varchar(50) not null,
 Nom varchar(50) not null,
 Prenom varchar(50) not null,
 Sexe varchar(1) constraint ck_sexe check (UPPER(Sexe) in ('H','F')) not null,

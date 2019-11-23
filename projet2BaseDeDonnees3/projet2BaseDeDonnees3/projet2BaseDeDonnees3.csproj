@@ -76,11 +76,20 @@
     <Compile Include="frmConnexion.Designer.cs">
       <DependentUpon>frmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +109,24 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Abonnements.datasource" />
+    <None Include="Properties\DataSources\DataClasses1DataContext.datasource" />
+    <None Include="Properties\DataSources\Dependants.datasource" />
+    <None Include="Properties\DataSources\Depenses.datasource" />
+    <None Include="Properties\DataSources\Employes.datasource" />
+    <None Include="Properties\DataSources\frmConnexion.datasource" />
+    <None Include="Properties\DataSources\PartiesJouees.datasource" />
+    <None Include="Properties\DataSources\PrixDepensesAbonnements.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Provinces.datasource" />
+    <None Include="Properties\DataSources\Reabonnements.datasource" />
+    <None Include="Properties\DataSources\Services.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
+    <None Include="Properties\DataSources\Terrains.datasource" />
+    <None Include="Properties\DataSources\TypesAbonnement.datasource" />
+    <None Include="Properties\DataSources\TypesEmploye.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
