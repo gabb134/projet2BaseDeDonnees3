@@ -79,7 +79,7 @@ namespace projet2BaseDeDonnees3
                                 errMessage.SetError(tbUtilisateur, "L'utilisateur ou le mot de passe est incorrect!");
                             }         
                             else
-                            {
+                            { //Faire la validation pour le mot de passe( expression reguliere)
                                 errMessage.SetError(tbUtilisateur, "");
                                 MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD);
                                 strNoUtilisateur = tbUtilisateur.Text;
