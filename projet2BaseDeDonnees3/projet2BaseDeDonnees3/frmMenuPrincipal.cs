@@ -14,6 +14,7 @@ namespace projet2BaseDeDonnees3
        
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
+        string strNoUtilisateurConnexion = "";
        
         public frmMenuPrincipal()
         {
@@ -43,8 +44,17 @@ namespace projet2BaseDeDonnees3
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         { //voir commment je peux reccuperer le noEmploye de la connexion
-            frmConnexion connexion = new frmConnexion();
-          //  MessageBox.Show(connexion.strNoUtilisateur);
+            strNoUtilisateurConnexion = frmConnexion.strNoUtilisateur;
+            //Validation des buttons du menu principal selon l'employe qui se connecte
+           if(strNoUtilisateurConnexion=="1" || strNoUtilisateurConnexion == "2")
+            {
+                btnGestionEmployes.Enabled = true;
+            }
+            else
+            {
+                btnGestionEmployes.Enabled = false;
+
+            }
         }
     }
 }

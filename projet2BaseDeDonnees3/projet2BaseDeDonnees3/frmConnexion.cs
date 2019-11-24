@@ -17,7 +17,7 @@ namespace projet2BaseDeDonnees3
         DataClasses1DataContext monDataContext = new DataClasses1DataContext();
         frmMenuPrincipal frmMenu = new frmMenuPrincipal();
 
-        public string strNoUtilisateur = "";
+        public static String strNoUtilisateur = "";
         
         public frmConnexion()
         {
@@ -30,7 +30,7 @@ namespace projet2BaseDeDonnees3
         private void btnConnexion_Click(object sender, EventArgs e)
         {
 
-            string strNoUtilisateur = tbUtilisateur.Text;
+            // strNoUtilisateur = tbUtilisateur.Text;
             //string strMotDePasse = tbMotDePasse.Text;
 
             string strNoUtilisateurBD = "";
@@ -82,6 +82,8 @@ namespace projet2BaseDeDonnees3
                             {
                                 errMessage.SetError(tbUtilisateur, "");
                                 MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD);
+                                strNoUtilisateur = tbUtilisateur.Text;
+                               // MessageBox.Show(strNoUtilisateur);
                                 this.Hide();
                                 frmMenu.ShowDialog();
                                 this.Show();

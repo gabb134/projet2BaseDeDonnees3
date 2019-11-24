@@ -185,8 +185,19 @@ insert into TypesEmploye (No,Description) values(7,'Professeur de golf')
 
 
 Print  'Remplissage de la TABLE Employes(le premier Employe est l''administrateur)...'
-insert into Employes values(1,'Admin-21','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','5149721014','admin@gmail.com',15,1,'test')
-insert into Employes values(2,'klk1234','test','test','F',21,1,'test','test','QC','H9H1V2','5149721014','5149721014','tes@gmail.com',15,2,'test')
+insert into Employes(No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
+values(1,'Admin-21','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','admin@gmail.com',15,1)
+insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
+values(2,'klk1234','Kouma','Cedric','F',21,1,'test','test','QC','H9H1V2','5146789876','tes@gmail.com',15,2)
+insert into Employes(No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
+values(3,'allo','Guelleh','Mohamed','F',21,1,'test','test','QC','H9H1V2','5149721014','tes@gmail.com',15,3)
+
+insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
+values(4,'123','Porras','Alex','H',21,1,'test','test','QC','H9H1V2','5149721014','admin@gmail.com',15,4)
+insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
+values(5,'123','Gariepy','Alex','F',21,1,'test','test','QC','H9H1V2','5149721014','tes@gmail.com',15,5)
+insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
+values(6,'123','Bergeron','Olivier','F',21,1,'test','test','QC','H9H1V2','5149721014','tes@gmail.com',15,6)
 
 Print  'Remplissage de la TABLE Terrains'
 insert into Terrains (No,Nom,NombreTrous,Description) values(1,'terrain1',18,'ceci est le terrain 1')
