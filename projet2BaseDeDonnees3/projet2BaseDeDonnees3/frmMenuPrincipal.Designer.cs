@@ -106,6 +106,7 @@
             this.btnGestionEmployes.TabIndex = 0;
             this.btnGestionEmployes.Text = "Gestion des employes";
             this.btnGestionEmployes.UseVisualStyleBackColor = true;
+            this.btnGestionEmployes.Click += new System.EventHandler(this.btnGestionEmployes_Click);
             // 
             // groupBox2
             // 
@@ -202,6 +203,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenuPrincipal";
             this.Text = "Menu principal";
+            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

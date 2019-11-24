@@ -77,6 +77,7 @@
             this.tbMotDePasse.Name = "tbMotDePasse";
             this.tbMotDePasse.Size = new System.Drawing.Size(132, 22);
             this.tbMotDePasse.TabIndex = 3;
+            this.tbMotDePasse.UseSystemPasswordChar = true;
             // 
             // label3
             // 
