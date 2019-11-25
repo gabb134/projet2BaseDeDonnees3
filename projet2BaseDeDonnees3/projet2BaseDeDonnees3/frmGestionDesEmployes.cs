@@ -39,5 +39,15 @@ namespace projet2BaseDeDonnees3
            // Application.Exit();
            // this.Close();
         }
+
+        private void btnSuppression_Click(object sender, EventArgs e)
+        {
+            dynamic EmployeSelectionnee = employesBindingSource.Current;
+
+           // string strNoEmployeSelectionee = EmployeSelectionnee["No"];
+            //employesDataGridView.Rows[DataGridView.SelectedRows[0].Index].Cells["No"].Value.ToString();
+          
+          // MessageBox.Show(strNoEmployeSelectionee);
+        }
     }
 }

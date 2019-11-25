@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 
 
@@ -16,6 +18,7 @@ namespace projet2BaseDeDonnees3
     {
         DataClasses1DataContext monDataContext = new DataClasses1DataContext();
         frmMenuPrincipal frmMenu = new frmMenuPrincipal();
+        public Regex ExprMotDePasse { get; }
 
         public static String strNoUtilisateur = "";
         
@@ -24,7 +27,9 @@ namespace projet2BaseDeDonnees3
             InitializeComponent();
 
             tbUtilisateur.Text = "1";
-            tbMotDePasse.Text ="Admin-21";
+            tbMotDePasse.Text ="Passwords%1";
+            // ExprMotDePasse = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,}$");
+            ExprMotDePasse = new Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$");
         }
 
         private void btnConnexion_Click(object sender, EventArgs e)
@@ -74,20 +79,32 @@ namespace projet2BaseDeDonnees3
                         {
                             errMessage.SetError(tbMotDePasse, "");
 
-                            if (!tbUtilisateur.Text.Equals(strNoUtilisateurBD) || !tbMotDePasse.Text.Equals(strMotDePasseBD))
+                            if (!ExprMotDePasse.IsMatch(tbMotDePasse.Text))
                             {
-                                errMessage.SetError(tbUtilisateur, "L'utilisateur ou le mot de passe est incorrect!");
-                            }         
-                            else
-                            { //Faire la validation pour le mot de passe( expression reguliere)
-                                errMessage.SetError(tbUtilisateur, "");
-                                MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD);
-                                strNoUtilisateur = tbUtilisateur.Text;
-                               // MessageBox.Show(strNoUtilisateur);
-                                this.Hide();
-                                frmMenu.ShowDialog();
-                                this.Show();
+                                errMessage.SetError(tbMotDePasse, "Le mot de passe doit avoir un minimum de 8 caractères, un moins une lettre, au moins un chiffre et au moins 1 caractère qui n’est ni une lettre, ni un chiffre.");
                             }
+                            else {
+                                errMessage.SetError(tbMotDePasse, "");
+                                if (!tbUtilisateur.Text.Equals(strNoUtilisateurBD) || !tbMotDePasse.Text.Equals(strMotDePasseBD))
+                                {
+                                    errMessage.SetError(tbUtilisateur, "L'utilisateur ou le mot de passe est incorrect!");
+                                }
+                                else
+                                { //Faire la validation pour le mot de passe( expression reguliere)
+                                    errMessage.SetError(tbUtilisateur, "");
+
+                                    MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD);
+                                    strNoUtilisateur = tbUtilisateur.Text;
+                                    // MessageBox.Show(strNoUtilisateur);
+                                    this.Hide();
+                                    frmMenu.ShowDialog();
+                                    this.Show();
+
+
+                                }
+
+                            }
+
 
 
                         }
