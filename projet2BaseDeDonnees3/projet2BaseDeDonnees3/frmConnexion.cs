@@ -21,6 +21,7 @@ namespace projet2BaseDeDonnees3
         public Regex ExprMotDePasse { get; }
 
         public static String strNoUtilisateur = "";
+        public static int noTypeEmploye =0;
         
         public frmConnexion()
         {
@@ -37,13 +38,15 @@ namespace projet2BaseDeDonnees3
 
             // strNoUtilisateur = tbUtilisateur.Text;
             //string strMotDePasse = tbMotDePasse.Text;
+            string strTypeEmploye = "";
 
             string strNoUtilisateurBD = "";
             string strMotDePasseBD ="" ;
             var employes = from unEmploye in monDataContext.Employes
                                                let noEmploye = unEmploye.No
                                                let motDePasse = unEmploye.MotDePasse
-                                               select new { noEmploye,motDePasse};
+                                               let noTypeEmploye = unEmploye.NoTypeEmploye
+                                               select new { noEmploye,motDePasse,noTypeEmploye};
 
 
             //pas sur si c'est la bonne facon pour aller chercher le premier employe(Administrateur)
@@ -93,9 +96,35 @@ namespace projet2BaseDeDonnees3
                                 { //Faire la validation pour le mot de passe( expression reguliere)
                                     errMessage.SetError(tbUtilisateur, "");
 
-                                    MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD);
+                                  
+                                    noTypeEmploye = emp.noTypeEmploye;
+                                    switch (noTypeEmploye)
+                                    {
+                                        case 1:
+                                            strTypeEmploye = "Administrateur";
+                                            break;
+                                        case 2:
+                                            strTypeEmploye = "Direction";
+                                            break;
+                                        case 3:
+                                            strTypeEmploye = "Propriétaire d''un club";
+                                            break;
+                                        case 4:
+                                            strTypeEmploye = "Employe d'un club";
+                                            break;
+                                        case 5:
+                                            strTypeEmploye = "Employé Pro-Shop";
+                                            break;
+                                        case 6:
+                                            strTypeEmploye = "Employe d'un restaurant";
+                                            break;
+                                        case 7:
+                                            strTypeEmploye = "Professeur de golf";
+                                            break;
+                                    }
+                                    MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD+"\nType d'employé : "+strTypeEmploye);
                                     strNoUtilisateur = tbUtilisateur.Text;
-                                    // MessageBox.Show(strNoUtilisateur);
+                                   
                                     this.Hide();
                                     frmMenu.ShowDialog();
                                     this.Show();

@@ -41,13 +41,54 @@ namespace projet2BaseDeDonnees3
         }
 
         private void btnSuppression_Click(object sender, EventArgs e)
-        {
-            dynamic EmployeSelectionnee = employesBindingSource.Current;
+        { 
 
-           // string strNoEmployeSelectionee = EmployeSelectionnee["No"];
-            //employesDataGridView.Rows[DataGridView.SelectedRows[0].Index].Cells["No"].Value.ToString();
-          
-          // MessageBox.Show(strNoEmployeSelectionee);
+            int noEmployeConnecter = Convert.ToInt32( frmConnexion.strNoUtilisateur);
+            
+            int intNoEmployeSelectionee = Convert.ToInt32( employesDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+
+            if (intNoEmployeSelectionee.Equals(noEmployeConnecter))
+            {
+                MessageBox.Show("Vous ne pouvez pas supprimer l'employé courant.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var employeASupprimer = from unEmploye in monDataContext.Employes
+                                        where unEmploye.No == intNoEmployeSelectionee
+                                        select unEmploye;
+
+                if ((MessageBox.Show("Vous êtes sur le point de supprimer un utilisateur. \nVous êtes sûr de vouloir le faire ?", "Suppression d'un employé",
+        MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+        MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+                {
+                    foreach (var unEmploye in employeASupprimer)
+                        employesBindingSource.Remove(unEmploye);
+
+                    employesBindingSource.EndEdit();
+
+                    try
+                    {
+                        monDataContext.SubmitChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Erreur lors de la suppression");
+                    }
+
+                }
+            }
+
+         
+
+           
+            
+
+        }
+
+        private void btnAjout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

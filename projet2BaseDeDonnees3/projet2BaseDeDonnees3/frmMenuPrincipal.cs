@@ -15,7 +15,7 @@ namespace projet2BaseDeDonnees3
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
         string strNoUtilisateurConnexion = "";
-       
+        int noTypeEmploye ;
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -45,8 +45,10 @@ namespace projet2BaseDeDonnees3
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         { //voir commment je peux reccuperer le noEmploye de la connexion
             strNoUtilisateurConnexion = frmConnexion.strNoUtilisateur;
+            noTypeEmploye = frmConnexion.noTypeEmploye;
+          //  MessageBox.Show(noTypeEmploye.ToString());
             //Validation des buttons du menu principal selon l'employe qui se connecte
-            if (strNoUtilisateurConnexion == "1" || strNoUtilisateurConnexion == "2")
+            if (noTypeEmploye == 1 || noTypeEmploye == 1)
             {
                 btnGestionEmployes.Enabled = true;
                 btnAbonnement.Enabled = true;
@@ -58,7 +60,7 @@ namespace projet2BaseDeDonnees3
                 btnVisualisationStats.Enabled = true;
                 btnInscriptionDepense.Enabled = true;
             }
-            else if ( strNoUtilisateurConnexion == "3" )
+            else if (noTypeEmploye == 3 )
             {
                 btnGestionEmployes.Enabled = false;
                
@@ -72,7 +74,7 @@ namespace projet2BaseDeDonnees3
                 btnVisualisationRpports.Enabled = true;
                 btnVisualisationStats.Enabled = true;
             }
-            else if (strNoUtilisateurConnexion == "4")
+            else if (noTypeEmploye == 4)
             {
 
 
@@ -88,9 +90,19 @@ namespace projet2BaseDeDonnees3
                 btnInscriptionPartie.Enabled = true;
 
             }
-            else
+            else 
             {
                 btnInscriptionDepense.Enabled = true;
+
+                btnGestionEmployes.Enabled = false;
+                btnAbonnement.Enabled = false;
+                btnReabonnement.Enabled = false;
+                btnMiseAJourAbonnes.Enabled = false;
+                btnInscriptionPartie.Enabled = false;
+                btnModifPrix.Enabled = false;
+                btnVisualisationRpports.Enabled = false;
+                btnVisualisationStats.Enabled = false;
+            
 
             }
           

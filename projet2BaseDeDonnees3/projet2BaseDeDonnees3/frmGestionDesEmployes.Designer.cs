@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionDesEmployes));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeconnexion = new System.Windows.Forms.Button();
             this.btnSuppression = new System.Windows.Forms.Button();
             this.btnModif = new System.Windows.Forms.Button();
             this.btnAjout = new System.Windows.Forms.Button();
             this.employesDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
@@ -60,28 +59,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDeconnexion);
             this.groupBox1.Controls.Add(this.btnSuppression);
             this.groupBox1.Controls.Add(this.btnModif);
             this.groupBox1.Controls.Add(this.btnAjout);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 278);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(590, 192);
+            this.groupBox1.Size = new System.Drawing.Size(590, 116);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "La gestion des employes";
-            // 
-            // btnDeconnexion
-            // 
-            this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeconnexion.Location = new System.Drawing.Point(206, 120);
-            this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(163, 47);
-            this.btnDeconnexion.TabIndex = 7;
-            this.btnDeconnexion.Text = "Déconnexion";
-            this.btnDeconnexion.UseVisualStyleBackColor = true;
-            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
             // btnSuppression
             // 
@@ -110,6 +97,7 @@
             this.btnAjout.TabIndex = 0;
             this.btnAjout.Text = "Ajout";
             this.btnAjout.UseVisualStyleBackColor = true;
+            this.btnAjout.Click += new System.EventHandler(this.btnAjout_Click);
             // 
             // employesDataGridView
             // 
@@ -136,6 +124,16 @@
             this.employesDataGridView.Name = "employesDataGridView";
             this.employesDataGridView.Size = new System.Drawing.Size(590, 184);
             this.employesDataGridView.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(222, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 29);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Les employes";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -231,21 +229,11 @@
             // 
             this.employesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Employes);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(222, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Les employes";
-            // 
             // frmGestionDesEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 482);
+            this.ClientSize = new System.Drawing.Size(631, 409);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.employesDataGridView);
             this.Controls.Add(this.groupBox1);
@@ -269,7 +257,6 @@
         private System.Windows.Forms.Button btnSuppression;
         private System.Windows.Forms.Button btnModif;
         private System.Windows.Forms.Button btnAjout;
-        private System.Windows.Forms.Button btnDeconnexion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

@@ -225,3 +225,6 @@ insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligat
 insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(4,2018,1700,700)
 insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(5,2018,1900,700)
 insert into PrixDepensesAbonnements (NoTypeAbonnement,Annee,Prix,DepensesObligatoires) values(6,2018,2100,700)
+
+print 'Tests des tables '
+
