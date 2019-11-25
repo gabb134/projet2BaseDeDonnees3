@@ -41,24 +41,46 @@ namespace projet2BaseDeDonnees3
         }
 
         private void btnSuppression_Click(object sender, EventArgs e)
-        { 
+        { //voir comment faire pour ne pas supprimer un employe qui a un service
+            //voir comment faire pour ne pa supprimer l'administrateur
+          /*  var employeQuiADesServices = from unEmploye in monDataContext.Services
+                                    let noEmploye = unEmploye.No
+                                    select new { noEmploye};
 
+     foreach(var employeService in employeQuiADesServices)
+       {
+          if(employeService.Equals(null))
+                {
+                    MessageBox.Show("allo");
+                }
+
+
+       }*/
             int noEmployeConnecter = Convert.ToInt32( frmConnexion.strNoUtilisateur);
             
             int intNoEmployeSelectionee = Convert.ToInt32( employesDataGridView.CurrentRow.Cells[0].Value.ToString());
 
+            int noTypeEmploye = frmConnexion.noTypeEmploye;
+
+            MessageBox.Show(noTypeEmploye.ToString());
 
             if (intNoEmployeSelectionee.Equals(noEmployeConnecter))
             {
                 MessageBox.Show("Vous ne pouvez pas supprimer l'employé courant.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (noTypeEmploye.Equals(1))//a faire
             {
+                MessageBox.Show("Vous ne pouvez pas supprimer l'administrateur", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+             
+
+
                 var employeASupprimer = from unEmploye in monDataContext.Employes
                                         where unEmploye.No == intNoEmployeSelectionee
                                         select unEmploye;
 
-                if ((MessageBox.Show("Vous êtes sur le point de supprimer un utilisateur. \nVous êtes sûr de vouloir le faire ?", "Suppression d'un employé",
+                if ((MessageBox.Show("Vous êtes sur le point de supprimer un employé. \nVous êtes sûr de vouloir le faire ?", "Suppression d'un employé",
         MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
         MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
                 {

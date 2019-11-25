@@ -48,7 +48,7 @@ namespace projet2BaseDeDonnees3
             noTypeEmploye = frmConnexion.noTypeEmploye;
           //  MessageBox.Show(noTypeEmploye.ToString());
             //Validation des buttons du menu principal selon l'employe qui se connecte
-            if (noTypeEmploye == 1 || noTypeEmploye == 1)
+            if (noTypeEmploye == 1 || noTypeEmploye == 2)
             {
                 btnGestionEmployes.Enabled = true;
                 btnAbonnement.Enabled = true;
