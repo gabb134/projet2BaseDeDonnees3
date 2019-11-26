@@ -88,6 +88,7 @@
             this.btnModif.TabIndex = 1;
             this.btnModif.Text = "Modification";
             this.btnModif.UseVisualStyleBackColor = true;
+            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
             // 
             // btnAjout
             // 

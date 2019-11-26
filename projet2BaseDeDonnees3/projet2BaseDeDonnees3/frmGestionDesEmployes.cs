@@ -13,6 +13,8 @@ namespace projet2BaseDeDonnees3
     public partial class frmGestionDesEmployes : Form
     {
         DataClasses1DataContext monDataContext = new DataClasses1DataContext();
+        frmAjoutEmployes frmAjout;
+        frmModificationEmployes frmModif;
 
         public frmGestionDesEmployes()
         {
@@ -186,6 +188,58 @@ namespace projet2BaseDeDonnees3
         private void btnAjout_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            frmModif = new frmModificationEmployes();
+
+            frmModif.strModificiation = "modif";
+            //Recupere les infos du datagridview
+            frmModif.strMotDePasse = employesDataGridView.CurrentRow.Cells[2].Value.ToString();
+            frmModif.strNom = employesDataGridView.CurrentRow.Cells[3].Value.ToString();
+            frmModif.strPrenom = employesDataGridView.CurrentRow.Cells[4].Value.ToString();
+            frmModif.strSexe = employesDataGridView.CurrentRow.Cells[5].Value.ToString();
+            frmModif.intAge = Convert.ToInt32( employesDataGridView.CurrentRow.Cells[6].Value);
+            frmModif.intNoCivique = Convert.ToInt32(employesDataGridView.CurrentRow.Cells[7].Value);
+            frmModif.strRue = employesDataGridView.CurrentRow.Cells[8].Value.ToString();
+            frmModif.strVile = employesDataGridView.CurrentRow.Cells[9].Value.ToString();
+            frmModif.strProvince = employesDataGridView.CurrentRow.Cells[10].Value.ToString();
+            frmModif.strCodePostal = employesDataGridView.CurrentRow.Cells[11].Value.ToString();
+            frmModif.strTelephone = employesDataGridView.CurrentRow.Cells[12].Value.ToString();
+            frmModif.strCouriel = employesDataGridView.CurrentRow.Cells[13].Value.ToString();
+            frmModif.intSalaire = Convert.ToInt32(employesDataGridView.CurrentRow.Cells[14].Value);
+
+            if (frmModif.ShowDialog() == DialogResult.OK)
+            {
+                employesDataGridView.CurrentRow.Cells[2].Value = frmModif.strMotDePasseModifier;
+                employesDataGridView.CurrentRow.Cells[3].Value = frmModif.strNomModifier;
+                employesDataGridView.CurrentRow.Cells[4].Value = frmModif.strPrenomModifier;
+                employesDataGridView.CurrentRow.Cells[5].Value = frmModif.strSexeModifier;
+                employesDataGridView.CurrentRow.Cells[6].Value = frmModif.intAgeModifier;
+                employesDataGridView.CurrentRow.Cells[7].Value = frmModif.intNoCiviqueModifier;
+                employesDataGridView.CurrentRow.Cells[8].Value = frmModif.strRueModifier;
+                employesDataGridView.CurrentRow.Cells[9].Value = frmModif.strVileModifier;
+                employesDataGridView.CurrentRow.Cells[10].Value = frmModif.strProvinceModifier;
+                employesDataGridView.CurrentRow.Cells[11].Value = frmModif.strCodePostalModifier;
+                employesDataGridView.CurrentRow.Cells[12].Value = frmModif.strTelephoneModifier;
+                employesDataGridView.CurrentRow.Cells[13].Value = frmModif.strCourielModifier;
+                employesDataGridView.CurrentRow.Cells[14].Value = frmModif.intSalaireModifier;
+
+                employesBindingSource.EndEdit();
+
+
+                try
+                {
+                    monDataContext.SubmitChanges();
+                    MessageBox.Show("L'employé a été modifié!", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de la suppression");
+                }
+
+            }
         }
     }
 }

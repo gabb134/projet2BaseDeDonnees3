@@ -186,21 +186,21 @@ insert into TypesEmploye (No,Description) values(7,'Professeur de golf')
 
 Print  'Remplissage de la TABLE Employes(le premier Employe est l''administrateur)...'
 insert into Employes(No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
-values(1,'Passwords%1','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','admin@gmail.com',15,1)
+values(1,'Passwords%1','Marrero','Gabriel','H',21,1,'Elgin','Montreal','QC','H9H1V2','5149721014','admin@gmail.com',45,1)
 insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
-values(2,'Passwords%1','Kouma','Cedric','H',21,1,'test','test','QC','H9H1V2','5146789876','Kouma@gmail.com',15,2)
+values(2,'Passwords%1','Kouma','Cedric','H',23,1,'test','test','QC','H9H1V2','5146789876','Kouma@gmail.com',32,2)
 insert into Employes(No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye) 
-values(3,'Passwords%1','Guelleh','Mohamed','H',21,1,'test','test','QC','H9H1V2','5149721014','Guelleh@gmail.com',15,3)
+values(3,'Passwords%1','Guelleh','Mohamed','H',25,1,'test','test','QC','H9H1V2','5149721014','Guelleh@gmail.com',12,3)
 
 insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
-values(4,'Passwords%1','Porras','Alex','H',21,1,'test','test','QC','H9H1V2','5149721014','Porras@gmail.com',15,4)
+values(4,'Passwords%1','Porras','Alex','H',18,1,'test','test','QC','H9H1V2','5149721014','Porras@gmail.com',32,4)
 insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
-values(5,'Passwords%1','Gariepy','Alex','H',21,1,'test','test','QC','H9H1V2','5149721014','Gariepy@gmail.com',15,5)
+values(5,'Passwords%1','Gariepy','Alex','H',25,1,'test','test','QC','H9H1V2','5149721014','Gariepy@gmail.com',16,5)
 insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
-values(6,'Passwords%1','Bergeron','Olivier','H',21,1,'test','test','QC','H9H1V2','5149721014','Bergeron@gmail.com',15,6)
+values(6,'Passwords%1','Bergeron','Olivier','H',32,1,'test','test','QC','H9H1V2','5149721014','Bergeron@gmail.com',43,6)
 
 insert into Employes (No,MotDePasse,Nom,Prenom,Sexe,Age,NoCivique,Rue,Ville,IdProvince,CodePostal,Telephone,Courriel,SalaireHoraire,NoTypeEmploye)
-values(7,'Passwords%1','Leclerc','David','H',21,1,'test','test','QC','H9H1V2','5149721014','Leclerc@gmail.com',15,7)
+values(7,'Passwords%1','Leclerc','David','H',31,1,'test','test','QC','H9H1V2','5149721014','Leclerc@gmail.com',21,7)
 
 Print  'Remplissage de la TABLE Terrains'
 insert into Terrains (No,Nom,NombreTrous,Description) values(1,'terrain1',18,'ceci est le terrain 1')
