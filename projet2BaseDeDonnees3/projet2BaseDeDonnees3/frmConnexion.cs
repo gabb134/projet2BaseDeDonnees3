@@ -39,6 +39,7 @@ namespace projet2BaseDeDonnees3
             // strNoUtilisateur = tbUtilisateur.Text;
             //string strMotDePasse = tbMotDePasse.Text;
             string strTypeEmploye = "";
+            Boolean booTrouver = false;
 
             string strNoUtilisateurBD = "";
             string strMotDePasseBD ="" ;
@@ -124,11 +125,12 @@ namespace projet2BaseDeDonnees3
                                     }
                                     MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD+"\nType d'employé : "+strTypeEmploye);
                                     strNoUtilisateur = tbUtilisateur.Text;
-                                   
+                                    booTrouver = true;
                                     this.Hide();
                                     frmMenu.ShowDialog();
+                                    
                                     this.Show();
-
+                                    
 
                                 }
 
@@ -143,6 +145,12 @@ namespace projet2BaseDeDonnees3
 
 
             }
+            if (booTrouver)
+            {
+                errMessage.Clear();
+                this.ActiveControl = tbUtilisateur;
+            }
+                
 
 
 
@@ -153,6 +161,7 @@ namespace projet2BaseDeDonnees3
             // this.ActiveControl = tbUtilisateur;
             //tbUtilisateur.Text = "";
             //tbMotDePasse.Text = "";
+            
         }
     }
 }
