@@ -41,70 +41,81 @@ namespace projet2BaseDeDonnees3
         }
 
         private void btnSuppression_Click(object sender, EventArgs e)
-        { //voir comment faire pour ne pas supprimer un employe qui a un service
-            //voir comment faire pour ne pa supprimer l'administrateur
-          /*  var employeQuiADesServices = from unEmploye in monDataContext.Services
-                                    let noEmploye = unEmploye.No
-                                    select new { noEmploye};
-
-     foreach(var employeService in employeQuiADesServices)
-       {
-          if(employeService.Equals(null))
-                {
-                    MessageBox.Show("allo");
-                }
+        { 
 
 
-       }*/
-            int noEmployeConnecter = Convert.ToInt32( frmConnexion.strNoUtilisateur);
-            
-            int intNoEmployeSelectionee = Convert.ToInt32( employesDataGridView.CurrentRow.Cells[0].Value.ToString());
+            int noEmployeConnecter = Convert.ToInt32(frmConnexion.strNoUtilisateur);
+
+            int intNoEmployeSelectionee = Convert.ToInt32(employesDataGridView.CurrentRow.Cells[0].Value.ToString());
+
+            string strTypeEmploySelectionee =employesDataGridView.CurrentRow.Cells[2].Value.ToString();
 
             int noTypeEmploye = frmConnexion.noTypeEmploye;
 
-            MessageBox.Show(noTypeEmploye.ToString());
+            // un employe qui a un service
+            var employeQuiADesServices = from unEmploye in monDataContext.Services
+                                    let noEmploye = unEmploye.NoEmploye
+                                    select new { noEmploye};
+
+            int intEmployeQuiADesService = 0;
+
+            foreach (var employeService in employeQuiADesServices)
+            {
+                 intEmployeQuiADesService = employeService.noEmploye;
+
+                
+            }
+
+            
+            //MessageBox.Show(intEmployeQuiADesService.ToString());
+            // MessageBox.Show(noTypeEmploye.ToString());
 
             if (intNoEmployeSelectionee.Equals(noEmployeConnecter))
-            {
-                MessageBox.Show("Vous ne pouvez pas supprimer l'employé courant.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (noTypeEmploye.Equals(1))//a faire
-            {
-                MessageBox.Show("Vous ne pouvez pas supprimer l'administrateur", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else {
-             
-
-
-                var employeASupprimer = from unEmploye in monDataContext.Employes
-                                        where unEmploye.No == intNoEmployeSelectionee
-                                        select unEmploye;
-
-                if ((MessageBox.Show("Vous êtes sur le point de supprimer un employé. \nVous êtes sûr de vouloir le faire ?", "Suppression d'un employé",
-        MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
-        MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
                 {
-                    foreach (var unEmploye in employeASupprimer)
-                        employesBindingSource.Remove(unEmploye);
-
-                    employesBindingSource.EndEdit();
-
-                    try
-                    {
-                        monDataContext.SubmitChanges();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Erreur lors de la suppression");
-                    }
-
+                    MessageBox.Show("Vous ne pouvez pas supprimer l'employé courant.", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+                else if (strTypeEmploySelectionee.Equals("Administrateur"))//a faire
+                {
+                    MessageBox.Show("Vous ne pouvez pas supprimer l'administrateur", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else {
 
-         
 
-           
+
+                    var employeASupprimer = from unEmploye in monDataContext.Employes
+                                            where unEmploye.No == intNoEmployeSelectionee
+                                            select unEmploye;
+
+                    if ((MessageBox.Show("Vous êtes sur le point de supprimer un employé. \nVous êtes sûr de vouloir le faire ?", "Suppression d'un employé",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+            MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
+                    {
+                        foreach (var unEmploye in employeASupprimer)
+                            employesBindingSource.Remove(unEmploye);
+
+                        employesBindingSource.EndEdit();
+
+                        try
+                        {
+                            monDataContext.SubmitChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Erreur lors de la suppression");
+                        }
+
+                    }
+                }
+
+
             
+
+
+
+
+
+
+
 
         }
 

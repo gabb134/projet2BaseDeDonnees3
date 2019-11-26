@@ -16,7 +16,8 @@ namespace projet2BaseDeDonnees3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConnexion());
+             Application.Run(new frmConnexion());
+            //Application.Run(new frmTest());
         }
     }
 }
