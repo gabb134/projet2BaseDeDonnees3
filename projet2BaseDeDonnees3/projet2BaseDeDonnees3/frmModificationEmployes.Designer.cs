@@ -43,7 +43,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnModif = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnConfirmerModification = new System.Windows.Forms.Button();
             this.cbSexe = new System.Windows.Forms.ComboBox();
             this.ndAge = new System.Windows.Forms.NumericUpDown();
@@ -59,12 +59,14 @@
             this.tbSalaire = new System.Windows.Forms.MaskedTextBox();
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tbProvince = new System.Windows.Forms.MaskedTextBox();
+            this.cbProvince = new System.Windows.Forms.ComboBox();
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // employesBindingSource
@@ -201,16 +203,16 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Mot de passe :";
             // 
-            // btnModif
+            // btnAnnuler
             // 
-            this.btnModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModif.Location = new System.Drawing.Point(208, 490);
-            this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(163, 47);
-            this.btnModif.TabIndex = 8;
-            this.btnModif.Text = "Annuler";
-            this.btnModif.UseVisualStyleBackColor = true;
-            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.Location = new System.Drawing.Point(208, 490);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(163, 47);
+            this.btnAnnuler.TabIndex = 8;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnConfirmerModification
             // 
@@ -279,13 +281,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbProvince);
             this.groupBox1.Controls.Add(this.tbNom);
             this.groupBox1.Controls.Add(this.tbPrenom);
             this.groupBox1.Controls.Add(this.tbMotDePasse);
             this.groupBox1.Controls.Add(this.tbCouriel);
             this.groupBox1.Controls.Add(this.tbRue);
             this.groupBox1.Controls.Add(this.tbVille);
-            this.groupBox1.Controls.Add(this.tbProvince);
             this.groupBox1.Controls.Add(this.tbSalaire);
             this.groupBox1.Controls.Add(this.tbCodePostal);
             this.groupBox1.Controls.Add(this.tbTelephone);
@@ -293,7 +295,7 @@
             this.groupBox1.Controls.Add(this.ndAge);
             this.groupBox1.Controls.Add(this.cbSexe);
             this.groupBox1.Controls.Add(this.btnConfirmerModification);
-            this.groupBox1.Controls.Add(this.btnModif);
+            this.groupBox1.Controls.Add(this.btnAnnuler);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label14);
@@ -376,18 +378,29 @@
             // 
             this.errMessage.ContainerControl = this;
             // 
-            // tbProvince
+            // cbProvince
             // 
-            this.tbProvince.Location = new System.Drawing.Point(209, 339);
-            this.tbProvince.Name = "tbProvince";
-            this.tbProvince.Size = new System.Drawing.Size(163, 26);
-            this.tbProvince.TabIndex = 44;
+            this.cbProvince.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.provincesBindingSource, "Nom", true));
+            this.cbProvince.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.provincesBindingSource, "Nom", true));
+            this.cbProvince.DataSource = this.provincesBindingSource;
+            this.cbProvince.DisplayMember = "Nom";
+            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProvince.FormattingEnabled = true;
+            this.cbProvince.Location = new System.Drawing.Point(208, 335);
+            this.cbProvince.Name = "cbProvince";
+            this.cbProvince.Size = new System.Drawing.Size(163, 28);
+            this.cbProvince.TabIndex = 51;
+            this.cbProvince.ValueMember = "Id";
+            // 
+            // provincesBindingSource
+            // 
+            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
             // 
             // frmModificationEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 596);
+            this.ClientSize = new System.Drawing.Size(437, 593);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmModificationEmployes";
             this.Text = "Modification d\'un employé";
@@ -398,6 +411,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,7 +431,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Button btnConfirmerModification;
         private System.Windows.Forms.ComboBox cbSexe;
         private System.Windows.Forms.NumericUpDown ndAge;
@@ -433,6 +447,7 @@
         private System.Windows.Forms.MaskedTextBox tbRue;
         private System.Windows.Forms.MaskedTextBox tbVille;
         private System.Windows.Forms.ErrorProvider errMessage;
-        private System.Windows.Forms.MaskedTextBox tbProvince;
+        private System.Windows.Forms.ComboBox cbProvince;
+        private System.Windows.Forms.BindingSource provincesBindingSource;
     }
 }

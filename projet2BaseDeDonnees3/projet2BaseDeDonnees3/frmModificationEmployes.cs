@@ -15,49 +15,76 @@ namespace projet2BaseDeDonnees3
     public partial class frmModificationEmployes : Form
     {
         public Regex ExprMotDePasse { get; }
-        public string strModificiation ;
-        public string strNom;
-        public string strPrenom;
-        public string strMotDePasse;
-        public string strSexe;
-        public int intAge;
-        public string strCouriel;
-        public int intNoCivique;
-        public string strRue;
-        public string strVile;
-        public string strProvince;
-        public string strCodePostal;
-        public string strTelephone;
-        public int intSalaire;
+        /* public string strModificiation ;
+         public string strNom;
+         public string strPrenom;
+         public string strMotDePasse;
+         public string strSexe;
+         public int intAge;
+         public string strCouriel;
+         public int intNoCivique;
+         public string strRue;
+         public string strVile;
+         public string strProvince;
+         public string strCodePostal;
+         public string strTelephone;
+         public int intSalaire;
 
 
 
-        
-        public string strNomModifier;
-        public string strPrenomModifier;
-        public string strMotDePasseModifier;
-        public string strSexeModifier;
-        public int intAgeModifier;
-        public string strCourielModifier;
-        public int intNoCiviqueModifier;
-        public string strRueModifier;
-        public string strVileModifier;
-        public string strProvinceModifier;
-        public string strCodePostalModifier;
-        public string strTelephoneModifier;
-        public int intSalaireModifier;
 
+         public string strNomModifier;
+         public string strPrenomModifier;
+         public string strMotDePasseModifier;
+         public string strSexeModifier;
+         public int intAgeModifier;
+         public string strCourielModifier;
+         public int intNoCiviqueModifier;
+         public string strRueModifier;
+         public string strVileModifier;
+         public string strProvinceModifier;
+         public string strCodePostalModifier;
+         public string strTelephoneModifier;
+         public int intSalaireModifier;*/
 
+        Employes employeRecuperer;
 
-        public frmModificationEmployes()
+        /*public frmModificationEmployes()
         {
             InitializeComponent();
             ExprMotDePasse = new Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$");
+        }*/
+
+        public frmModificationEmployes(Employes emp, DataClasses1DataContext dataContextRecuperer)
+        {
+            InitializeComponent();
+            ExprMotDePasse = new Regex("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$");
+            employeRecuperer =  (from unEmploye in dataContextRecuperer.Employes
+                                           where unEmploye.No == emp.No
+                                           select unEmploye).FirstOrDefault();
+
+           // MessageBox.Show(employeRecuperer.Nom);
         }
 
         private void frmModificationEmployes_Load(object sender, EventArgs e)
         {
-            if (strModificiation == "modif") //recupère l'information du formulaire gestion des employés
+
+            tbNom.Text = employeRecuperer.Nom;
+            tbPrenom.Text = employeRecuperer.Prenom;
+            tbMotDePasse.Text = employeRecuperer.MotDePasse;
+            cbSexe.Text = employeRecuperer.Sexe;
+            ndAge.Value = employeRecuperer.Age;
+            tbCouriel.Text = employeRecuperer.Courriel;
+            ndNumeroCivique.Value = employeRecuperer.NoCivique;
+            tbRue.Text = employeRecuperer.Rue;
+            tbVille.Text = employeRecuperer.Ville;
+            //tbProvince.Text = employeRecuperer.IdProvince;
+            cbProvince.SelectedValue = employeRecuperer.Provinces; // voir comment faire en sorte que ca affiche dans le combobox et que le combobox ait le nom complet des provinces 
+            tbCodePostal.Text = employeRecuperer.CodePostal;
+            tbTelephone.Text = employeRecuperer.Telephone;
+            tbSalaire.Text =employeRecuperer.SalaireHoraire.ToString();
+
+            /*if (strModificiation == "modif") //recupère l'information du formulaire gestion des employés
             {
                 //tbNumeroEmploye.Enabled = false;
                 // cbTypeEmploye.Enabled = false;
@@ -77,20 +104,23 @@ namespace projet2BaseDeDonnees3
                 tbTelephone.Text = strTelephone;
                 tbSalaire.Text = intSalaire.ToString();
 
-            }
+            }*/
         }
-
-       
-
-        private void btnModif_Click(object sender, EventArgs e)
+        private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+
             this.Close();
         }
 
+
+
+
         private void btnConfirmerModification_Click(object sender, EventArgs e)
         {
-            if(tbNom.Text == "")
+
+
+
+          /*  if(tbNom.Text == "")
             {
                 errMessage.SetError(tbNom, "Vous devez inserer un nom");
             }
@@ -209,7 +239,9 @@ namespace projet2BaseDeDonnees3
                 
                 
 
-            }
+            }*/
         }
+
+     
     }
 }
