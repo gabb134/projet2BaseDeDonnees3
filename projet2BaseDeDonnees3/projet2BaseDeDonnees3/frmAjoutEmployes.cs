@@ -16,5 +16,16 @@ namespace projet2BaseDeDonnees3
         {
             InitializeComponent();
         }
+
+        private void btnModif_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnConfirmerAjout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

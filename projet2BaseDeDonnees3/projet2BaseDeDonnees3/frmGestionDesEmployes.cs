@@ -187,6 +187,12 @@ namespace projet2BaseDeDonnees3
 
         private void btnAjout_Click(object sender, EventArgs e)
         {
+            frmAjout = new frmAjoutEmployes();
+
+            if(frmAjout.ShowDialog() == DialogResult.OK)
+            {
+
+            }
 
         }
 
@@ -221,7 +227,7 @@ namespace projet2BaseDeDonnees3
                     employesDataGridView.CurrentRow.Cells[7].Value = frmModif.intNoCiviqueModifier;
                     employesDataGridView.CurrentRow.Cells[8].Value = frmModif.strRueModifier;
                     employesDataGridView.CurrentRow.Cells[9].Value = frmModif.strVileModifier;
-                    employesDataGridView.CurrentRow.Cells[10].Value = frmModif.strProvinceModifier.ToString(); //voir comment regler ca, car province est un objet et ne peut pas le convertir en string
+                    employesDataGridView.CurrentRow.Cells[10].Value =  frmModif.strProvinceModifier; //voir comment regler ca, car province est un objet et ne peut pas le convertir en string
                     employesDataGridView.CurrentRow.Cells[11].Value = frmModif.strCodePostalModifier;
                     employesDataGridView.CurrentRow.Cells[12].Value = frmModif.strTelephoneModifier;
                     employesDataGridView.CurrentRow.Cells[13].Value = frmModif.strCourielModifier;
