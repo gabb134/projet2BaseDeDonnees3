@@ -168,7 +168,7 @@ insert into Provinces (Id,Nom)values('NS','Nouvelle-Écosse')
 insert into Provinces (Id,Nom)values('NU','Nunavut')
 insert into Provinces (Id,Nom)values('ON','Ontario')
 insert into Provinces (Id,Nom)values('PE','Île-du-Prince-Édouard')
-insert into Provinces (Id,Nom)values('QC','Quebéc')
+insert into Provinces (Id,Nom)values('QC','Québec')
 insert into Provinces (Id,Nom)values('SK','Saskatchewan')
 insert into Provinces (Id,Nom)values('YT','Territoire du Yukon')
 

@@ -56,10 +56,10 @@
             this.tbCouriel = new System.Windows.Forms.MaskedTextBox();
             this.tbRue = new System.Windows.Forms.MaskedTextBox();
             this.tbVille = new System.Windows.Forms.MaskedTextBox();
-            this.tbProvince = new System.Windows.Forms.MaskedTextBox();
             this.tbSalaire = new System.Windows.Forms.MaskedTextBox();
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbProvince = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
@@ -238,11 +238,16 @@
             // ndAge
             // 
             this.ndAge.Location = new System.Drawing.Point(209, 173);
+            this.ndAge.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.ndAge.Name = "ndAge";
             this.ndAge.Size = new System.Drawing.Size(163, 26);
             this.ndAge.TabIndex = 39;
             this.ndAge.Value = new decimal(new int[] {
-            1,
+            16,
             0,
             0,
             0});
@@ -352,13 +357,6 @@
             this.tbVille.Size = new System.Drawing.Size(163, 26);
             this.tbVille.TabIndex = 45;
             // 
-            // tbProvince
-            // 
-            this.tbProvince.Location = new System.Drawing.Point(209, 339);
-            this.tbProvince.Name = "tbProvince";
-            this.tbProvince.Size = new System.Drawing.Size(163, 26);
-            this.tbProvince.TabIndex = 44;
-            // 
             // tbSalaire
             // 
             this.tbSalaire.Location = new System.Drawing.Point(209, 444);
@@ -377,6 +375,13 @@
             // errMessage
             // 
             this.errMessage.ContainerControl = this;
+            // 
+            // tbProvince
+            // 
+            this.tbProvince.Location = new System.Drawing.Point(209, 339);
+            this.tbProvince.Name = "tbProvince";
+            this.tbProvince.Size = new System.Drawing.Size(163, 26);
+            this.tbProvince.TabIndex = 44;
             // 
             // frmModificationEmployes
             // 
@@ -419,7 +424,6 @@
         private System.Windows.Forms.NumericUpDown ndNumeroCivique;
         private System.Windows.Forms.MaskedTextBox tbTelephone;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox tbProvince;
         private System.Windows.Forms.MaskedTextBox tbSalaire;
         private System.Windows.Forms.MaskedTextBox tbCodePostal;
         private System.Windows.Forms.MaskedTextBox tbNom;
@@ -429,5 +433,6 @@
         private System.Windows.Forms.MaskedTextBox tbRue;
         private System.Windows.Forms.MaskedTextBox tbVille;
         private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.MaskedTextBox tbProvince;
     }
 }

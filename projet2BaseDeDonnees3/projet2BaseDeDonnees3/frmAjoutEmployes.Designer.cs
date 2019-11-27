@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.typesEmployeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbProvince = new System.Windows.Forms.ComboBox();
+            this.cpNoTypeEmploye = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbNom = new System.Windows.Forms.MaskedTextBox();
             this.tbPrenom = new System.Windows.Forms.MaskedTextBox();
             this.tbMotDePasse = new System.Windows.Forms.MaskedTextBox();
@@ -58,15 +61,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cpNoTypeEmploye = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.typesEmployeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.typesEmployeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typesEmployeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.typesEmployeBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.typesEmployeBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.cbProvince = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
@@ -122,6 +122,56 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajouter d\'un employé";
+            // 
+            // cbProvince
+            // 
+            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProvince.FormattingEnabled = true;
+            this.cbProvince.Items.AddRange(new object[] {
+            "Alberta",
+            "Colombie-Britanique",
+            "Manitoba",
+            "Nouveau-Brunswick",
+            "Terre-Neuve et Labrador",
+            "Territoires du Nord-Ouest",
+            "Nouvelle-Écosse",
+            "Nunavut",
+            "Ontario",
+            "Île-du-Prince-Édouard",
+            "Québec",
+            "Saskatchewan",
+            "Territoire du Yukon"});
+            this.cbProvince.Location = new System.Drawing.Point(207, 374);
+            this.cbProvince.Name = "cbProvince";
+            this.cbProvince.Size = new System.Drawing.Size(207, 28);
+            this.cbProvince.TabIndex = 53;
+            // 
+            // cpNoTypeEmploye
+            // 
+            this.cpNoTypeEmploye.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.typesEmployeBindingSource, "Description", true));
+            this.cpNoTypeEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cpNoTypeEmploye.FormattingEnabled = true;
+            this.cpNoTypeEmploye.Items.AddRange(new object[] {
+            "Direction",
+            "Propriétaire d\'un club",
+            "Employe d\'un club",
+            "Employé Pro-Shop",
+            "Employe d\'\'un restaurant",
+            "Professeur de golf"});
+            this.cpNoTypeEmploye.Location = new System.Drawing.Point(207, 33);
+            this.cpNoTypeEmploye.Name = "cpNoTypeEmploye";
+            this.cpNoTypeEmploye.Size = new System.Drawing.Size(207, 28);
+            this.cpNoTypeEmploye.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 24);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Type d\'employé :";
             // 
             // tbNom
             // 
@@ -208,11 +258,16 @@
             // ndAge
             // 
             this.ndAge.Location = new System.Drawing.Point(207, 208);
+            this.ndAge.Minimum = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
             this.ndAge.Name = "ndAge";
             this.ndAge.Size = new System.Drawing.Size(207, 26);
             this.ndAge.TabIndex = 39;
             this.ndAge.Value = new decimal(new int[] {
-            1,
+            16,
             0,
             0,
             0});
@@ -381,33 +436,6 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Ville :";
             // 
-            // cpNoTypeEmploye
-            // 
-            this.cpNoTypeEmploye.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.typesEmployeBindingSource, "Description", true));
-            this.cpNoTypeEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cpNoTypeEmploye.FormattingEnabled = true;
-            this.cpNoTypeEmploye.Items.AddRange(new object[] {
-            "Direction",
-            "Propriétaire d\'un club",
-            "Employe d\'un club",
-            "Employé Pro-Shop",
-            "Employe d\'\'un restaurant",
-            "Professeur de golf"});
-            this.cpNoTypeEmploye.Location = new System.Drawing.Point(207, 33);
-            this.cpNoTypeEmploye.Name = "cpNoTypeEmploye";
-            this.cpNoTypeEmploye.Size = new System.Drawing.Size(207, 28);
-            this.cpNoTypeEmploye.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 24);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Type d\'employé :";
-            // 
             // typesEmployeBindingSource1
             // 
             this.typesEmployeBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
@@ -432,29 +460,6 @@
             // typesEmployeBindingSource5
             // 
             this.typesEmployeBindingSource5.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
-            // 
-            // cbProvince
-            // 
-            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProvince.FormattingEnabled = true;
-            this.cbProvince.Items.AddRange(new object[] {
-            "Alberta",
-            "Colombie-Britanique",
-            "Manitoba",
-            "Nouveau-Brunswick",
-            "Terre-Neuve et Labrador",
-            "Territoires du Nord-Ouest",
-            "Nouvelle-Écosse",
-            "Nunavut",
-            "Ontario",
-            "Île-du-Prince-Édouard",
-            "Québec",
-            "Saskatchewan",
-            "Territoire du Yukon"});
-            this.cbProvince.Location = new System.Drawing.Point(207, 374);
-            this.cbProvince.Name = "cbProvince";
-            this.cbProvince.Size = new System.Drawing.Size(207, 28);
-            this.cbProvince.TabIndex = 53;
             // 
             // frmAjoutEmployes
             // 
