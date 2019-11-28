@@ -187,13 +187,13 @@ namespace projet2BaseDeDonnees3
 
         private void btnAjout_Click(object sender, EventArgs e)
         {
-            frmAjout = new frmAjoutEmployes();
 
-            if(frmAjout.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-
+            Employes employeModif = (from unEmploye in monDataContext.Employes
+                                     where unEmploye.No == (int)employesDataGridView.CurrentRow.Cells[0].Value
+                                     select unEmploye).FirstOrDefault();
+            frmAjout = new frmAjoutEmployes(employeModif,monDataContext);
+            frmAjout.ShowDialog();
+            this.Show();
         }
 
         private void btnModif_Click(object sender, EventArgs e)

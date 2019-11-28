@@ -226,8 +226,7 @@ namespace projet2BaseDeDonnees3
                                                     else
                                                     {
 
-                                                        
-                                                        errMessage.SetError(tbSalaire, "");
+                                                          errMessage.SetError(tbSalaire, "");
 
 
                                                         employeRecuperer = (from unEmploye in dataContexteModifier.Employes
@@ -310,6 +309,7 @@ namespace projet2BaseDeDonnees3
                 
 
             }
+                                                      
         }
 
      

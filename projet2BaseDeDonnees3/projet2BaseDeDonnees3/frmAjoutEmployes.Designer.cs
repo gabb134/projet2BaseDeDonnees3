@@ -32,7 +32,9 @@
             this.typesEmployeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbProvince = new System.Windows.Forms.ComboBox();
+            this.employesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cpNoTypeEmploye = new System.Windows.Forms.ComboBox();
+            this.employesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.tbNom = new System.Windows.Forms.MaskedTextBox();
             this.tbPrenom = new System.Windows.Forms.MaskedTextBox();
@@ -47,7 +49,7 @@
             this.ndAge = new System.Windows.Forms.NumericUpDown();
             this.cbSexe = new System.Windows.Forms.ComboBox();
             this.btnConfirmerAjout = new System.Windows.Forms.Button();
-            this.btnModif = new System.Windows.Forms.Button();
+            this.btnAnnulerAjout = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,22 +63,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.typesEmployeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.typesEmployeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typesEmployeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.typesEmployeBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.typesEmployeBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // typesEmployeBindingSource
@@ -101,7 +99,7 @@
             this.groupBox1.Controls.Add(this.ndAge);
             this.groupBox1.Controls.Add(this.cbSexe);
             this.groupBox1.Controls.Add(this.btnConfirmerAjout);
-            this.groupBox1.Controls.Add(this.btnModif);
+            this.groupBox1.Controls.Add(this.btnAnnulerAjout);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label14);
@@ -125,43 +123,36 @@
             // 
             // cbProvince
             // 
+            this.cbProvince.DataSource = this.employesBindingSource1;
+            this.cbProvince.DisplayMember = "Nom";
             this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvince.FormattingEnabled = true;
-            this.cbProvince.Items.AddRange(new object[] {
-            "Alberta",
-            "Colombie-Britanique",
-            "Manitoba",
-            "Nouveau-Brunswick",
-            "Terre-Neuve et Labrador",
-            "Territoires du Nord-Ouest",
-            "Nouvelle-Écosse",
-            "Nunavut",
-            "Ontario",
-            "Île-du-Prince-Édouard",
-            "Québec",
-            "Saskatchewan",
-            "Territoire du Yukon"});
             this.cbProvince.Location = new System.Drawing.Point(207, 374);
             this.cbProvince.Name = "cbProvince";
             this.cbProvince.Size = new System.Drawing.Size(207, 28);
             this.cbProvince.TabIndex = 53;
+            this.cbProvince.ValueMember = "Id";
+            // 
+            // employesBindingSource1
+            // 
+            this.employesBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.Employes);
             // 
             // cpNoTypeEmploye
             // 
             this.cpNoTypeEmploye.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.typesEmployeBindingSource, "Description", true));
+            this.cpNoTypeEmploye.DataSource = this.employesBindingSource2;
+            this.cpNoTypeEmploye.DisplayMember = "TypesEmploye";
             this.cpNoTypeEmploye.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cpNoTypeEmploye.FormattingEnabled = true;
-            this.cpNoTypeEmploye.Items.AddRange(new object[] {
-            "Direction",
-            "Propriétaire d\'un club",
-            "Employe d\'un club",
-            "Employé Pro-Shop",
-            "Employe d\'\'un restaurant",
-            "Professeur de golf"});
             this.cpNoTypeEmploye.Location = new System.Drawing.Point(207, 33);
             this.cpNoTypeEmploye.Name = "cpNoTypeEmploye";
             this.cpNoTypeEmploye.Size = new System.Drawing.Size(207, 28);
             this.cpNoTypeEmploye.TabIndex = 52;
+            this.cpNoTypeEmploye.ValueMember = "No";
+            // 
+            // employesBindingSource2
+            // 
+            this.employesBindingSource2.DataSource = typeof(projet2BaseDeDonnees3.Employes);
             // 
             // label1
             // 
@@ -277,9 +268,9 @@
             this.cbSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexe.FormattingEnabled = true;
             this.cbSexe.Items.AddRange(new object[] {
-            "H",
-            "F"});
-            this.cbSexe.Location = new System.Drawing.Point(207, 172);
+            "Homme",
+            "Femme"});
+            this.cbSexe.Location = new System.Drawing.Point(207, 174);
             this.cbSexe.Name = "cbSexe";
             this.cbSexe.Size = new System.Drawing.Size(207, 28);
             this.cbSexe.TabIndex = 38;
@@ -295,16 +286,16 @@
             this.btnConfirmerAjout.UseVisualStyleBackColor = true;
             this.btnConfirmerAjout.Click += new System.EventHandler(this.btnConfirmerAjout_Click);
             // 
-            // btnModif
+            // btnAnnulerAjout
             // 
-            this.btnModif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModif.Location = new System.Drawing.Point(206, 525);
-            this.btnModif.Name = "btnModif";
-            this.btnModif.Size = new System.Drawing.Size(163, 47);
-            this.btnModif.TabIndex = 8;
-            this.btnModif.Text = "Annuler";
-            this.btnModif.UseVisualStyleBackColor = true;
-            this.btnModif.Click += new System.EventHandler(this.btnModif_Click);
+            this.btnAnnulerAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnulerAjout.Location = new System.Drawing.Point(206, 525);
+            this.btnAnnulerAjout.Name = "btnAnnulerAjout";
+            this.btnAnnulerAjout.Size = new System.Drawing.Size(163, 47);
+            this.btnAnnulerAjout.TabIndex = 8;
+            this.btnAnnulerAjout.Text = "Annuler";
+            this.btnAnnulerAjout.UseVisualStyleBackColor = true;
+            this.btnAnnulerAjout.Click += new System.EventHandler(this.btnAnnulerAjout_Click);
             // 
             // label2
             // 
@@ -436,30 +427,18 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Ville :";
             // 
-            // typesEmployeBindingSource1
-            // 
-            this.typesEmployeBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
-            // 
-            // typesEmployeBindingSource2
-            // 
-            this.typesEmployeBindingSource2.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
-            // 
             // employesBindingSource
             // 
             this.employesBindingSource.DataMember = "Employes";
             this.employesBindingSource.DataSource = this.typesEmployeBindingSource;
             // 
-            // typesEmployeBindingSource3
+            // provincesBindingSource
             // 
-            this.typesEmployeBindingSource3.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
+            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
             // 
-            // typesEmployeBindingSource4
+            // errMessage
             // 
-            this.typesEmployeBindingSource4.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
-            // 
-            // typesEmployeBindingSource5
-            // 
-            this.typesEmployeBindingSource5.DataSource = typeof(projet2BaseDeDonnees3.TypesEmploye);
+            this.errMessage.ContainerControl = this;
             // 
             // frmAjoutEmployes
             // 
@@ -469,17 +448,17 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAjoutEmployes";
             this.Text = "Ajout d\'un employé";
+            this.Load += new System.EventHandler(this.frmAjoutEmployes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +479,7 @@
         private System.Windows.Forms.NumericUpDown ndAge;
         private System.Windows.Forms.ComboBox cbSexe;
         private System.Windows.Forms.Button btnConfirmerAjout;
-        private System.Windows.Forms.Button btnModif;
+        private System.Windows.Forms.Button btnAnnulerAjout;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
@@ -515,13 +494,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cpNoTypeEmploye;
-        private System.Windows.Forms.BindingSource typesEmployeBindingSource1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource typesEmployeBindingSource2;
-        private System.Windows.Forms.BindingSource typesEmployeBindingSource4;
-        private System.Windows.Forms.BindingSource typesEmployeBindingSource3;
         private System.Windows.Forms.BindingSource employesBindingSource;
-        private System.Windows.Forms.BindingSource typesEmployeBindingSource5;
         private System.Windows.Forms.ComboBox cbProvince;
+        private System.Windows.Forms.BindingSource provincesBindingSource;
+        private System.Windows.Forms.BindingSource employesBindingSource1;
+        private System.Windows.Forms.BindingSource employesBindingSource2;
+        private System.Windows.Forms.ErrorProvider errMessage;
     }
 }
