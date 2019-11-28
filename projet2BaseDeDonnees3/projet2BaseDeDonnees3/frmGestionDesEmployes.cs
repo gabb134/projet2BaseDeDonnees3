@@ -214,6 +214,7 @@ namespace projet2BaseDeDonnees3
                // this.Close();
                 frmModif.ShowDialog();
                 this.Show();
+               
             }
 
             

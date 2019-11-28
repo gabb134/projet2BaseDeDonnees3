@@ -50,6 +50,7 @@
             this.ndNumeroCivique = new System.Windows.Forms.NumericUpDown();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbNom = new System.Windows.Forms.MaskedTextBox();
             this.tbPrenom = new System.Windows.Forms.MaskedTextBox();
             this.tbMotDePasse = new System.Windows.Forms.MaskedTextBox();
@@ -60,13 +61,14 @@
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbProvince = new System.Windows.Forms.ComboBox();
-            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // employesBindingSource
@@ -230,11 +232,11 @@
             this.cbSexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSexe.FormattingEnabled = true;
             this.cbSexe.Items.AddRange(new object[] {
-            "H",
-            "F"});
+            "Homme",
+            "Femme"});
             this.cbSexe.Location = new System.Drawing.Point(209, 137);
             this.cbSexe.Name = "cbSexe";
-            this.cbSexe.Size = new System.Drawing.Size(163, 28);
+            this.cbSexe.Size = new System.Drawing.Size(210, 28);
             this.cbSexe.TabIndex = 38;
             // 
             // ndAge
@@ -246,7 +248,7 @@
             0,
             0});
             this.ndAge.Name = "ndAge";
-            this.ndAge.Size = new System.Drawing.Size(163, 26);
+            this.ndAge.Size = new System.Drawing.Size(210, 26);
             this.ndAge.TabIndex = 39;
             this.ndAge.Value = new decimal(new int[] {
             16,
@@ -263,7 +265,7 @@
             5421,
             0});
             this.ndNumeroCivique.Name = "ndNumeroCivique";
-            this.ndNumeroCivique.Size = new System.Drawing.Size(163, 26);
+            this.ndNumeroCivique.Size = new System.Drawing.Size(210, 26);
             this.ndNumeroCivique.TabIndex = 40;
             this.ndNumeroCivique.Value = new decimal(new int[] {
             1,
@@ -276,7 +278,7 @@
             this.tbTelephone.Location = new System.Drawing.Point(209, 408);
             this.tbTelephone.Mask = "(000) 000-0000";
             this.tbTelephone.Name = "tbTelephone";
-            this.tbTelephone.Size = new System.Drawing.Size(163, 26);
+            this.tbTelephone.Size = new System.Drawing.Size(210, 26);
             this.tbTelephone.TabIndex = 41;
             // 
             // groupBox1
@@ -312,58 +314,62 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(24, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(392, 553);
+            this.groupBox1.Size = new System.Drawing.Size(443, 557);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modification d\'un employé";
+            // 
+            // provincesBindingSource
+            // 
+            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
             // 
             // tbNom
             // 
             this.tbNom.Location = new System.Drawing.Point(209, 35);
             this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(163, 26);
+            this.tbNom.Size = new System.Drawing.Size(210, 26);
             this.tbNom.TabIndex = 50;
             // 
             // tbPrenom
             // 
             this.tbPrenom.Location = new System.Drawing.Point(209, 67);
             this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(163, 26);
+            this.tbPrenom.Size = new System.Drawing.Size(210, 26);
             this.tbPrenom.TabIndex = 49;
             // 
             // tbMotDePasse
             // 
             this.tbMotDePasse.Location = new System.Drawing.Point(209, 101);
             this.tbMotDePasse.Name = "tbMotDePasse";
-            this.tbMotDePasse.Size = new System.Drawing.Size(163, 26);
+            this.tbMotDePasse.Size = new System.Drawing.Size(210, 26);
             this.tbMotDePasse.TabIndex = 48;
             // 
             // tbCouriel
             // 
             this.tbCouriel.Location = new System.Drawing.Point(209, 207);
             this.tbCouriel.Name = "tbCouriel";
-            this.tbCouriel.Size = new System.Drawing.Size(163, 26);
+            this.tbCouriel.Size = new System.Drawing.Size(210, 26);
             this.tbCouriel.TabIndex = 47;
             // 
             // tbRue
             // 
             this.tbRue.Location = new System.Drawing.Point(209, 271);
             this.tbRue.Name = "tbRue";
-            this.tbRue.Size = new System.Drawing.Size(163, 26);
+            this.tbRue.Size = new System.Drawing.Size(210, 26);
             this.tbRue.TabIndex = 46;
             // 
             // tbVille
             // 
             this.tbVille.Location = new System.Drawing.Point(209, 304);
             this.tbVille.Name = "tbVille";
-            this.tbVille.Size = new System.Drawing.Size(163, 26);
+            this.tbVille.Size = new System.Drawing.Size(210, 26);
             this.tbVille.TabIndex = 45;
             // 
             // tbSalaire
             // 
             this.tbSalaire.Location = new System.Drawing.Point(209, 444);
             this.tbSalaire.Name = "tbSalaire";
-            this.tbSalaire.Size = new System.Drawing.Size(163, 26);
+            this.tbSalaire.Size = new System.Drawing.Size(210, 26);
             this.tbSalaire.TabIndex = 43;
             // 
             // tbCodePostal
@@ -371,7 +377,7 @@
             this.tbCodePostal.Location = new System.Drawing.Point(209, 373);
             this.tbCodePostal.Mask = "L0L-0L0";
             this.tbCodePostal.Name = "tbCodePostal";
-            this.tbCodePostal.Size = new System.Drawing.Size(163, 26);
+            this.tbCodePostal.Size = new System.Drawing.Size(210, 26);
             this.tbCodePostal.TabIndex = 42;
             // 
             // errMessage
@@ -380,27 +386,25 @@
             // 
             // cbProvince
             // 
-            this.cbProvince.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.provincesBindingSource, "Nom", true));
-            this.cbProvince.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.provincesBindingSource, "Nom", true));
-            this.cbProvince.DataSource = this.provincesBindingSource;
+            this.cbProvince.DataSource = this.employesBindingSource;
             this.cbProvince.DisplayMember = "Nom";
             this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvince.FormattingEnabled = true;
-            this.cbProvince.Location = new System.Drawing.Point(208, 335);
+            this.cbProvince.Location = new System.Drawing.Point(209, 339);
             this.cbProvince.Name = "cbProvince";
-            this.cbProvince.Size = new System.Drawing.Size(163, 28);
-            this.cbProvince.TabIndex = 51;
+            this.cbProvince.Size = new System.Drawing.Size(210, 28);
+            this.cbProvince.TabIndex = 50;
             this.cbProvince.ValueMember = "Id";
             // 
-            // provincesBindingSource
+            // employesBindingSource1
             // 
-            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
+            this.employesBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.Employes);
             // 
             // frmModificationEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 593);
+            this.ClientSize = new System.Drawing.Size(483, 593);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmModificationEmployes";
             this.Text = "Modification d\'un employé";
@@ -410,8 +414,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,7 +452,8 @@
         private System.Windows.Forms.MaskedTextBox tbRue;
         private System.Windows.Forms.MaskedTextBox tbVille;
         private System.Windows.Forms.ErrorProvider errMessage;
-        private System.Windows.Forms.ComboBox cbProvince;
         private System.Windows.Forms.BindingSource provincesBindingSource;
+        private System.Windows.Forms.ComboBox cbProvince;
+        private System.Windows.Forms.BindingSource employesBindingSource1;
     }
 }
