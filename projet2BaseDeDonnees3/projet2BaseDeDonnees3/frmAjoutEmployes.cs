@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Data.Linq;
+using System.Net.Mail;
 
 namespace projet2BaseDeDonnees3
 {
@@ -66,7 +67,20 @@ namespace projet2BaseDeDonnees3
             //   var max = dataContextajout.Employes.Max(em => em.No);
 
             // MessageBox.Show((max+1).ToString());
-                   }
+        }
+        public bool courielValide(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
 
 
 
@@ -110,143 +124,152 @@ namespace projet2BaseDeDonnees3
                             else
                             {
                                 errMessage.SetError(tbCouriel, "");
-                                if (tbRue.Text == "")
+                                if (!courielValide(tbCouriel.Text))
                                 {
-                                    errMessage.SetError(tbRue, "Vous devez inserer une rue");
+                                    errMessage.SetError(tbCouriel, "Vous devez inserer un couriel dans un format valide");
                                 }
                                 else
                                 {
-                                    errMessage.SetError(tbRue, "");
-                                    if (tbVille.Text == "")
+                                    errMessage.SetError(tbCouriel, "");
+                                    if (tbRue.Text == "")
                                     {
-                                        errMessage.SetError(tbVille, "Vous devez inserer une ville");
+                                        errMessage.SetError(tbRue, "Vous devez inserer une rue");
                                     }
                                     else
                                     {
-                                        errMessage.SetError(tbVille, "");
-                                        if (cbProvince.Text == "")
+                                        errMessage.SetError(tbRue, "");
+                                        if (tbVille.Text == "")
                                         {
-                                            errMessage.SetError(cbProvince, "Vous devez inserer une province");
+                                            errMessage.SetError(tbVille, "Vous devez inserer une ville");
                                         }
                                         else
                                         {
-                                            errMessage.SetError(cbProvince, "");
-                                            if (!tbCodePostal.MaskCompleted)
+                                            errMessage.SetError(tbVille, "");
+                                            if (cbProvince.Text == "")
                                             {
-                                                errMessage.SetError(tbCodePostal, "Vous devez inserer un code postal");
+                                                errMessage.SetError(cbProvince, "Vous devez inserer une province");
                                             }
                                             else
                                             {
-                                                errMessage.SetError(tbCodePostal, "");
-                                                if (!tbTelephone.MaskCompleted)
+                                                errMessage.SetError(cbProvince, "");
+                                                if (!tbCodePostal.MaskCompleted)
                                                 {
-                                                    errMessage.SetError(tbTelephone, "Vous devez inserer un numéro de téléphone");
+                                                    errMessage.SetError(tbCodePostal, "Vous devez inserer un code postal");
                                                 }
                                                 else
                                                 {
-                                                    errMessage.SetError(tbTelephone, "");
-                                                    if (tbSalaire.Text == "")
+                                                    errMessage.SetError(tbCodePostal, "");
+                                                    if (!tbTelephone.MaskCompleted)
                                                     {
-                                                        errMessage.SetError(tbSalaire, "Vous devez inserer un salaire");
+                                                        errMessage.SetError(tbTelephone, "Vous devez inserer un numéro de téléphone");
                                                     }
                                                     else
                                                     {
-                                                        errMessage.SetError(tbSalaire, "");
-
-                                                        //Ajout d'un employe
-
-                                                        Employes employeAjouter = new Employes();
-
-                                                        employeAjouter.Nom = tbNom.Text;
-                                                        employeAjouter.Prenom = tbPrenom.Text;
-                                                        employeAjouter.MotDePasse = tbMotDePasse.Text;
-
-                                                        if (cbSexe.Text == "Homme")
-                                                            employeAjouter.Sexe = "H";
-                                                        else if (cbSexe.Text == "Femme")
-                                                            employeAjouter.Sexe = "F";
-
-                                                        employeAjouter.Age = Convert.ToInt32(ndAge.Value);
-                                                        employeAjouter.Courriel = tbCouriel.Text;
-                                                        employeAjouter.NoCivique = Convert.ToInt32(ndNumeroCivique.Value);
-                                                        employeAjouter.Rue = tbRue.Text;
-                                                        employeAjouter.Ville = tbVille.Text;
-
-                                                        //recuperer l'objet province
-                                                        employeAjouter.Provinces = (from prov in dataContextajout.Provinces
-                                                                                      where (string)prov.Id == cbProvince.SelectedValue.ToString()
-                                                                                      select prov).FirstOrDefault();
-                                                        //recupere l'objet type employe 
-                                                        employeAjouter.TypesEmploye = (from type in dataContextajout.TypesEmploye
-                                                                                       where type.No == (int)cpNoTypeEmploye.SelectedValue
-                                                                                       select type).FirstOrDefault();
-
-                                                        //donner le bon noTyppeemploye
-                                                      /*  switch (cpNoTypeEmploye.SelectedValue.ToString())
+                                                        errMessage.SetError(tbTelephone, "");
+                                                        if (ndSalaire.Text == "")
                                                         {
-                                                            case "Direction":
-                                                                employeAjouter.NoTypeEmploye = 2;
-                                                                break;
-                                                            case "Propriétaire d'un club":
-                                                                employeAjouter.NoTypeEmploye = 3;
-                                                                break;
-                                                            case "Employe d'un club":
-                                                                employeAjouter.NoTypeEmploye = 4;
-                                                                break;
-                                                            case "Employé Pro-Shop":
-                                                                employeAjouter.NoTypeEmploye = 5;
-                                                                break;
-                                                            case "Employé d'un restaurant":
-                                                                employeAjouter.NoTypeEmploye = 6;
-                                                                break;
-                                                            case "Professeur de golf":
-                                                                employeAjouter.NoTypeEmploye = 7;
-                                                                break;
-
-                                                        }*/
-
-                                                       
-
-
-                                                        employeAjouter.CodePostal = tbCodePostal.Text;
-                                                        employeAjouter.Telephone = tbTelephone.Text;
-                                                        employeAjouter.SalaireHoraire = Convert.ToInt32(tbSalaire.Text);
-
-                                                        //employeAjouter.No = (dataContextajout.Employes.Aggregate(0, (plusGrand, numero) => (plusGrand < numero.No) ? numero.No : plusGrand))+1;
-                                                        //va chercher l'employe le plus grand pour ajouter le nouveau
-                                                        
-
-                                                        var max = dataContextajout.Employes.Max(em => em.No) + 1;
-
-                                                        employeAjouter.No = max;
-
-                                                        // employesBindingSource.Add(employeAjouter);
-
-                                                        
-                                                        //employesBindingSource.EndEdit();
-                                                        try
-                                                        {
-                                                            // dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
-                                                            employesBindingSource.Add(employeAjouter);
-                                                            //  dataContextajout.Employes.InsertOnSubmit(employeAjouter);
-                                                            dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
-                                                         /*   employesBindingSource.DataSource = from unEmploye in dataContextajout.Employes
-                                                                                                   //orderby unEmploye.No
-                                                                                               select unEmploye;*/
-
-                                                            MessageBox.Show("L'employé a été ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            errMessage.SetError(ndSalaire, "Vous devez inserer un salaire");
                                                         }
-                                                        catch (ChangeConflictException)
+                                                        else
                                                         {
-                                                            dataContextajout.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
-                                                        }
-                                                        catch (Exception ex)
-                                                        {
-                                                            MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
-                                                        }
+                                                            errMessage.SetError(ndSalaire, "");
+
+                                                            //Ajout d'un employe
+
+                                                            Employes employeAjouter = new Employes();
+
+                                                            employeAjouter.Nom = tbNom.Text;
+                                                            employeAjouter.Prenom = tbPrenom.Text;
+                                                            employeAjouter.MotDePasse = tbMotDePasse.Text;
+
+                                                            if (cbSexe.Text == "Homme")
+                                                                employeAjouter.Sexe = "H";
+                                                            else if (cbSexe.Text == "Femme")
+                                                                employeAjouter.Sexe = "F";
+
+                                                            employeAjouter.Age = Convert.ToInt32(ndAge.Value);
+                                                            employeAjouter.Courriel = tbCouriel.Text;
+                                                            employeAjouter.NoCivique = Convert.ToInt32(ndNumeroCivique.Value);
+                                                            employeAjouter.Rue = tbRue.Text;
+                                                            employeAjouter.Ville = tbVille.Text;
+
+                                                            //recuperer l'objet province
+                                                            employeAjouter.Provinces = (from prov in dataContextajout.Provinces
+                                                                                        where (string)prov.Id == cbProvince.SelectedValue.ToString()
+                                                                                        select prov).FirstOrDefault();
+                                                            //recupere l'objet type employe 
+                                                            employeAjouter.TypesEmploye = (from type in dataContextajout.TypesEmploye
+                                                                                           where type.No == (int)cpNoTypeEmploye.SelectedValue
+                                                                                           select type).FirstOrDefault();
+
+                                                            //donner le bon noTyppeemploye
+                                                            /*  switch (cpNoTypeEmploye.SelectedValue.ToString())
+                                                              {
+                                                                  case "Direction":
+                                                                      employeAjouter.NoTypeEmploye = 2;
+                                                                      break;
+                                                                  case "Propriétaire d'un club":
+                                                                      employeAjouter.NoTypeEmploye = 3;
+                                                                      break;
+                                                                  case "Employe d'un club":
+                                                                      employeAjouter.NoTypeEmploye = 4;
+                                                                      break;
+                                                                  case "Employé Pro-Shop":
+                                                                      employeAjouter.NoTypeEmploye = 5;
+                                                                      break;
+                                                                  case "Employé d'un restaurant":
+                                                                      employeAjouter.NoTypeEmploye = 6;
+                                                                      break;
+                                                                  case "Professeur de golf":
+                                                                      employeAjouter.NoTypeEmploye = 7;
+                                                                      break;
+
+                                                              }*/
 
 
-                                                        this.Close();
+
+
+                                                            employeAjouter.CodePostal = tbCodePostal.Text;
+                                                            employeAjouter.Telephone = tbTelephone.Text;
+                                                            employeAjouter.SalaireHoraire = Convert.ToInt32(ndSalaire.Text);
+
+                                                            //employeAjouter.No = (dataContextajout.Employes.Aggregate(0, (plusGrand, numero) => (plusGrand < numero.No) ? numero.No : plusGrand))+1;
+                                                            //va chercher l'employe le plus grand pour ajouter le nouveau
+
+
+                                                            var max = dataContextajout.Employes.Max(em => em.No) + 1;
+
+                                                            employeAjouter.No = max;
+
+                                                            // employesBindingSource.Add(employeAjouter);
+
+
+                                                            //employesBindingSource.EndEdit();
+                                                            try
+                                                            {
+                                                                // dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
+                                                                employesBindingSource.Add(employeAjouter);
+                                                                //  dataContextajout.Employes.InsertOnSubmit(employeAjouter);
+                                                                dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
+                                                                /*   employesBindingSource.DataSource = from unEmploye in dataContextajout.Employes
+                                                                                                          //orderby unEmploye.No
+                                                                                                      select unEmploye;*/
+
+                                                                MessageBox.Show("L'employé a été ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            }
+                                                            catch (ChangeConflictException)
+                                                            {
+                                                                dataContextajout.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                                                            }
+                                                            catch (Exception ex)
+                                                            {
+                                                                MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
+                                                            }
+
+
+                                                            this.Close();
+
+                                                        }
 
                                                     }
 
@@ -259,6 +282,8 @@ namespace projet2BaseDeDonnees3
                                     }
 
                                 }
+                               
+                                
                             }
 
                         }

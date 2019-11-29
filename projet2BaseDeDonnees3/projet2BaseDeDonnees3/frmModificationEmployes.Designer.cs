@@ -50,18 +50,18 @@
             this.ndNumeroCivique = new System.Windows.Forms.NumericUpDown();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbProvince = new System.Windows.Forms.ComboBox();
             this.tbNom = new System.Windows.Forms.MaskedTextBox();
             this.tbPrenom = new System.Windows.Forms.MaskedTextBox();
             this.tbMotDePasse = new System.Windows.Forms.MaskedTextBox();
             this.tbCouriel = new System.Windows.Forms.MaskedTextBox();
             this.tbRue = new System.Windows.Forms.MaskedTextBox();
             this.tbVille = new System.Windows.Forms.MaskedTextBox();
-            this.tbSalaire = new System.Windows.Forms.MaskedTextBox();
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
+            this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbProvince = new System.Windows.Forms.ComboBox();
             this.employesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.ndSalaire = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
@@ -69,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).BeginInit();
             this.SuspendLayout();
             // 
             // employesBindingSource
@@ -242,6 +243,11 @@
             // ndAge
             // 
             this.ndAge.Location = new System.Drawing.Point(209, 173);
+            this.ndAge.Maximum = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
             this.ndAge.Minimum = new decimal(new int[] {
             16,
             0,
@@ -283,6 +289,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ndSalaire);
             this.groupBox1.Controls.Add(this.cbProvince);
             this.groupBox1.Controls.Add(this.tbNom);
             this.groupBox1.Controls.Add(this.tbPrenom);
@@ -290,7 +297,6 @@
             this.groupBox1.Controls.Add(this.tbCouriel);
             this.groupBox1.Controls.Add(this.tbRue);
             this.groupBox1.Controls.Add(this.tbVille);
-            this.groupBox1.Controls.Add(this.tbSalaire);
             this.groupBox1.Controls.Add(this.tbCodePostal);
             this.groupBox1.Controls.Add(this.tbTelephone);
             this.groupBox1.Controls.Add(this.ndNumeroCivique);
@@ -319,9 +325,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modification d\'un employé";
             // 
-            // provincesBindingSource
+            // cbProvince
             // 
-            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
+            this.cbProvince.DataSource = this.employesBindingSource;
+            this.cbProvince.DisplayMember = "Nom";
+            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProvince.FormattingEnabled = true;
+            this.cbProvince.Location = new System.Drawing.Point(209, 339);
+            this.cbProvince.Name = "cbProvince";
+            this.cbProvince.Size = new System.Drawing.Size(210, 28);
+            this.cbProvince.TabIndex = 50;
+            this.cbProvince.ValueMember = "Id";
             // 
             // tbNom
             // 
@@ -365,13 +379,6 @@
             this.tbVille.Size = new System.Drawing.Size(210, 26);
             this.tbVille.TabIndex = 45;
             // 
-            // tbSalaire
-            // 
-            this.tbSalaire.Location = new System.Drawing.Point(209, 444);
-            this.tbSalaire.Name = "tbSalaire";
-            this.tbSalaire.Size = new System.Drawing.Size(210, 26);
-            this.tbSalaire.TabIndex = 43;
-            // 
             // tbCodePostal
             // 
             this.tbCodePostal.Location = new System.Drawing.Point(209, 373);
@@ -380,25 +387,39 @@
             this.tbCodePostal.Size = new System.Drawing.Size(210, 26);
             this.tbCodePostal.TabIndex = 42;
             // 
+            // provincesBindingSource
+            // 
+            this.provincesBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Provinces);
+            // 
             // errMessage
             // 
             this.errMessage.ContainerControl = this;
             // 
-            // cbProvince
-            // 
-            this.cbProvince.DataSource = this.employesBindingSource;
-            this.cbProvince.DisplayMember = "Nom";
-            this.cbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProvince.FormattingEnabled = true;
-            this.cbProvince.Location = new System.Drawing.Point(209, 339);
-            this.cbProvince.Name = "cbProvince";
-            this.cbProvince.Size = new System.Drawing.Size(210, 28);
-            this.cbProvince.TabIndex = 50;
-            this.cbProvince.ValueMember = "Id";
-            // 
             // employesBindingSource1
             // 
             this.employesBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.Employes);
+            // 
+            // ndSalaire
+            // 
+            this.ndSalaire.Location = new System.Drawing.Point(209, 440);
+            this.ndSalaire.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.ndSalaire.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ndSalaire.Name = "ndSalaire";
+            this.ndSalaire.Size = new System.Drawing.Size(210, 26);
+            this.ndSalaire.TabIndex = 51;
+            this.ndSalaire.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // frmModificationEmployes
             // 
@@ -417,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,7 +465,6 @@
         private System.Windows.Forms.NumericUpDown ndNumeroCivique;
         private System.Windows.Forms.MaskedTextBox tbTelephone;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox tbSalaire;
         private System.Windows.Forms.MaskedTextBox tbCodePostal;
         private System.Windows.Forms.MaskedTextBox tbNom;
         private System.Windows.Forms.MaskedTextBox tbPrenom;
@@ -455,5 +476,6 @@
         private System.Windows.Forms.BindingSource provincesBindingSource;
         private System.Windows.Forms.ComboBox cbProvince;
         private System.Windows.Forms.BindingSource employesBindingSource1;
+        private System.Windows.Forms.NumericUpDown ndSalaire;
     }
 }

@@ -42,7 +42,6 @@
             this.tbCouriel = new System.Windows.Forms.MaskedTextBox();
             this.tbRue = new System.Windows.Forms.MaskedTextBox();
             this.tbVille = new System.Windows.Forms.MaskedTextBox();
-            this.tbSalaire = new System.Windows.Forms.MaskedTextBox();
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.ndNumeroCivique = new System.Windows.Forms.NumericUpDown();
@@ -66,6 +65,7 @@
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ndSalaire = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.typesEmployeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).BeginInit();
@@ -75,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).BeginInit();
             this.SuspendLayout();
             // 
             // typesEmployeBindingSource
@@ -83,6 +84,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ndSalaire);
             this.groupBox1.Controls.Add(this.cbProvince);
             this.groupBox1.Controls.Add(this.cpNoTypeEmploye);
             this.groupBox1.Controls.Add(this.label1);
@@ -92,7 +94,6 @@
             this.groupBox1.Controls.Add(this.tbCouriel);
             this.groupBox1.Controls.Add(this.tbRue);
             this.groupBox1.Controls.Add(this.tbVille);
-            this.groupBox1.Controls.Add(this.tbSalaire);
             this.groupBox1.Controls.Add(this.tbCodePostal);
             this.groupBox1.Controls.Add(this.tbTelephone);
             this.groupBox1.Controls.Add(this.ndNumeroCivique);
@@ -205,13 +206,6 @@
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(207, 26);
             this.tbVille.TabIndex = 45;
-            // 
-            // tbSalaire
-            // 
-            this.tbSalaire.Location = new System.Drawing.Point(207, 479);
-            this.tbSalaire.Name = "tbSalaire";
-            this.tbSalaire.Size = new System.Drawing.Size(207, 26);
-            this.tbSalaire.TabIndex = 43;
             // 
             // tbCodePostal
             // 
@@ -440,6 +434,28 @@
             // 
             this.errMessage.ContainerControl = this;
             // 
+            // ndSalaire
+            // 
+            this.ndSalaire.Location = new System.Drawing.Point(207, 475);
+            this.ndSalaire.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.ndSalaire.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ndSalaire.Name = "ndSalaire";
+            this.ndSalaire.Size = new System.Drawing.Size(210, 26);
+            this.ndSalaire.TabIndex = 54;
+            this.ndSalaire.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // frmAjoutEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,6 +475,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +489,6 @@
         private System.Windows.Forms.MaskedTextBox tbCouriel;
         private System.Windows.Forms.MaskedTextBox tbRue;
         private System.Windows.Forms.MaskedTextBox tbVille;
-        private System.Windows.Forms.MaskedTextBox tbSalaire;
         private System.Windows.Forms.MaskedTextBox tbCodePostal;
         private System.Windows.Forms.MaskedTextBox tbTelephone;
         private System.Windows.Forms.NumericUpDown ndNumeroCivique;
@@ -501,5 +517,6 @@
         private System.Windows.Forms.BindingSource employesBindingSource1;
         private System.Windows.Forms.BindingSource employesBindingSource2;
         private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.NumericUpDown ndSalaire;
     }
 }

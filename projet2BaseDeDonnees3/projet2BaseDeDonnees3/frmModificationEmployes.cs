@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Data.Linq;
+using System.Net.Mail;
 
 namespace projet2BaseDeDonnees3
 {
@@ -110,7 +111,7 @@ namespace projet2BaseDeDonnees3
             cbProvince.SelectedValue = employeRecuperer.Provinces.Id; // voir comment faire en sorte que ca affiche dans le combobox et que le combobox ait le nom complet des provinces 
             tbCodePostal.Text = employeRecuperer.CodePostal;
             tbTelephone.Text = employeRecuperer.Telephone;
-            tbSalaire.Text =employeRecuperer.SalaireHoraire.ToString();
+            ndSalaire.Text =employeRecuperer.SalaireHoraire.ToString();
 
             /*if (strModificiation == "modif") //recupère l'information du formulaire gestion des employés
             {
@@ -138,6 +139,19 @@ namespace projet2BaseDeDonnees3
         {
 
             this.Close();
+        }
+        public bool courielValide(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
 
 
@@ -184,106 +198,115 @@ namespace projet2BaseDeDonnees3
                             else
                             {
                                 errMessage.SetError(tbCouriel, "");
-                                if(tbRue.Text == "")
+                                if (!courielValide(tbCouriel.Text))
                                 {
-                                    errMessage.SetError(tbRue, "Vous devez inserer une rue");
+                                    errMessage.SetError(tbCouriel, "Vous devez inserer un couriel dans un format valide");
                                 }
                                 else
                                 {
-                                    errMessage.SetError(tbRue, "");
-                                    if (tbVille.Text == "")
+                                    errMessage.SetError(tbCouriel, "");
+                                    if (tbRue.Text == "")
                                     {
-                                        errMessage.SetError(tbVille, "Vous devez inserer une ville");
+                                        errMessage.SetError(tbRue, "Vous devez inserer une rue");
                                     }
                                     else
                                     {
-                                        errMessage.SetError(tbVille, "");
-                                        if (cbProvince.Text == "")
+                                        errMessage.SetError(tbRue, "");
+                                        if (tbVille.Text == "")
                                         {
-                                            errMessage.SetError(cbProvince, "Vous devez inserer une province");
+                                            errMessage.SetError(tbVille, "Vous devez inserer une ville");
                                         }
                                         else
                                         {
-                                            errMessage.SetError(cbProvince, "");
-                                            if (!tbCodePostal.MaskCompleted)
+                                            errMessage.SetError(tbVille, "");
+                                            if (cbProvince.Text == "")
                                             {
-                                                errMessage.SetError(tbCodePostal, "Vous devez inserer un code postal");
+                                                errMessage.SetError(cbProvince, "Vous devez inserer une province");
                                             }
                                             else
                                             {
-                                                errMessage.SetError(tbCodePostal, "");
-                                                if (!tbTelephone.MaskCompleted)
+                                                errMessage.SetError(cbProvince, "");
+                                                if (!tbCodePostal.MaskCompleted)
                                                 {
-                                                    errMessage.SetError(tbTelephone, "Vous devez inserer un numéro de téléphone");
+                                                    errMessage.SetError(tbCodePostal, "Vous devez inserer un code postal");
                                                 }
                                                 else
                                                 {
-                                                    errMessage.SetError(tbTelephone, "");
-                                                    if (tbSalaire.Text=="")
+                                                    errMessage.SetError(tbCodePostal, "");
+                                                    if (!tbTelephone.MaskCompleted)
                                                     {
-                                                        errMessage.SetError(tbSalaire, "Vous devez inserer un salaire");
+                                                        errMessage.SetError(tbTelephone, "Vous devez inserer un numéro de téléphone");
                                                     }
                                                     else
                                                     {
+                                                        errMessage.SetError(tbTelephone, "");
+                                                        if (ndSalaire.Text == "")
+                                                        {
+                                                            errMessage.SetError(ndSalaire, "Vous devez inserer un salaire");
+                                                        }
+                                                        else
+                                                        {
 
-                                                          errMessage.SetError(tbSalaire, "");
+                                                            errMessage.SetError(ndSalaire, "");
 
 
-                                                        employeRecuperer = (from unEmploye in dataContexteModifier.Employes
+                                                            employeRecuperer = (from unEmploye in dataContexteModifier.Employes
                                                                                 where unEmploye.No == this.employeRecuperer.No
                                                                                 select unEmploye).FirstOrDefault();
 
-                                                        //regler les conflits de modification
-                                                        //confirmation de la modification
-                                                        //DialogResult = DialogResult.OK;
-                                                        employeRecuperer.Nom = tbNom.Text;
-                                                        employeRecuperer.Prenom = tbPrenom.Text;
-                                                        employeRecuperer.MotDePasse = tbMotDePasse.Text;
-                                                        
-                                                        if (cbSexe.Text == "Homme")
-                                                            employeRecuperer.Sexe = "H";
-                                                        else if (cbSexe.Text == "Femme")
-                                                            employeRecuperer.Sexe = "F";
+                                                            //regler les conflits de modification
+                                                            //confirmation de la modification
+                                                            //DialogResult = DialogResult.OK;
+                                                            employeRecuperer.Nom = tbNom.Text;
+                                                            employeRecuperer.Prenom = tbPrenom.Text;
+                                                            employeRecuperer.MotDePasse = tbMotDePasse.Text;
 
-                                                        employeRecuperer.Age = Convert.ToInt32( ndAge.Value);
-                                                        employeRecuperer.Courriel = tbCouriel.Text;
-                                                        employeRecuperer.NoCivique = Convert.ToInt32( ndNumeroCivique.Value);
-                                                        employeRecuperer.Rue = tbRue.Text;
-                                                        employeRecuperer.Ville = tbVille.Text;
+                                                            if (cbSexe.Text == "Homme")
+                                                                employeRecuperer.Sexe = "H";
+                                                            else if (cbSexe.Text == "Femme")
+                                                                employeRecuperer.Sexe = "F";
 
-                                                        //recuperer l'objet province
-                                                        employeRecuperer.Provinces = (from prov in dataContexteModifier.Provinces
-                                                                                      where (string)prov.Id == cbProvince.SelectedValue.ToString()
-                                                                                      select prov).FirstOrDefault();
+                                                            employeRecuperer.Age = Convert.ToInt32(ndAge.Value);
+                                                            employeRecuperer.Courriel = tbCouriel.Text;
+                                                            employeRecuperer.NoCivique = Convert.ToInt32(ndNumeroCivique.Value);
+                                                            employeRecuperer.Rue = tbRue.Text;
+                                                            employeRecuperer.Ville = tbVille.Text;
 
-
-                                                        
+                                                            //recuperer l'objet province
+                                                            employeRecuperer.Provinces = (from prov in dataContexteModifier.Provinces
+                                                                                          where (string)prov.Id == cbProvince.SelectedValue.ToString()
+                                                                                          select prov).FirstOrDefault();
 
 
 
-                                                        employeRecuperer.CodePostal = tbCodePostal.Text;
-                                                        employeRecuperer.Telephone = tbTelephone.Text;
-                                                        employeRecuperer.SalaireHoraire = Convert.ToInt32( tbSalaire.Text);
-
-                                                        employesBindingSource.EndEdit();
 
 
-                                                        try
-                                                        {
-                                                            dataContexteModifier.SubmitChanges(ConflictMode.ContinueOnConflict);
-                                                            MessageBox.Show("L'employé a été modifié!", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                                            employeRecuperer.CodePostal = tbCodePostal.Text;
+                                                            employeRecuperer.Telephone = tbTelephone.Text;
+                                                            employeRecuperer.SalaireHoraire = Convert.ToInt32(ndSalaire.Text);
+
+                                                            employesBindingSource.EndEdit();
+
+
+                                                            try
+                                                            {
+                                                                dataContexteModifier.SubmitChanges(ConflictMode.ContinueOnConflict);
+                                                                MessageBox.Show("L'employé a été modifié!", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                            }
+                                                            catch (ChangeConflictException)
+                                                            {
+                                                                dataContexteModifier.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                                                            }
+                                                            catch (Exception ex)
+                                                            {
+                                                                MessageBox.Show(ex.Message, "Erreur lors de la suppression");
+                                                            }
+
+
+                                                            this.Close();
+
                                                         }
-                                                        catch (ChangeConflictException)
-                                                        {
-                                                            dataContexteModifier.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
-                                                        }
-                                                        catch (Exception ex)
-                                                        {
-                                                            MessageBox.Show(ex.Message, "Erreur lors de la suppression");
-                                                        }
-
-
-                                                        this.Close();
 
                                                     }
 
@@ -296,6 +319,7 @@ namespace projet2BaseDeDonnees3
                                     }
 
                                 }
+                               
                             }
 
                         }
