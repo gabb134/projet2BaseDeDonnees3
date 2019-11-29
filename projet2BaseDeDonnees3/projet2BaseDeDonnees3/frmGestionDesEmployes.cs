@@ -24,7 +24,7 @@ namespace projet2BaseDeDonnees3
         private void frmGestionDesEmployes_Load(object sender, EventArgs e)
         {
             employesBindingSource.DataSource = from unEmploye in monDataContext.Employes
-                                               orderby unEmploye.No
+                                               //orderby unEmploye.No
                                                select unEmploye;
         }
 
@@ -194,6 +194,13 @@ namespace projet2BaseDeDonnees3
             frmAjout = new frmAjoutEmployes(employeModif,monDataContext);
             frmAjout.ShowDialog();
             this.Show();
+
+
+            //refresh le bindingsource du datagridview pour voir l'employe qui a ete ajoute
+            employesBindingSource.DataSource = from unEmploye in monDataContext.Employes
+                                                   //orderby unEmploye.No
+                                               select unEmploye;
+
         }
 
         private void btnModif_Click(object sender, EventArgs e)

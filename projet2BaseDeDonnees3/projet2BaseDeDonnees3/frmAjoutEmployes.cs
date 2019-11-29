@@ -62,16 +62,18 @@ namespace projet2BaseDeDonnees3
                 cbSexe.Text = "Femme";
             }
 
+           
+            //   var max = dataContextajout.Employes.Max(em => em.No);
 
-         //   var max = dataContextajout.Employes.Max(em => em.No);
-
-           // MessageBox.Show((max+1).ToString());
-;        }
+            // MessageBox.Show((max+1).ToString());
+                   }
 
 
 
         private void btnConfirmerAjout_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(cpNoTypeEmploye.SelectedValue.ToString());
+            
             if (tbNom.Text == "")
             {
                 errMessage.SetError(tbNom, "Vous devez inserer un nom");
@@ -174,10 +176,36 @@ namespace projet2BaseDeDonnees3
                                                         employeAjouter.Provinces = (from prov in dataContextajout.Provinces
                                                                                       where (string)prov.Id == cbProvince.SelectedValue.ToString()
                                                                                       select prov).FirstOrDefault();
+                                                        //recupere l'objet type employe 
+                                                        employeAjouter.TypesEmploye = (from type in dataContextajout.TypesEmploye
+                                                                                       where type.No == (int)cpNoTypeEmploye.SelectedValue
+                                                                                       select type).FirstOrDefault();
 
+                                                        //donner le bon noTyppeemploye
+                                                      /*  switch (cpNoTypeEmploye.SelectedValue.ToString())
+                                                        {
+                                                            case "Direction":
+                                                                employeAjouter.NoTypeEmploye = 2;
+                                                                break;
+                                                            case "Propriétaire d'un club":
+                                                                employeAjouter.NoTypeEmploye = 3;
+                                                                break;
+                                                            case "Employe d'un club":
+                                                                employeAjouter.NoTypeEmploye = 4;
+                                                                break;
+                                                            case "Employé Pro-Shop":
+                                                                employeAjouter.NoTypeEmploye = 5;
+                                                                break;
+                                                            case "Employé d'un restaurant":
+                                                                employeAjouter.NoTypeEmploye = 6;
+                                                                break;
+                                                            case "Professeur de golf":
+                                                                employeAjouter.NoTypeEmploye = 7;
+                                                                break;
 
+                                                        }*/
 
-
+                                                       
 
 
                                                         employeAjouter.CodePostal = tbCodePostal.Text;
@@ -192,16 +220,20 @@ namespace projet2BaseDeDonnees3
 
                                                         employeAjouter.No = max;
 
-                                                       // employesBindingSource.Add(employeAjouter);
+                                                        // employesBindingSource.Add(employeAjouter);
 
                                                         
-
+                                                        //employesBindingSource.EndEdit();
                                                         try
                                                         {
                                                             // dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
+                                                            employesBindingSource.Add(employeAjouter);
+                                                            //  dataContextajout.Employes.InsertOnSubmit(employeAjouter);
+                                                            dataContextajout.SubmitChanges(ConflictMode.ContinueOnConflict);
+                                                         /*   employesBindingSource.DataSource = from unEmploye in dataContextajout.Employes
+                                                                                                   //orderby unEmploye.No
+                                                                                               select unEmploye;*/
 
-                                                            dataContextajout.Employes.InsertOnSubmit(employeAjouter);
-                                                            employesBindingSource.EndEdit();
                                                             MessageBox.Show("L'employé a été ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                         }
                                                         catch (ChangeConflictException)
