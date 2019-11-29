@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbonnementIdEtNomComplet.cs" />
     <Compile Include="DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
@@ -90,6 +91,12 @@
     </Compile>
     <Compile Include="frmGestionDesEmployes.Designer.cs">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInscriptionPartieGolf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInscriptionPartieGolf.Designer.cs">
+      <DependentUpon>frmInscriptionPartieGolf.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -120,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionDesEmployes.resx">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInscriptionPartieGolf.resx">
+      <DependentUpon>frmInscriptionPartieGolf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>

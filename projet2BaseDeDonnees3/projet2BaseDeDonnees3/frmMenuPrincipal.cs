@@ -14,6 +14,7 @@ namespace projet2BaseDeDonnees3
        
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
+        frmInscriptionPartieGolf inscriptionPartieGolf = new frmInscriptionPartieGolf();
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye ;
         public frmMenuPrincipal()
@@ -107,6 +108,13 @@ namespace projet2BaseDeDonnees3
             }
           
          
+        }
+
+        private void btnInscriptionPartie_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inscriptionPartieGolf.ShowDialog();
+            this.Show();
         }
     }
 }

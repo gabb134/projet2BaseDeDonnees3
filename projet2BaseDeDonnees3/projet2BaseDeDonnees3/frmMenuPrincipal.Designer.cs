@@ -157,6 +157,7 @@
             this.btnInscriptionPartie.TabIndex = 1;
             this.btnInscriptionPartie.Text = "Inscription partie de golf";
             this.btnInscriptionPartie.UseVisualStyleBackColor = true;
+            this.btnInscriptionPartie.Click += new System.EventHandler(this.btnInscriptionPartie_Click);
             // 
             // btnDeconnexion
             // 
