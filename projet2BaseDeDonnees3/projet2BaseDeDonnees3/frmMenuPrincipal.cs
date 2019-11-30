@@ -11,11 +11,13 @@ using System.Windows.Forms;
 namespace projet2BaseDeDonnees3
 {
     public partial class frmMenuPrincipal : Form
-       
+
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
+        frmNouvelAbonnement fNouvelAbonnement = new frmNouvelAbonnement();
+        frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
         string strNoUtilisateurConnexion = "";
-        int noTypeEmploye ;
+        int noTypeEmploye;
         public frmMenuPrincipal()
         {
             InitializeComponent();
@@ -39,14 +41,14 @@ namespace projet2BaseDeDonnees3
             gestionEmployes.ShowDialog();
             this.Show();
 
-            
+
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         { //voir commment je peux reccuperer le noEmploye de la connexion
             strNoUtilisateurConnexion = frmConnexion.strNoUtilisateur;
             noTypeEmploye = frmConnexion.noTypeEmploye;
-          //  MessageBox.Show(noTypeEmploye.ToString());
+            //  MessageBox.Show(noTypeEmploye.ToString());
             //Validation des buttons du menu principal selon l'employe qui se connecte
             if (noTypeEmploye == 1 || noTypeEmploye == 2)
             {
@@ -60,10 +62,10 @@ namespace projet2BaseDeDonnees3
                 btnVisualisationStats.Enabled = true;
                 btnInscriptionDepense.Enabled = true;
             }
-            else if (noTypeEmploye == 3 )
+            else if (noTypeEmploye == 3)
             {
                 btnGestionEmployes.Enabled = false;
-               
+
 
                 btnAbonnement.Enabled = true;
                 btnReabonnement.Enabled = true;
@@ -90,7 +92,7 @@ namespace projet2BaseDeDonnees3
                 btnInscriptionPartie.Enabled = true;
 
             }
-            else 
+            else
             {
                 btnInscriptionDepense.Enabled = true;
 
@@ -102,11 +104,25 @@ namespace projet2BaseDeDonnees3
                 btnModifPrix.Enabled = false;
                 btnVisualisationRpports.Enabled = false;
                 btnVisualisationStats.Enabled = false;
-            
+
 
             }
-          
-         
+
+
+        }
+
+        private void btnAbonnement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fNouvelAbonnement.ShowDialog();
+            this.Show();
+        }
+
+        private void btnReabonnement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fRenouvellerAbonnement.ShowDialog();
+            this.Show();
         }
     }
 }

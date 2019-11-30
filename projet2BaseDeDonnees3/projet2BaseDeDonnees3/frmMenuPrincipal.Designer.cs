@@ -55,54 +55,63 @@
             this.groupBox1.Controls.Add(this.btnReabonnement);
             this.groupBox1.Controls.Add(this.btnGestionEmployes);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(32, 75);
+            this.groupBox1.Location = new System.Drawing.Point(48, 115);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 253);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(760, 389);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestions et abonnements";
             // 
             // btnMiseAJourAbonnes
             // 
-            this.btnMiseAJourAbonnes.Location = new System.Drawing.Point(269, 116);
+            this.btnMiseAJourAbonnes.Location = new System.Drawing.Point(404, 178);
+            this.btnMiseAJourAbonnes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMiseAJourAbonnes.Name = "btnMiseAJourAbonnes";
-            this.btnMiseAJourAbonnes.Size = new System.Drawing.Size(217, 40);
+            this.btnMiseAJourAbonnes.Size = new System.Drawing.Size(326, 62);
             this.btnMiseAJourAbonnes.TabIndex = 4;
             this.btnMiseAJourAbonnes.Text = "Mise à jour des abonnés";
             this.btnMiseAJourAbonnes.UseVisualStyleBackColor = true;
             // 
             // btnAbonnement
             // 
-            this.btnAbonnement.Location = new System.Drawing.Point(269, 50);
+            this.btnAbonnement.Location = new System.Drawing.Point(404, 77);
+            this.btnAbonnement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbonnement.Name = "btnAbonnement";
-            this.btnAbonnement.Size = new System.Drawing.Size(217, 40);
+            this.btnAbonnement.Size = new System.Drawing.Size(326, 62);
             this.btnAbonnement.TabIndex = 3;
             this.btnAbonnement.Text = "Abonnement";
             this.btnAbonnement.UseVisualStyleBackColor = true;
+            this.btnAbonnement.Click += new System.EventHandler(this.btnAbonnement_Click);
             // 
             // btnModifPrix
             // 
-            this.btnModifPrix.Location = new System.Drawing.Point(146, 178);
+            this.btnModifPrix.Location = new System.Drawing.Point(219, 274);
+            this.btnModifPrix.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModifPrix.Name = "btnModifPrix";
-            this.btnModifPrix.Size = new System.Drawing.Size(215, 40);
+            this.btnModifPrix.Size = new System.Drawing.Size(322, 62);
             this.btnModifPrix.TabIndex = 2;
             this.btnModifPrix.Text = "Modification des prix";
             this.btnModifPrix.UseVisualStyleBackColor = true;
             // 
             // btnReabonnement
             // 
-            this.btnReabonnement.Location = new System.Drawing.Point(21, 116);
+            this.btnReabonnement.Location = new System.Drawing.Point(32, 178);
+            this.btnReabonnement.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReabonnement.Name = "btnReabonnement";
-            this.btnReabonnement.Size = new System.Drawing.Size(217, 40);
+            this.btnReabonnement.Size = new System.Drawing.Size(326, 62);
             this.btnReabonnement.TabIndex = 1;
             this.btnReabonnement.Text = "Réabonnement";
             this.btnReabonnement.UseVisualStyleBackColor = true;
+            this.btnReabonnement.Click += new System.EventHandler(this.btnReabonnement_Click);
             // 
             // btnGestionEmployes
             // 
-            this.btnGestionEmployes.Location = new System.Drawing.Point(23, 50);
+            this.btnGestionEmployes.Location = new System.Drawing.Point(34, 77);
+            this.btnGestionEmployes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGestionEmployes.Name = "btnGestionEmployes";
-            this.btnGestionEmployes.Size = new System.Drawing.Size(215, 40);
+            this.btnGestionEmployes.Size = new System.Drawing.Size(322, 62);
             this.btnGestionEmployes.TabIndex = 0;
             this.btnGestionEmployes.Text = "Gestion des employes";
             this.btnGestionEmployes.UseVisualStyleBackColor = true;
@@ -115,45 +124,51 @@
             this.groupBox2.Controls.Add(this.btnVisualisationStats);
             this.groupBox2.Controls.Add(this.btnInscriptionPartie);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(568, 75);
+            this.groupBox2.Location = new System.Drawing.Point(852, 115);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 253);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(760, 389);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Inscriptions et visualisations";
             // 
             // btnVisualisationRpports
             // 
-            this.btnVisualisationRpports.Location = new System.Drawing.Point(265, 136);
+            this.btnVisualisationRpports.Location = new System.Drawing.Point(398, 209);
+            this.btnVisualisationRpports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVisualisationRpports.Name = "btnVisualisationRpports";
-            this.btnVisualisationRpports.Size = new System.Drawing.Size(228, 40);
+            this.btnVisualisationRpports.Size = new System.Drawing.Size(342, 62);
             this.btnVisualisationRpports.TabIndex = 4;
             this.btnVisualisationRpports.Text = "Visualisation des rapports";
             this.btnVisualisationRpports.UseVisualStyleBackColor = true;
             // 
             // btnInscriptionDepense
             // 
-            this.btnInscriptionDepense.Location = new System.Drawing.Point(265, 61);
+            this.btnInscriptionDepense.Location = new System.Drawing.Point(398, 94);
+            this.btnInscriptionDepense.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInscriptionDepense.Name = "btnInscriptionDepense";
-            this.btnInscriptionDepense.Size = new System.Drawing.Size(228, 40);
+            this.btnInscriptionDepense.Size = new System.Drawing.Size(342, 62);
             this.btnInscriptionDepense.TabIndex = 3;
             this.btnInscriptionDepense.Text = "Inscription dépense";
             this.btnInscriptionDepense.UseVisualStyleBackColor = true;
             // 
             // btnVisualisationStats
             // 
-            this.btnVisualisationStats.Location = new System.Drawing.Point(17, 136);
+            this.btnVisualisationStats.Location = new System.Drawing.Point(26, 209);
+            this.btnVisualisationStats.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVisualisationStats.Name = "btnVisualisationStats";
-            this.btnVisualisationStats.Size = new System.Drawing.Size(226, 40);
+            this.btnVisualisationStats.Size = new System.Drawing.Size(339, 62);
             this.btnVisualisationStats.TabIndex = 2;
             this.btnVisualisationStats.Text = "Visualisation des stats";
             this.btnVisualisationStats.UseVisualStyleBackColor = true;
             // 
             // btnInscriptionPartie
             // 
-            this.btnInscriptionPartie.Location = new System.Drawing.Point(17, 61);
+            this.btnInscriptionPartie.Location = new System.Drawing.Point(26, 94);
+            this.btnInscriptionPartie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInscriptionPartie.Name = "btnInscriptionPartie";
-            this.btnInscriptionPartie.Size = new System.Drawing.Size(226, 40);
+            this.btnInscriptionPartie.Size = new System.Drawing.Size(339, 62);
             this.btnInscriptionPartie.TabIndex = 1;
             this.btnInscriptionPartie.Text = "Inscription partie de golf";
             this.btnInscriptionPartie.UseVisualStyleBackColor = true;
@@ -161,9 +176,10 @@
             // btnDeconnexion
             // 
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeconnexion.Location = new System.Drawing.Point(390, 364);
+            this.btnDeconnexion.Location = new System.Drawing.Point(585, 560);
+            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(149, 53);
+            this.btnDeconnexion.Size = new System.Drawing.Size(224, 82);
             this.btnDeconnexion.TabIndex = 5;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
@@ -172,9 +188,10 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(568, 364);
+            this.btnQuitter.Location = new System.Drawing.Point(852, 560);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(149, 53);
+            this.btnQuitter.Size = new System.Drawing.Size(224, 82);
             this.btnQuitter.TabIndex = 6;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -184,23 +201,25 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(384, 27);
+            this.label1.Location = new System.Drawing.Point(576, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 31);
+            this.label1.Size = new System.Drawing.Size(497, 47);
             this.label1.TabIndex = 7;
             this.label1.Text = "Gestion de Clubs de golf";
             // 
             // frmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 445);
+            this.ClientSize = new System.Drawing.Size(1630, 685);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMenuPrincipal";
             this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
