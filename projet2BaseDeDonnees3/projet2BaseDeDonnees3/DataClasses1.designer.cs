@@ -201,7 +201,7 @@ namespace projet2BaseDeDonnees3
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id;
+		private string _Id;
 		
 		private System.DateTime _DateAbonnement;
 		
@@ -249,7 +249,7 @@ namespace projet2BaseDeDonnees3
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(int value);
+    partial void OnIdChanging(string value);
     partial void OnIdChanged();
     partial void OnDateAbonnementChanging(System.DateTime value);
     partial void OnDateAbonnementChanged();
@@ -294,8 +294,8 @@ namespace projet2BaseDeDonnees3
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Id
 		{
 			get
 			{
@@ -817,7 +817,7 @@ namespace projet2BaseDeDonnees3
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id;
+		private string _Id;
 		
 		private string _Nom;
 		
@@ -825,7 +825,9 @@ namespace projet2BaseDeDonnees3
 		
 		private string _Sexe;
 		
-		private int _IdAbonnement;
+		private System.DateTime _DateNaissance;
+		
+		private string _IdAbonnement;
 		
 		private string _Remarque;
 		
@@ -835,7 +837,7 @@ namespace projet2BaseDeDonnees3
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(int value);
+    partial void OnIdChanging(string value);
     partial void OnIdChanged();
     partial void OnNomChanging(string value);
     partial void OnNomChanged();
@@ -843,7 +845,9 @@ namespace projet2BaseDeDonnees3
     partial void OnPrenomChanged();
     partial void OnSexeChanging(string value);
     partial void OnSexeChanged();
-    partial void OnIdAbonnementChanging(int value);
+    partial void OnDateNaissanceChanging(System.DateTime value);
+    partial void OnDateNaissanceChanged();
+    partial void OnIdAbonnementChanging(string value);
     partial void OnIdAbonnementChanged();
     partial void OnRemarqueChanging(string value);
     partial void OnRemarqueChanged();
@@ -855,8 +859,8 @@ namespace projet2BaseDeDonnees3
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Id
 		{
 			get
 			{
@@ -935,8 +939,28 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="Int NOT NULL")]
-		public int IdAbonnement
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateNaissance", DbType="Date NOT NULL")]
+		public System.DateTime DateNaissance
+		{
+			get
+			{
+				return this._DateNaissance;
+			}
+			set
+			{
+				if ((this._DateNaissance != value))
+				{
+					this.OnDateNaissanceChanging(value);
+					this.SendPropertyChanging();
+					this._DateNaissance = value;
+					this.SendPropertyChanged("DateNaissance");
+					this.OnDateNaissanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string IdAbonnement
 		{
 			get
 			{
@@ -1006,7 +1030,7 @@ namespace projet2BaseDeDonnees3
 					}
 					else
 					{
-						this._IdAbonnement = default(int);
+						this._IdAbonnement = default(string);
 					}
 					this.SendPropertyChanged("Abonnements");
 				}
@@ -1042,7 +1066,7 @@ namespace projet2BaseDeDonnees3
 		
 		private int _No;
 		
-		private int _IdAbonnement;
+		private string _IdAbonnement;
 		
 		private System.DateTime _DateDepense;
 		
@@ -1062,7 +1086,7 @@ namespace projet2BaseDeDonnees3
     partial void OnCreated();
     partial void OnNoChanging(int value);
     partial void OnNoChanged();
-    partial void OnIdAbonnementChanging(int value);
+    partial void OnIdAbonnementChanging(string value);
     partial void OnIdAbonnementChanged();
     partial void OnDateDepenseChanging(System.DateTime value);
     partial void OnDateDepenseChanged();
@@ -1101,8 +1125,8 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="Int NOT NULL")]
-		public int IdAbonnement
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string IdAbonnement
 		{
 			get
 			{
@@ -1236,7 +1260,7 @@ namespace projet2BaseDeDonnees3
 					}
 					else
 					{
-						this._IdAbonnement = default(int);
+						this._IdAbonnement = default(string);
 					}
 					this.SendPropertyChanged("Abonnements");
 				}
@@ -1412,7 +1436,7 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotDePasse", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MotDePasse", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string MotDePasse
 		{
 			get
@@ -1596,7 +1620,7 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodePostal", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodePostal", DbType="VarChar(7) NOT NULL", CanBeNull=false)]
 		public string CodePostal
 		{
 			get
@@ -1616,7 +1640,7 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telephone", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telephone", DbType="VarChar(14) NOT NULL", CanBeNull=false)]
 		public string Telephone
 		{
 			get
@@ -1636,7 +1660,7 @@ namespace projet2BaseDeDonnees3
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cellulaire", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cellulaire", DbType="VarChar(15)")]
 		public string Cellulaire
 		{
 			get
@@ -1860,7 +1884,7 @@ namespace projet2BaseDeDonnees3
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IdAbonnement;
+		private string _IdAbonnement;
 		
 		private int _NoTerrain;
 		
@@ -1878,7 +1902,7 @@ namespace projet2BaseDeDonnees3
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdAbonnementChanging(int value);
+    partial void OnIdAbonnementChanging(string value);
     partial void OnIdAbonnementChanged();
     partial void OnNoTerrainChanging(int value);
     partial void OnNoTerrainChanged();
@@ -1897,8 +1921,8 @@ namespace projet2BaseDeDonnees3
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IdAbonnement
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IdAbonnement
 		{
 			get
 			{
@@ -2032,7 +2056,7 @@ namespace projet2BaseDeDonnees3
 					}
 					else
 					{
-						this._IdAbonnement = default(int);
+						this._IdAbonnement = default(string);
 					}
 					this.SendPropertyChanged("Abonnements");
 				}
@@ -2465,7 +2489,7 @@ namespace projet2BaseDeDonnees3
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IdAbonnement;
+		private string _IdAbonnement;
 		
 		private System.DateTime _DateRenouvellement;
 		
@@ -2477,7 +2501,7 @@ namespace projet2BaseDeDonnees3
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdAbonnementChanging(int value);
+    partial void OnIdAbonnementChanging(string value);
     partial void OnIdAbonnementChanged();
     partial void OnDateRenouvellementChanging(System.DateTime value);
     partial void OnDateRenouvellementChanged();
@@ -2491,8 +2515,8 @@ namespace projet2BaseDeDonnees3
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IdAbonnement
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdAbonnement", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string IdAbonnement
 		{
 			get
 			{
@@ -2582,7 +2606,7 @@ namespace projet2BaseDeDonnees3
 					}
 					else
 					{
-						this._IdAbonnement = default(int);
+						this._IdAbonnement = default(string);
 					}
 					this.SendPropertyChanged("Abonnements");
 				}

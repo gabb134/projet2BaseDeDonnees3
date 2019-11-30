@@ -2,10 +2,8 @@ namespace projet2BaseDeDonnees3
 {
     partial class DataClasses1DataContext
     {
-      
-
-
     }
+
     public partial class Provinces
     {
         public override string ToString()

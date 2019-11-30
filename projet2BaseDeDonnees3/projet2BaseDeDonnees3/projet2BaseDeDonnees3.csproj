@@ -158,15 +158,13 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AbonnementIdEtNomComplet.datasource" />
     <None Include="Properties\DataSources\Abonnements.datasource" />
-    <None Include="Properties\DataSources\DataClasses1DataContext.datasource" />
     <None Include="Properties\DataSources\Dependants.datasource" />
     <None Include="Properties\DataSources\Depenses.datasource" />
     <None Include="Properties\DataSources\Employes.datasource" />
-    <None Include="Properties\DataSources\frmConnexion.datasource" />
     <None Include="Properties\DataSources\PartiesJouees.datasource" />
     <None Include="Properties\DataSources\PrixDepensesAbonnements.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\Provinces.datasource" />
