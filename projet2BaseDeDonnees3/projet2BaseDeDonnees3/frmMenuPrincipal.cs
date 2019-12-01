@@ -15,6 +15,7 @@ namespace projet2BaseDeDonnees3
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
         frmInscriptionPartieGolf inscriptionPartieGolf = new frmInscriptionPartieGolf();
+        frmInscriptionDepense inscriptionDepense = new frmInscriptionDepense();
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye ;
         public frmMenuPrincipal()
@@ -114,6 +115,13 @@ namespace projet2BaseDeDonnees3
         {
             this.Hide();
             inscriptionPartieGolf.ShowDialog();
+            this.Show();
+        }
+
+        private void btnInscriptionDepense_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inscriptionDepense.ShowDialog();
             this.Show();
         }
     }

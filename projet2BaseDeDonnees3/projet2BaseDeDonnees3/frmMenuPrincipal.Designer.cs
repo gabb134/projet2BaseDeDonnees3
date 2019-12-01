@@ -139,6 +139,7 @@
             this.btnInscriptionDepense.TabIndex = 3;
             this.btnInscriptionDepense.Text = "Inscription dépense";
             this.btnInscriptionDepense.UseVisualStyleBackColor = true;
+            this.btnInscriptionDepense.Click += new System.EventHandler(this.btnInscriptionDepense_Click);
             // 
             // btnVisualisationStats
             // 
