@@ -123,7 +123,7 @@ namespace projet2BaseDeDonnees3
                                             strTypeEmploye = "Professeur de golf";
                                             break;
                                     }
-                                    MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD+"\nType d'employé : "+strTypeEmploye);
+                                  //  MessageBox.Show("Bienvenue dans la gestion de golf !\n\nNo : " + strNoUtilisateurBD + "\nMot de passe : " + strMotDePasseBD+"\nType d'employé : "+strTypeEmploye);
                                     strNoUtilisateur = tbUtilisateur.Text;
                                     booTrouver = true;
                                     this.Hide();

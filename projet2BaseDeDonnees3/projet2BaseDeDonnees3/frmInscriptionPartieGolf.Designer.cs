@@ -39,10 +39,12 @@
             this.terrainsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnInscriptionPartie = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ndPointage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementIdEtNomCompletBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -142,6 +144,10 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Terrain :";
             // 
+            // errMessage
+            // 
+            this.errMessage.ContainerControl = this;
+            // 
             // frmInscriptionPartieGolf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ndPointage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementIdEtNomCompletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +179,6 @@
         private System.Windows.Forms.BindingSource terrainsBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown ndPointage;
+        private System.Windows.Forms.ErrorProvider errMessage;
     }
 }

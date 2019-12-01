@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ namespace projet2BaseDeDonnees3
         private void btnInscriptionPartie_Click(object sender, EventArgs e)
         {
             //ajouter la partie jouer
-
+            Boolean booTrouver = false;
             PartiesJouees nouvellePartie = new PartiesJouees();
 
 
@@ -59,26 +60,50 @@ namespace projet2BaseDeDonnees3
                                                     idNomEtPrenom = abonnement.Id + "-" + abonnement.Nom + ", " + abonnement.Prenom
 
                                                 });
+            
+
+            foreach (var abonne in abonnementReabonnee)// tous les abonnemetn qui nont pas ete reabonnee
+            {
+                if (abonne.idNomEtPrenom.Equals(cbAbonnement.Text.ToString()))
+                    booTrouver = true;
+
+            }
 
 
-            foreach (var abonne in abonnementReabonnee) // tous les abonnemetn qui nont pas ete reabonnee
-            MessageBox.Show(abonne.idNomEtPrenom);
 
-            // a faire : 1. faire la comparaison pour ne pas permettre a un abonnemenert qui nest pas eabonner dajouter une paertie
-            //2. ajouter la partie
-            //MessageBox.Show(abonnementReabonnee);
+            if (booTrouver)
+                MessageBox.Show("Vous ne pouvez pas inscrire une partie à un abonnement qui ne s'est pas réabonné.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                nouvellePartie.IdAbonnement = cbAbonnement.SelectedValue.ToString();
+                nouvellePartie.Terrains = (from terrain in dataContext.Terrains
+                                           where terrain.Nom == cbTerrain.SelectedValue.ToString()
+                                           select terrain).FirstOrDefault();
+                nouvellePartie.DatePartie = DateTime.Now;
+
+                nouvellePartie.Pointage = Convert.ToInt32(ndPointage.Value);
+                try
+                {
+                    
+
+                    dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
+                    MessageBox.Show("La partie à été ajouté!","Ajout",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                catch (ChangeConflictException)
+                {
+                    dataContext.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
+                }
 
 
-            nouvellePartie.IdAbonnement = cbAbonnement.SelectedValue.ToString();
 
-            nouvellePartie.Terrains = (from terrain in dataContext.Terrains
-                                       where terrain.Nom == cbTerrain.SelectedValue.ToString()
-                                       select terrain).FirstOrDefault();
-            nouvellePartie.DatePartie = DateTime.Now;
 
-            nouvellePartie.Pointage = Convert.ToInt32( ndPointage.Value);
 
-            //MessageBox.Show("Id : " + cbAbonnement.SelectedValue.ToString() + "\nterrain : " + cbTerrain.SelectedValue.ToString() + "\ndate du jour : " + DateTime.Now + "\nPointage : " + ndPointage.Value);
+                //MessageBox.Show("Id : " + cbAbonnement.SelectedValue.ToString() + "\nterrain : " + cbTerrain.SelectedValue.ToString() + "\ndate du jour : " + DateTime.Now + "\nPointage : " + ndPointage.Value);
+            }
         }
     }
 }
