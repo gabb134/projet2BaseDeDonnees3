@@ -1,3 +1,4 @@
+
 use BD5B6TP2Marrero_Kouma
 
 print '=============================Suppression des tables ==========================='
@@ -53,7 +54,7 @@ constraint pk_PrixDepensesAbonnements primary key(NoTypeAbonnement,Annee)
 
 print 'Création table Abonnements'
 create table Abonnements(
-Id int primary key(Id) not null,
+Id varchar(50) primary key(Id) not null,
 DateAbonnement date not null,
 Nom varchar(50) not null,
 Prenom varchar(50) not null,
@@ -74,7 +75,7 @@ Remarque varchar(50)
 print 'Création table Terrains'
 create table Terrains(
 No int primary key(No) not null,
-Nom varchar(50) not null,
+Nom varchar(50) not null,	
 NombreTrous int not null,
 Description varchar(50),
 Remarque varchar(50)
@@ -82,7 +83,7 @@ Remarque varchar(50)
 
 print 'Création table PartiesJouees'
 create table PartiesJouees(
-IdAbonnement int foreign key(IdAbonnement) references Abonnements(Id) not null,
+IdAbonnement varchar(50) foreign key(IdAbonnement) references Abonnements(Id) not null,
 NoTerrain int foreign key(NoTerrain) references Terrains(No) not null,
 DatePartie date not null,
 Pointage int not null,
@@ -91,7 +92,7 @@ constraint pk_PartieJouees primary key(IdAbonnement,NoTerrain,DatePartie)
 )
 print 'Création table Reabonnements'
 create table Reabonnements(
-IdAbonnement int foreign key(IdAbonnement) references Abonnements(Id) not null,
+IdAbonnement varchar(50) foreign key(IdAbonnement) references Abonnements(Id) not null,
 DateRenouvellement date not null,
 Remarque varchar(50),
 constraint pk_Reabonnements primary key(IdAbonnement,DateRenouvellement)
@@ -137,7 +138,7 @@ Remarque varchar(50)
 print 'Création table Depenses'
 create table Depenses(
 No int primary key(No) not null,
-IdAbonnement int foreign key(IdAbonnement) references Abonnements(Id) not null,
+IdAbonnement varchar(50) foreign key(IdAbonnement) references Abonnements(Id) not null,
 DateDepense date not null,
 Montant money not null,
 NoService int foreign key(NoService) references Services(No)  not null,
@@ -145,11 +146,12 @@ Remarque varchar(50)
 )
 print 'Création table Dependants'
 create table Dependants(
-Id int primary key(Id) not null,
+Id varchar(50) primary key(Id) not null,
 Nom varchar(50) not null,
 Prenom varchar(50) not null,
 Sexe varchar(1) constraint ck_sexe1 check (UPPER(Sexe) in ('H','F')) not null,
-IdAbonnement int foreign key(IdAbonnement) references Abonnements(Id) not null,
+DateNaissance date not null,
+IdAbonnement varchar(50) foreign key(IdAbonnement) references Abonnements(Id) not null,
 Remarque varchar(50)
 )
 
@@ -240,3 +242,10 @@ insert into Services (No,TypesService,NoEmploye) values(3,'Leçon de golf',7)
 print 'Tests des tables '
 
 select * from Employes
+
+select * from Abonnements
+select * from Dependants
+
+select * from Reabonnements
+
+select * from PartiesJouees
