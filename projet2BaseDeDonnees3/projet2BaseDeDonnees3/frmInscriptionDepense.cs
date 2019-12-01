@@ -30,6 +30,11 @@ namespace projet2BaseDeDonnees3
             //2. faire les verification des personnes
             //3. remplir le combobox
 
+            //Employe qui sest connecte
+            int noTypeEmploye = frmConnexion.noTypeEmploye;
+           // MessageBox.Show(noTypeEmploye.ToString());
+
+        
 
             //chargement des id et nomComplet
             this.abonnementIdEtNomCompletBindingSource.DataSource = from abonnement in dataContext.Abonnements
@@ -37,9 +42,35 @@ namespace projet2BaseDeDonnees3
                                                                     select new { idAbonneePrincipal = abonnement.Id, idNomEtPrenom = abonnement.Id + "-" + abonnement.Nom + ", " + abonnement.Prenom };
 
 
-            //chargement de type service
-            this.servicesBindingSource.DataSource = (from service in dataContext.Services
-                                                     select service.TypesService);
+            //chargement de type service selon l'employe qui se connecte
+          
+
+            if (noTypeEmploye == 1 || noTypeEmploye == 2||noTypeEmploye==3) // admin, direction ou proprietaire d'un club
+            {
+                this.servicesBindingSource.DataSource = (from service in dataContext.Services
+                                                         select service.TypesService);
+                cbtypeService.Enabled = true;
+            }
+            else // les employes
+            {
+
+                this.servicesBindingSource.DataSource = (from service in dataContext.Services
+                                                         where service.NoEmploye == noTypeEmploye
+                                                         select service.TypesService);
+                cbtypeService.Enabled = false;
+
+            }
+
+
+
+        }
+
+        private void btnInscriptionDepense_Click(object sender, EventArgs e)
+        {
+            //Avant d’ajouter la dépense dans la base de données, vérifiez si le type de service pour
+            //cet employé existe déjà dans la base de données
+
+
 
 
         }
