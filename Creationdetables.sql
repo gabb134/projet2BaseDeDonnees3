@@ -251,11 +251,21 @@ select * from Reabonnements
 select * from PartiesJouees
 
 
+delete from Depenses where NoService = 6
+delete from Depenses where NoService = 7
+delete from Depenses where NoService = 1
+
 delete from Services where NoEmploye = 5
 delete from Services where NoEmploye = 6
 delete from Services where NoEmploye = 7
+
+delete from Services where NoEmploye = 1
 
 select * from Services
 
 select * from Depenses
 
+select * from PrixDepensesAbonnements
+
+
+select * from PartiesJouees
