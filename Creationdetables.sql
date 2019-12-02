@@ -237,7 +237,7 @@ print 'Remplissage de la TABLE services'
 
 insert into Services (No,TypesService,NoEmploye) values(1,'Magasin Pro-Shop',5)
 insert into Services (No,TypesService,NoEmploye) values(2,'Restaurant',6)
-insert into Services (No,TypesService,NoEmploye) values(3,'Leçon de golf',7)
+insert into Services (No,TypesService,NoEmploye) values(3,'Leçon de golf',7)	
 
 print 'Tests des tables '
 
@@ -256,3 +256,5 @@ delete from Services where NoEmploye = 6
 delete from Services where NoEmploye = 7
 
 select * from Services
+
+

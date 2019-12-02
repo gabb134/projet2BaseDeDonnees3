@@ -14,7 +14,7 @@ namespace projet2BaseDeDonnees3
     public partial class frmInscriptionDepense : Form
     {
         DataClasses1DataContext dataContext = new DataClasses1DataContext();
-        
+        public int intNoEmployeDejaConnecte;
         public frmInscriptionDepense()
         {
             InitializeComponent();
@@ -32,14 +32,14 @@ namespace projet2BaseDeDonnees3
             //2. faire les verification des personnes
             //3. remplir le combobox
 
-            //Employe qui sest connecte
+         
             int noTypeEmploye = frmConnexion.noTypeEmploye; // celui qui defini son service
-            //numero de l'employe qui sest connecte
-            int intNoEmploye = Convert.ToInt32(frmConnexion.strNoUtilisateur); // celui sest connecte
-            // MessageBox.Show(intNoEmploye.ToString());
-           // MessageBox.Show(noTypeEmploye.ToString());
+           
 
-        
+            int intNoEmploye = Convert.ToInt32(frmConnexion.strNoUtilisateur); // celui sest connecte
+
+
+            
 
             //chargement des id et nomComplet
             this.abonnementIdEtNomCompletBindingSource.DataSource = from abonnement in dataContext.Abonnements
@@ -49,26 +49,35 @@ namespace projet2BaseDeDonnees3
             //voir le nombre de services 
             int nombreService = (from employeService in dataContext.Services
                                        select employeService).Count();
+            //   MessageBox.Show("nb services : " + nombreService.ToString());
 
-           
+
+
+
+
 
             //chargement de type service selon l'employe qui se connecte
 
-
+            
             if (noTypeEmploye == 1 || noTypeEmploye == 2||noTypeEmploye==3) // admin, direction ou proprietaire d'un club
             {
 
 
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
-                                                         select service.TypesService);
+                                                         select service.TypesService).Distinct();
                 cbtypeService.Enabled = true;
             }
-            else if(nombreService!=4) //les employes nont pas tous de service
+            else if(intNoEmploye != intNoEmployeDejaConnecte) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
             {
-                MessageBox.Show("type employe :"+noTypeEmploye.ToString());
-               // MessageBox.Show("Employe n'existe pas!");
+                MessageBox.Show("employe qui sest deja connecter : " + intNoEmployeDejaConnecte.ToString());
+                intNoEmployeDejaConnecte = intNoEmploye;
+              //  MessageBox.Show("employe premiere fois connecter : " + intNoEmploye.ToString());
+               
+               
+                // MessageBox.Show("type employe :"+noTypeEmploye.ToString());
+                // MessageBox.Show("Employe n'existe pas!");
 
-              // MessageBox.Show(noTypeEmploye.ToString());
+                // MessageBox.Show(noTypeEmploye.ToString());
                 //ajout des services a lemploye qui sest connecte
                 Services servicePourEmployeConnecter = new Services();
 
@@ -161,12 +170,13 @@ namespace projet2BaseDeDonnees3
 
               
             }
-            else// les employes ont dess sevices
+            else 
             {
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          where service.NoEmploye == noTypeEmploye
                                                          select service.TypesService);
                 cbtypeService.Enabled = false;
+                MessageBox.Show("le else, quand le service existe deja");
             }
 
 
@@ -175,8 +185,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnInscriptionDepense_Click(object sender, EventArgs e)
         {
-            //Avant d’ajouter la dépense dans la base de données, vérifiez si le type de service pour
-            //cet employé existe déjà dans la base de données
+            
 
           
 
