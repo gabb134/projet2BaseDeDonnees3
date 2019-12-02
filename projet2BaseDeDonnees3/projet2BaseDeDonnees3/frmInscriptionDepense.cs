@@ -63,9 +63,9 @@ namespace projet2BaseDeDonnees3
                                                          select service.TypesService);
                 cbtypeService.Enabled = true;
             }
-            else if(nombreService!=3) //les employes nont pas tous de service
+            else if(nombreService!=4) //les employes nont pas tous de service
             {
-              
+                MessageBox.Show("type employe :"+noTypeEmploye.ToString());
                // MessageBox.Show("Employe n'existe pas!");
 
               // MessageBox.Show(noTypeEmploye.ToString());
@@ -79,19 +79,56 @@ namespace projet2BaseDeDonnees3
                  if (noTypeEmploye == 5)
                 {
                     servicePourEmployeConnecter.TypesService = "Magasin Pro-Shop";
-                    servicePourEmployeConnecter.No = 1;
+
+                    //il faut generer le numero a laide dune requete
+
+                    if (nombreService==0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
+
+                     
+
+                        servicePourEmployeConnecter.No = max;
+                    }
+
+                       
+                   // servicePourEmployeConnecter.No = 1;
                 }
                 
                  else if (noTypeEmploye == 6)
                 {
                     servicePourEmployeConnecter.TypesService = "Restaurant";
-                    servicePourEmployeConnecter.No = 2;
+                    // servicePourEmployeConnecter.No = 2;
+
+                    if (nombreService == 0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
+
+                      
+
+                        servicePourEmployeConnecter.No = max;
+                    }
                 }
                      
                  else if (noTypeEmploye == 7)
                 {
                     servicePourEmployeConnecter.TypesService = "Leçon de golf";
-                    servicePourEmployeConnecter.No = 3;
+                    // servicePourEmployeConnecter.No = 3;
+
+                    if (nombreService == 0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
+
+                      //  MessageBox.Show("Maximum :"+max.ToString());
+
+                        servicePourEmployeConnecter.No = max;
+                    }
                 }
                    
 
