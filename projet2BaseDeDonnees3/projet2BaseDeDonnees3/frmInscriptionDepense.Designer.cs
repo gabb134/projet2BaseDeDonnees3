@@ -86,6 +86,7 @@
             this.cbtypeService.Size = new System.Drawing.Size(201, 28);
             this.cbtypeService.TabIndex = 56;
             this.cbtypeService.ValueMember = "No";
+            this.cbtypeService.SelectedIndexChanged += new System.EventHandler(this.cbtypeService_SelectedIndexChanged);
             // 
             // servicesBindingSource
             // 

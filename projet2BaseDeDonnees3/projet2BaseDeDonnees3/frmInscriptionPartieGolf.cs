@@ -46,14 +46,14 @@ namespace projet2BaseDeDonnees3
 
             var abonnementReabonnee = (from abonnement in dataContext.Abonnements
                                        where !abonnement.Reabonnements.Any()
-                                       where DateTime.Today > abonnement.DateAbonnement.AddYears(1)
+                                       where DateTime.Now > abonnement.DateAbonnement.AddYears(1)
                                        select new
                                        {
                                            idAbonneePrincipal = abonnement.Id,
                                            idNomEtPrenom = abonnement.Id + "-" + abonnement.Nom + ", " + abonnement.Prenom
                                        }).Union(from abonnement in dataContext.Abonnements
                                                 where abonnement.Reabonnements.Any()
-                                                where abonnement.Reabonnements.All(x => DateTime.Today > x.DateRenouvellement.AddYears(1))
+                                                where abonnement.Reabonnements.All(x => DateTime.Now > x.DateRenouvellement.AddYears(1))
                                                 select new
                                                 {
                                                     idAbonneePrincipal = abonnement.Id,

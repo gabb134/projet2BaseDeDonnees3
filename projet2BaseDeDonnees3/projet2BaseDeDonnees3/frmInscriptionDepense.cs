@@ -60,10 +60,11 @@ namespace projet2BaseDeDonnees3
 
 
                 List<String> lstTypeServices = new List<string>();
+
                 lstTypeServices.Add("Magasin Pro-Shop");
                 lstTypeServices.Add("Restaurant");
                 lstTypeServices.Add("Leçon de golf");
-                // this.servicesBindingSource.DataSource = (from service in dataContext.Services
+                // this.servicesBindingSource.DataSource = (from service in dataContext.Services   // ne marche pas car l prend le contenu du combobox qui saffiche car on est dans le load
                 //                                        select service.TypesService).Distinct();
 
                 this.servicesBindingSource.DataSource = lstTypeServices;
@@ -303,6 +304,16 @@ namespace projet2BaseDeDonnees3
             }
           
                
+
+        }
+
+        private void cbtypeService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void verificationUnDeuxTrois()
+        {
 
         }
     }
