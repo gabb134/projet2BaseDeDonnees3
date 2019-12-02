@@ -73,6 +73,7 @@
             this.btnMiseAJourAbonnes.TabIndex = 4;
             this.btnMiseAJourAbonnes.Text = "Mise à jour des abonnés";
             this.btnMiseAJourAbonnes.UseVisualStyleBackColor = true;
+            this.btnMiseAJourAbonnes.Click += new System.EventHandler(this.btnMiseAJourAbonnes_Click);
             // 
             // btnAbonnement
             // 
@@ -94,6 +95,7 @@
             this.btnModifPrix.TabIndex = 2;
             this.btnModifPrix.Text = "Modification des prix";
             this.btnModifPrix.UseVisualStyleBackColor = true;
+            this.btnModifPrix.Click += new System.EventHandler(this.btnModifPrix_Click);
             // 
             // btnReabonnement
             // 
@@ -142,6 +144,7 @@
             this.btnVisualisationRpports.TabIndex = 4;
             this.btnVisualisationRpports.Text = "Visualisation des rapports";
             this.btnVisualisationRpports.UseVisualStyleBackColor = true;
+            this.btnVisualisationRpports.Click += new System.EventHandler(this.btnVisualisationRpports_Click);
             // 
             // btnInscriptionDepense
             // 
@@ -162,6 +165,7 @@
             this.btnVisualisationStats.TabIndex = 2;
             this.btnVisualisationStats.Text = "Visualisation des stats";
             this.btnVisualisationStats.UseVisualStyleBackColor = true;
+            this.btnVisualisationStats.Click += new System.EventHandler(this.btnVisualisationStats_Click);
             // 
             // btnInscriptionPartie
             // 

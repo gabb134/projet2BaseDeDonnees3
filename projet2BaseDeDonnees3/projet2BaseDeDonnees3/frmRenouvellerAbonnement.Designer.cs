@@ -34,8 +34,8 @@
             this.tbRemarque = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ddlAbonnements = new System.Windows.Forms.ComboBox();
-            this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
+            this.idNomPrenomAbonnePrincipalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.idNomPrenomAbonnePrincipalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRenouvellerAbonnement
@@ -48,6 +48,7 @@
             this.btnRenouvellerAbonnement.TabIndex = 42;
             this.btnRenouvellerAbonnement.Text = "Renouveller cet abonnement";
             this.btnRenouvellerAbonnement.UseVisualStyleBackColor = true;
+            this.btnRenouvellerAbonnement.Click += new System.EventHandler(this.btnRenouvellerAbonnement_Click);
             // 
             // lblRemarque
             // 
@@ -85,8 +86,8 @@
             // 
             // ddlAbonnements
             // 
-            this.ddlAbonnements.DataSource = this.abonnementsBindingSource;
-            this.ddlAbonnements.DisplayMember = "Nom";
+            this.ddlAbonnements.DataSource = this.idNomPrenomAbonnePrincipalBindingSource;
+            this.ddlAbonnements.DisplayMember = "idNomPrenomAbonne";
             this.ddlAbonnements.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlAbonnements.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlAbonnements.FormattingEnabled = true;
@@ -94,11 +95,11 @@
             this.ddlAbonnements.Name = "ddlAbonnements";
             this.ddlAbonnements.Size = new System.Drawing.Size(298, 33);
             this.ddlAbonnements.TabIndex = 38;
-            this.ddlAbonnements.ValueMember = "Id";
+            this.ddlAbonnements.ValueMember = "idAbonnePrincipal";
             // 
-            // abonnementsBindingSource
+            // idNomPrenomAbonnePrincipalBindingSource
             // 
-            this.abonnementsBindingSource.DataSource = typeof(projet2BaseDeDonnees3.Abonnements);
+            this.idNomPrenomAbonnePrincipalBindingSource.DataSource = typeof(projet2BaseDeDonnees3.idNomPrenomAbonnePrincipal);
             // 
             // frmRenouvellerAbonnement
             // 
@@ -113,7 +114,7 @@
             this.Name = "frmRenouvellerAbonnement";
             this.Text = "frmRenouvellerAbonnement";
             this.Load += new System.EventHandler(this.frmRenouvellerAbonnement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idNomPrenomAbonnePrincipalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +127,6 @@
         private System.Windows.Forms.TextBox tbRemarque;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ddlAbonnements;
-        private System.Windows.Forms.BindingSource abonnementsBindingSource;
+        private System.Windows.Forms.BindingSource idNomPrenomAbonnePrincipalBindingSource;
     }
 }

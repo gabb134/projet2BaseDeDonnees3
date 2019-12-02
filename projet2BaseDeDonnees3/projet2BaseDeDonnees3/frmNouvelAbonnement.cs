@@ -17,8 +17,8 @@ namespace projet2BaseDeDonnees3
     {
         private DataClasses1DataContext dataContext = new DataClasses1DataContext();
         List<Dependants> dependants = new List<Dependants>();
-        int intNombreEnfant = 0;
-        int intNoEnfantAjoute = 1;
+        int intNombreEnfant = 1;
+        int intNoEnfantAjoute = 0;
         public frmNouvelAbonnement()
         {
             InitializeComponent();
@@ -26,6 +26,8 @@ namespace projet2BaseDeDonnees3
 
         private void NouvelAbonnement_Load(object sender, EventArgs e)
         {
+            nupNbEnfant.Minimum = 0;
+            nupNbEnfant.Value = 0;
             List<Sexe> sexes = new List<Sexe>();
             sexes.Add(new Sexe("H", "Homme"));
             sexes.Add(new Sexe("F", "Femme"));
@@ -39,6 +41,20 @@ namespace projet2BaseDeDonnees3
 
         private void ddlTypesAbonnement_SelectedIndexChanged(object sender, EventArgs e)
         {
+            nupNbEnfant.Minimum = 0;
+            tbNomConjoint.Text = "";
+            tbPrenomConjoint.Text = "";
+            tbRemarqueConjoint.Text = "";
+            dtpDateNaissanceConjoint.Value = DateTime.Now;
+
+            tbNomEnfant.Text = "";
+            tbPrenomEnfant.Text = "";
+            tbRemarqueEnfant.Text = "";
+            dtpDateDeNaissanceEnfant.Value = DateTime.Now;
+            
+
+            dependants.Clear();
+
 
             DateTime dateActuelle = DateTime.Today;
             DateTime dateNaissance = dtpDateNaissance.Value.Date;
@@ -53,7 +69,11 @@ namespace projet2BaseDeDonnees3
                     gbEnfant.Enabled = false;
                     if (age < 18)
                     {
-                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
+                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal doit etre de 18 ans");
+                    }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
                     }
                     break;
                 case 2:
@@ -63,7 +83,11 @@ namespace projet2BaseDeDonnees3
                     gbEnfant.Enabled = false;
                     if (age < 60)
                     {
-                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 60 ans pour les personnes de l’âge d’or");
+                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal doit etre de 60 ans pour les personnes de l’âge d’or");
+                    }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
                     }
                     break;
                 case 3:
@@ -71,9 +95,14 @@ namespace projet2BaseDeDonnees3
                     intNombreEnfant = 0;
                     if (age < 18)
                     {
-                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
+                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal doit etre de 18 ans");
+                    }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
                     }
                     gbConjoint.Enabled = true;
+                    gbEnfant.Enabled = false;
                     break;
                 case 4:
                     nupNbEnfant.Value = 1;
@@ -82,11 +111,15 @@ namespace projet2BaseDeDonnees3
                     gbEnfant.Enabled = true;
                     if (age < 18)
                     {
-                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
+                        errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal doit etre de 18 ans");
+                    }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
                     }
                     break;
                 case 5:
-
+                    nupNbEnfant.Value = 2;
                     intNombreEnfant = 2;
                     gbConjoint.Enabled = true;
                     gbEnfant.Enabled = true;
@@ -94,9 +127,15 @@ namespace projet2BaseDeDonnees3
                     {
                         errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
                     }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
+                    }
                     break;
                 case 6:
                     nupNbEnfant.Value = 3;
+                    nupNbEnfant.Minimum = 3;
+                    //lbl.Enabled = true;
                     nupNbEnfant.Enabled = true;
                     intNombreEnfant = int.Parse(nupNbEnfant.Value.ToString());
                     gbConjoint.Enabled = true;
@@ -104,6 +143,10 @@ namespace projet2BaseDeDonnees3
                     if (age < 18)
                     {
                         errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
+                    }
+                    else
+                    {
+                        errMessage.SetError(dtpDateNaissance, String.Empty);
                     }
                     break;
                 default:
@@ -309,7 +352,8 @@ namespace projet2BaseDeDonnees3
         private void btnAjouterAbonnement_Click(object sender, EventArgs e)
         {
 
-            if (dependants.Count != nupNbEnfant.Value + 1)
+          //  MessageBox.Show(((int)ddlTypesAbonnement.SelectedValue).ToString());
+            if (dependants.Count < nupNbEnfant.Value + 1 && ((int)ddlTypesAbonnement.SelectedValue > 2))
             {
                 MessageBox.Show("Veuillez ajouter les enfants avant de créer cet abonnement");
             }
@@ -376,7 +420,7 @@ namespace projet2BaseDeDonnees3
                         }
                     }
 
-                    Close();
+                    this.Close();
                 }
 
                 else
@@ -402,19 +446,19 @@ namespace projet2BaseDeDonnees3
                 dependant.DateNaissance = dtpDateNaissanceConjoint.Value.Date;
                 dependant.IdAbonnement = idAbonnement;
                 if (!string.IsNullOrEmpty(tbRemarqueConjoint.Text.Trim())) dependant.Remarque = tbRemarqueConjoint.Text.Trim();
-                MessageBox.Show(dependant.Id);
+               // MessageBox.Show(dependant.Id);
                 return dependant;
             }
             else
             {
-                dependant.Id = idAbonnement.Substring(0, idAbonnement.Length - 1) + $"E{noEnfant}";
+                dependant.Id = idAbonnement.Substring(0, idAbonnement.Length - 1) + $"E{noEnfant+1}";
                 dependant.Nom = tbNomEnfant.Text.Trim();
                 dependant.Prenom = tbPrenomEnfant.Text.Trim();
                 dependant.Sexe = ddlSexeEnfant.SelectedValue.ToString();
                 dependant.DateNaissance = dtpDateDeNaissanceEnfant.Value.Date;
                 dependant.IdAbonnement = idAbonnement;
                 if (!string.IsNullOrEmpty(tbRemarqueEnfant.Text.Trim())) dependant.Remarque = tbRemarqueEnfant.Text.Trim();
-                MessageBox.Show(dependant.Id);
+             //   MessageBox.Show(dependant.Id);
                 return dependant;
             }
 
@@ -451,6 +495,36 @@ namespace projet2BaseDeDonnees3
         private void nupNbEnfant_ValueChanged(object sender, EventArgs e)
         {
             intNombreEnfant = (int)nupNbEnfant.Value;
+        }
+
+        private void ddlTypesAbonnement_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime dateActuelle = DateTime.Today;
+            DateTime dateNaissance = dtpDateNaissance.Value.Date;
+            int age = dateActuelle.Year - dateNaissance.Year;
+            if (dateNaissance > dateActuelle.AddYears(-age)) age--;
+
+            if ((int)ddlTypesAbonnement.SelectedValue == 2)
+            {
+                if (age < 60)
+                {
+                    errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 60 ans pour les personnes de l’âge d’or");
+                    // e.Cancel = true;
+                }
+            }
+            else
+            {
+                if (age < 18)
+                {
+                    errMessage.SetError(dtpDateNaissance, "L’âge minimum de l’abonné principal est de 18 ans");
+                    //  e.Cancel = true;
+                }
+            }
+        }
+
+        private void ddlTypesAbonnement_Validated(object sender, EventArgs e)
+        {
+            errMessage.SetError(dtpDateNaissance, string.Empty);
         }
     }
 }

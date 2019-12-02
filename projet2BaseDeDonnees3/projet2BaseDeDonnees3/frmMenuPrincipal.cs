@@ -15,7 +15,11 @@ namespace projet2BaseDeDonnees3
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
         frmNouvelAbonnement fNouvelAbonnement = new frmNouvelAbonnement();
+        frmMAJAbonnes fMAJAbonnes = new frmMAJAbonnes();
         frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
+        frmModificationPrixEtDepenseObligatoire fModificationPrixEtDepenseObligatoire = new frmModificationPrixEtDepenseObligatoire();
+        frmRapports fRapports = new frmRapports();
+        frmStatistique fStatistique = new frmStatistique();
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye;
         public frmMenuPrincipal()
@@ -122,6 +126,34 @@ namespace projet2BaseDeDonnees3
         {
             this.Hide();
             fRenouvellerAbonnement.ShowDialog();
+            this.Show();
+        }
+
+        private void btnMiseAJourAbonnes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fMAJAbonnes.ShowDialog();
+            this.Show();
+        }
+
+        private void btnModifPrix_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fModificationPrixEtDepenseObligatoire.ShowDialog();
+            this.Show();
+        }
+
+        private void btnVisualisationRpports_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fRapports.ShowDialog();
+            this.Show();
+        }
+
+        private void btnVisualisationStats_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            fStatistique.ShowDialog();
             this.Show();
         }
     }

@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DepenseParEmploye.cs" />
     <Compile Include="frmAjoutEmployes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,12 @@
     <Compile Include="frmGestionDesEmployes.Designer.cs">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMAJAbonnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMAJAbonnes.Designer.cs">
+      <DependentUpon>frmMAJAbonnes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +105,29 @@
     <Compile Include="frmModificationEmployes.Designer.cs">
       <DependentUpon>frmModificationEmployes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificationPrixEtDepenseObligatoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificationPrixEtDepenseObligatoire.Designer.cs">
+      <DependentUpon>frmModificationPrixEtDepenseObligatoire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRapports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRapports.Designer.cs">
+      <DependentUpon>frmRapports.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRenouvellerAbonnement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRenouvellerAbonnement.Designer.cs">
       <DependentUpon>frmRenouvellerAbonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatistique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistique.Designer.cs">
+      <DependentUpon>frmStatistique.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTest.cs">
       <SubType>Form</SubType>
@@ -116,10 +141,13 @@
     <Compile Include="frmNouvelAbonnement.Designer.cs">
       <DependentUpon>frmNouvelAbonnement.cs</DependentUpon>
     </Compile>
+    <Compile Include="idNomPrenomAbonnePrincipal.cs" />
+    <Compile Include="PartieJoueeParTerrain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sexe.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TypeAbonnementPrixEtDepenseObligatoire.cs" />
     <EmbeddedResource Include="frmAjoutEmployes.resx">
       <DependentUpon>frmAjoutEmployes.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,11 +157,20 @@
     <EmbeddedResource Include="frmGestionDesEmployes.resx">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMAJAbonnes.resx">
+      <DependentUpon>frmMAJAbonnes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificationEmployes.resx">
       <DependentUpon>frmModificationEmployes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificationPrixEtDepenseObligatoire.resx">
+      <DependentUpon>frmModificationPrixEtDepenseObligatoire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRapports.resx">
+      <DependentUpon>frmRapports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRenouvellerAbonnement.resx">
       <DependentUpon>frmRenouvellerAbonnement.cs</DependentUpon>
@@ -153,6 +190,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RapportDepenseParAbonnement.rdlc" />
+    <EmbeddedResource Include="RapportDepenseParAnnee.rdlc" />
+    <EmbeddedResource Include="RapportDepenseParEmploye.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParAbonnement.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParAnnee.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParTerrain.rdlc" />
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -164,8 +207,11 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Abonnements.datasource" />
     <None Include="Properties\DataSources\Dependants.datasource" />
+    <None Include="Properties\DataSources\DepenseParEmploye.datasource" />
     <None Include="Properties\DataSources\Depenses.datasource" />
     <None Include="Properties\DataSources\Employes.datasource" />
+    <None Include="Properties\DataSources\idNomPrenomAbonnePrincipal.datasource" />
+    <None Include="Properties\DataSources\PartieJoueeParTerrain.datasource" />
     <None Include="Properties\DataSources\PartiesJouees.datasource" />
     <None Include="Properties\DataSources\PrixDepensesAbonnements.datasource" />
     <None Include="Properties\DataSources\Provinces.datasource" />
@@ -173,6 +219,7 @@
     <None Include="Properties\DataSources\Services.datasource" />
     <None Include="Properties\DataSources\Sexe.datasource" />
     <None Include="Properties\DataSources\Terrains.datasource" />
+    <None Include="Properties\DataSources\TypeAbonnementPrixEtDepenseObligatoire.datasource" />
     <None Include="Properties\DataSources\TypesAbonnement.datasource" />
     <None Include="Properties\DataSources\TypesEmploye.datasource" />
     <None Include="Properties\Settings.settings">

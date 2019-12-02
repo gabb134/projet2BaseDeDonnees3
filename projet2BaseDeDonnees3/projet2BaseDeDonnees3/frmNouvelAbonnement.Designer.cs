@@ -46,7 +46,6 @@
             System.Windows.Forms.Label lblSexeConjoint;
             System.Windows.Forms.Label lblNomConjoint;
             System.Windows.Forms.Label lblPrenomConjoint;
-            System.Windows.Forms.Label lblNbEnfants;
             System.Windows.Forms.Label lblRemarqueEnfant;
             System.Windows.Forms.Label lblDateNaissanceEnfant;
             System.Windows.Forms.Label lblSexeEnfant;
@@ -89,6 +88,7 @@
             this.tbPrenomEnfant = new System.Windows.Forms.TextBox();
             this.tbCourriel = new System.Windows.Forms.TextBox();
             this.gbAbonnePrincipale = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             lblTelephone = new System.Windows.Forms.Label();
             lblCourriel = new System.Windows.Forms.Label();
             lblCellulaire = new System.Windows.Forms.Label();
@@ -106,7 +106,6 @@
             lblSexeConjoint = new System.Windows.Forms.Label();
             lblNomConjoint = new System.Windows.Forms.Label();
             lblPrenomConjoint = new System.Windows.Forms.Label();
-            lblNbEnfants = new System.Windows.Forms.Label();
             lblRemarqueEnfant = new System.Windows.Forms.Label();
             lblDateNaissanceEnfant = new System.Windows.Forms.Label();
             lblSexeEnfant = new System.Windows.Forms.Label();
@@ -126,7 +125,7 @@
             // lblTelephone
             // 
             lblTelephone.AutoSize = true;
-            lblTelephone.Location = new System.Drawing.Point(20, 418);
+            lblTelephone.Location = new System.Drawing.Point(20, 350);
             lblTelephone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblTelephone.Name = "lblTelephone";
             lblTelephone.Size = new System.Drawing.Size(128, 25);
@@ -136,7 +135,7 @@
             // lblCourriel
             // 
             lblCourriel.AutoSize = true;
-            lblCourriel.Location = new System.Drawing.Point(20, 518);
+            lblCourriel.Location = new System.Drawing.Point(20, 434);
             lblCourriel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblCourriel.Name = "lblCourriel";
             lblCourriel.Size = new System.Drawing.Size(101, 25);
@@ -146,7 +145,7 @@
             // lblCellulaire
             // 
             lblCellulaire.AutoSize = true;
-            lblCellulaire.Location = new System.Drawing.Point(20, 468);
+            lblCellulaire.Location = new System.Drawing.Point(20, 392);
             lblCellulaire.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblCellulaire.Name = "lblCellulaire";
             lblCellulaire.Size = new System.Drawing.Size(116, 25);
@@ -156,7 +155,7 @@
             // lblProvince
             // 
             lblProvince.AutoSize = true;
-            lblProvince.Location = new System.Drawing.Point(20, 322);
+            lblProvince.Location = new System.Drawing.Point(20, 269);
             lblProvince.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblProvince.Name = "lblProvince";
             lblProvince.Size = new System.Drawing.Size(109, 25);
@@ -166,7 +165,7 @@
             // lblCodePostal
             // 
             lblCodePostal.AutoSize = true;
-            lblCodePostal.Location = new System.Drawing.Point(20, 371);
+            lblCodePostal.Location = new System.Drawing.Point(20, 310);
             lblCodePostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblCodePostal.Name = "lblCodePostal";
             lblCodePostal.Size = new System.Drawing.Size(141, 25);
@@ -176,7 +175,7 @@
             // lblVille
             // 
             lblVille.AutoSize = true;
-            lblVille.Location = new System.Drawing.Point(20, 276);
+            lblVille.Location = new System.Drawing.Point(20, 231);
             lblVille.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblVille.Name = "lblVille";
             lblVille.Size = new System.Drawing.Size(67, 25);
@@ -186,7 +185,7 @@
             // lblRue
             // 
             lblRue.AutoSize = true;
-            lblRue.Location = new System.Drawing.Point(401, 229);
+            lblRue.Location = new System.Drawing.Point(400, 191);
             lblRue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblRue.Name = "lblRue";
             lblRue.Size = new System.Drawing.Size(63, 25);
@@ -196,7 +195,7 @@
             // lblNoCivique
             // 
             lblNoCivique.AutoSize = true;
-            lblNoCivique.Location = new System.Drawing.Point(20, 228);
+            lblNoCivique.Location = new System.Drawing.Point(20, 191);
             lblNoCivique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblNoCivique.Name = "lblNoCivique";
             lblNoCivique.Size = new System.Drawing.Size(123, 25);
@@ -206,7 +205,7 @@
             // lblSexe
             // 
             lblSexe.AutoSize = true;
-            lblSexe.Location = new System.Drawing.Point(20, 132);
+            lblSexe.Location = new System.Drawing.Point(20, 115);
             lblSexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblSexe.Name = "lblSexe";
             lblSexe.Size = new System.Drawing.Size(75, 25);
@@ -216,7 +215,7 @@
             // lblDateNaissance
             // 
             lblDateNaissance.AutoSize = true;
-            lblDateNaissance.Location = new System.Drawing.Point(20, 179);
+            lblDateNaissance.Location = new System.Drawing.Point(20, 152);
             lblDateNaissance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblDateNaissance.Name = "lblDateNaissance";
             lblDateNaissance.Size = new System.Drawing.Size(204, 25);
@@ -226,7 +225,7 @@
             // lblNom
             // 
             lblNom.AutoSize = true;
-            lblNom.Location = new System.Drawing.Point(20, 86);
+            lblNom.Location = new System.Drawing.Point(20, 76);
             lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblNom.Name = "lblNom";
             lblNom.Size = new System.Drawing.Size(69, 25);
@@ -288,17 +287,6 @@
             lblPrenomConjoint.TabIndex = 20;
             lblPrenomConjoint.Text = "Prénom :";
             // 
-            // lblNbEnfants
-            // 
-            lblNbEnfants.AutoSize = true;
-            lblNbEnfants.Enabled = false;
-            lblNbEnfants.Location = new System.Drawing.Point(20, 621);
-            lblNbEnfants.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblNbEnfants.Name = "lblNbEnfants";
-            lblNbEnfants.Size = new System.Drawing.Size(146, 25);
-            lblNbEnfants.TabIndex = 67;
-            lblNbEnfants.Text = "Nb d\'enfants :";
-            // 
             // lblRemarqueEnfant
             // 
             lblRemarqueEnfant.AutoSize = true;
@@ -347,7 +335,7 @@
             // lblRemarque
             // 
             this.lblRemarque.AutoSize = true;
-            this.lblRemarque.Location = new System.Drawing.Point(20, 677);
+            this.lblRemarque.Location = new System.Drawing.Point(20, 571);
             this.lblRemarque.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRemarque.Name = "lblRemarque";
             this.lblRemarque.Size = new System.Drawing.Size(123, 25);
@@ -356,7 +344,7 @@
             // 
             // btnAjouterAbonnement
             // 
-            this.btnAjouterAbonnement.Location = new System.Drawing.Point(136, 776);
+            this.btnAjouterAbonnement.Location = new System.Drawing.Point(132, 669);
             this.btnAjouterAbonnement.Margin = new System.Windows.Forms.Padding(6);
             this.btnAjouterAbonnement.Name = "btnAjouterAbonnement";
             this.btnAjouterAbonnement.Size = new System.Drawing.Size(308, 65);
@@ -368,7 +356,7 @@
             // lblTypeAbonnement
             // 
             this.lblTypeAbonnement.AutoSize = true;
-            this.lblTypeAbonnement.Location = new System.Drawing.Point(20, 567);
+            this.lblTypeAbonnement.Location = new System.Drawing.Point(20, 474);
             this.lblTypeAbonnement.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTypeAbonnement.Name = "lblTypeAbonnement";
             this.lblTypeAbonnement.Size = new System.Drawing.Size(216, 25);
@@ -377,7 +365,7 @@
             // 
             // tbRemarque
             // 
-            this.tbRemarque.Location = new System.Drawing.Point(265, 671);
+            this.tbRemarque.Location = new System.Drawing.Point(265, 555);
             this.tbRemarque.Margin = new System.Windows.Forms.Padding(6);
             this.tbRemarque.MaxLength = 500;
             this.tbRemarque.Multiline = true;
@@ -388,7 +376,7 @@
             // 
             // numNoCivique
             // 
-            this.numNoCivique.Location = new System.Drawing.Point(265, 222);
+            this.numNoCivique.Location = new System.Drawing.Point(265, 189);
             this.numNoCivique.Margin = new System.Windows.Forms.Padding(6);
             this.numNoCivique.Maximum = new decimal(new int[] {
             9999,
@@ -411,23 +399,25 @@
             // 
             // mtbCellulaire
             // 
-            this.mtbCellulaire.Location = new System.Drawing.Point(265, 463);
+            this.mtbCellulaire.Location = new System.Drawing.Point(265, 389);
             this.mtbCellulaire.Margin = new System.Windows.Forms.Padding(6);
             this.mtbCellulaire.Mask = "(000) 000-0000";
             this.mtbCellulaire.Name = "mtbCellulaire";
             this.mtbCellulaire.Size = new System.Drawing.Size(212, 30);
             this.mtbCellulaire.TabIndex = 51;
+            this.mtbCellulaire.Text = "1234567890";
             this.mtbCellulaire.Validating += new System.ComponentModel.CancelEventHandler(this.mtbCellulaire_Validating);
             this.mtbCellulaire.Validated += new System.EventHandler(this.mtbCellulaire_Validated);
             // 
             // mtbTelephone
             // 
-            this.mtbTelephone.Location = new System.Drawing.Point(265, 413);
+            this.mtbTelephone.Location = new System.Drawing.Point(265, 347);
             this.mtbTelephone.Margin = new System.Windows.Forms.Padding(6);
             this.mtbTelephone.Mask = "(000) 000-0000";
             this.mtbTelephone.Name = "mtbTelephone";
             this.mtbTelephone.Size = new System.Drawing.Size(212, 30);
             this.mtbTelephone.TabIndex = 49;
+            this.mtbTelephone.Text = "1234567890";
             this.mtbTelephone.Validating += new System.ComponentModel.CancelEventHandler(this.mtbTelephone_Validating);
             this.mtbTelephone.Validated += new System.EventHandler(this.mtbTelephone_Validated);
             // 
@@ -437,13 +427,15 @@
             this.ddlTypesAbonnement.DisplayMember = "Description";
             this.ddlTypesAbonnement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlTypesAbonnement.FormattingEnabled = true;
-            this.ddlTypesAbonnement.Location = new System.Drawing.Point(265, 561);
+            this.ddlTypesAbonnement.Location = new System.Drawing.Point(265, 471);
             this.ddlTypesAbonnement.Margin = new System.Windows.Forms.Padding(4);
             this.ddlTypesAbonnement.Name = "ddlTypesAbonnement";
             this.ddlTypesAbonnement.Size = new System.Drawing.Size(429, 33);
             this.ddlTypesAbonnement.TabIndex = 54;
             this.ddlTypesAbonnement.ValueMember = "No";
             this.ddlTypesAbonnement.SelectedIndexChanged += new System.EventHandler(this.ddlTypesAbonnement_SelectedIndexChanged);
+            this.ddlTypesAbonnement.Validating += new System.ComponentModel.CancelEventHandler(this.ddlTypesAbonnement_Validating);
+            this.ddlTypesAbonnement.Validated += new System.EventHandler(this.ddlTypesAbonnement_Validated);
             // 
             // typesAbonnementBindingSource
             // 
@@ -455,7 +447,7 @@
             this.ddlSexes.DisplayMember = "Nom";
             this.ddlSexes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlSexes.FormattingEnabled = true;
-            this.ddlSexes.Location = new System.Drawing.Point(265, 126);
+            this.ddlSexes.Location = new System.Drawing.Point(265, 110);
             this.ddlSexes.Margin = new System.Windows.Forms.Padding(4);
             this.ddlSexes.Name = "ddlSexes";
             this.ddlSexes.Size = new System.Drawing.Size(212, 33);
@@ -468,12 +460,13 @@
             // 
             // mtbCodePostal
             // 
-            this.mtbCodePostal.Location = new System.Drawing.Point(265, 365);
+            this.mtbCodePostal.Location = new System.Drawing.Point(265, 307);
             this.mtbCodePostal.Margin = new System.Windows.Forms.Padding(4);
             this.mtbCodePostal.Mask = "L0L 0L0";
             this.mtbCodePostal.Name = "mtbCodePostal";
             this.mtbCodePostal.Size = new System.Drawing.Size(104, 30);
             this.mtbCodePostal.TabIndex = 48;
+            this.mtbCodePostal.Text = "q1w2e3";
             this.mtbCodePostal.Validating += new System.ComponentModel.CancelEventHandler(this.mtbCodePostal_Validating);
             this.mtbCodePostal.Validated += new System.EventHandler(this.mtbCodePostal_Validated);
             // 
@@ -483,7 +476,7 @@
             this.ddlProvinces.DisplayMember = "Nom";
             this.ddlProvinces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlProvinces.FormattingEnabled = true;
-            this.ddlProvinces.Location = new System.Drawing.Point(265, 317);
+            this.ddlProvinces.Location = new System.Drawing.Point(265, 266);
             this.ddlProvinces.Margin = new System.Windows.Forms.Padding(4);
             this.ddlProvinces.Name = "ddlProvinces";
             this.ddlProvinces.Size = new System.Drawing.Size(320, 33);
@@ -496,29 +489,31 @@
             // 
             // tbVille
             // 
-            this.tbVille.Location = new System.Drawing.Point(265, 271);
+            this.tbVille.Location = new System.Drawing.Point(265, 228);
             this.tbVille.Margin = new System.Windows.Forms.Padding(4);
             this.tbVille.MaxLength = 50;
             this.tbVille.Name = "tbVille";
             this.tbVille.Size = new System.Drawing.Size(429, 30);
             this.tbVille.TabIndex = 45;
+            this.tbVille.Text = "Montréal";
             this.tbVille.Validating += new System.ComponentModel.CancelEventHandler(this.tbVille_Validating);
             this.tbVille.Validated += new System.EventHandler(this.tbVille_Validated);
             // 
             // tbRue
             // 
-            this.tbRue.Location = new System.Drawing.Point(482, 222);
+            this.tbRue.Location = new System.Drawing.Point(482, 188);
             this.tbRue.Margin = new System.Windows.Forms.Padding(4);
             this.tbRue.MaxLength = 50;
             this.tbRue.Name = "tbRue";
             this.tbRue.Size = new System.Drawing.Size(212, 30);
             this.tbRue.TabIndex = 43;
+            this.tbRue.Text = "ok";
             this.tbRue.Validating += new System.ComponentModel.CancelEventHandler(this.tbRue_Validating);
             this.tbRue.Validated += new System.EventHandler(this.tbRue_Validated);
             // 
             // dtpDateNaissance
             // 
-            this.dtpDateNaissance.Location = new System.Drawing.Point(265, 175);
+            this.dtpDateNaissance.Location = new System.Drawing.Point(265, 151);
             this.dtpDateNaissance.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateNaissance.Name = "dtpDateNaissance";
             this.dtpDateNaissance.Size = new System.Drawing.Size(320, 30);
@@ -528,7 +523,7 @@
             // 
             // tbNom
             // 
-            this.tbNom.Location = new System.Drawing.Point(265, 79);
+            this.tbNom.Location = new System.Drawing.Point(265, 73);
             this.tbNom.Margin = new System.Windows.Forms.Padding(4);
             this.tbNom.MaxLength = 50;
             this.tbNom.Name = "tbNom";
@@ -564,14 +559,14 @@
             this.gbConjoint.Enabled = false;
             this.gbConjoint.Location = new System.Drawing.Point(772, 12);
             this.gbConjoint.Name = "gbConjoint";
-            this.gbConjoint.Size = new System.Drawing.Size(634, 396);
+            this.gbConjoint.Size = new System.Drawing.Size(634, 337);
             this.gbConjoint.TabIndex = 65;
             this.gbConjoint.TabStop = false;
             this.gbConjoint.Text = "Conjoint(e)";
             // 
             // btnAjouterConjoint
             // 
-            this.btnAjouterConjoint.Location = new System.Drawing.Point(171, 321);
+            this.btnAjouterConjoint.Location = new System.Drawing.Point(171, 269);
             this.btnAjouterConjoint.Margin = new System.Windows.Forms.Padding(6);
             this.btnAjouterConjoint.Name = "btnAjouterConjoint";
             this.btnAjouterConjoint.Size = new System.Drawing.Size(308, 65);
@@ -636,7 +631,7 @@
             // nupNbEnfant
             // 
             this.nupNbEnfant.Enabled = false;
-            this.nupNbEnfant.Location = new System.Drawing.Point(265, 615);
+            this.nupNbEnfant.Location = new System.Drawing.Point(265, 513);
             this.nupNbEnfant.Margin = new System.Windows.Forms.Padding(6);
             this.nupNbEnfant.Maximum = new decimal(new int[] {
             9999,
@@ -667,16 +662,16 @@
             this.gbEnfant.Controls.Add(lblPrenomEnfant);
             this.gbEnfant.Controls.Add(this.tbPrenomEnfant);
             this.gbEnfant.Enabled = false;
-            this.gbEnfant.Location = new System.Drawing.Point(772, 431);
+            this.gbEnfant.Location = new System.Drawing.Point(772, 362);
             this.gbEnfant.Name = "gbEnfant";
-            this.gbEnfant.Size = new System.Drawing.Size(634, 396);
+            this.gbEnfant.Size = new System.Drawing.Size(634, 347);
             this.gbEnfant.TabIndex = 66;
             this.gbEnfant.TabStop = false;
             this.gbEnfant.Text = "Enfant(s)";
             // 
             // btnAjouterEnfant
             // 
-            this.btnAjouterEnfant.Location = new System.Drawing.Point(171, 321);
+            this.btnAjouterEnfant.Location = new System.Drawing.Point(171, 272);
             this.btnAjouterEnfant.Margin = new System.Windows.Forms.Padding(6);
             this.btnAjouterEnfant.Name = "btnAjouterEnfant";
             this.btnAjouterEnfant.Size = new System.Drawing.Size(308, 65);
@@ -736,20 +731,21 @@
             // 
             // tbCourriel
             // 
-            this.tbCourriel.Location = new System.Drawing.Point(265, 513);
+            this.tbCourriel.Location = new System.Drawing.Point(265, 431);
             this.tbCourriel.Margin = new System.Windows.Forms.Padding(6);
             this.tbCourriel.Name = "tbCourriel";
             this.tbCourriel.Size = new System.Drawing.Size(429, 30);
             this.tbCourriel.TabIndex = 52;
+            this.tbCourriel.Text = "test@gmail.com";
             this.tbCourriel.Validating += new System.ComponentModel.CancelEventHandler(this.tbCourriel_Validating);
             this.tbCourriel.Validated += new System.EventHandler(this.tbCourriel_Validated);
             // 
             // gbAbonnePrincipale
             // 
+            this.gbAbonnePrincipale.Controls.Add(this.label1);
             this.gbAbonnePrincipale.Controls.Add(lblPrenom);
             this.gbAbonnePrincipale.Controls.Add(this.nupNbEnfant);
             this.gbAbonnePrincipale.Controls.Add(this.tbPrenom);
-            this.gbAbonnePrincipale.Controls.Add(lblNbEnfants);
             this.gbAbonnePrincipale.Controls.Add(this.tbNom);
             this.gbAbonnePrincipale.Controls.Add(lblNom);
             this.gbAbonnePrincipale.Controls.Add(this.lblRemarque);
@@ -779,16 +775,26 @@
             this.gbAbonnePrincipale.Controls.Add(lblProvince);
             this.gbAbonnePrincipale.Location = new System.Drawing.Point(12, 12);
             this.gbAbonnePrincipale.Name = "gbAbonnePrincipale";
-            this.gbAbonnePrincipale.Size = new System.Drawing.Size(706, 852);
+            this.gbAbonnePrincipale.Size = new System.Drawing.Size(706, 745);
             this.gbAbonnePrincipale.TabIndex = 68;
             this.gbAbonnePrincipale.TabStop = false;
             this.gbAbonnePrincipale.Text = "Abonné(e) principal(e)";
+            // 
+            // label1
+            // 
+            this.label1.AccessibleName = "lblNbEnfants";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 515);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Nb d\'enfants";
             // 
             // frmNouvelAbonnement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1463, 868);
+            this.ClientSize = new System.Drawing.Size(1463, 766);
             this.Controls.Add(this.gbEnfant);
             this.Controls.Add(this.gbConjoint);
             this.Controls.Add(this.gbAbonnePrincipale);
@@ -852,5 +858,6 @@
         private System.Windows.Forms.TextBox tbPrenomEnfant;
         private System.Windows.Forms.GroupBox gbAbonnePrincipale;
         private System.Windows.Forms.TextBox tbCourriel;
+        private System.Windows.Forms.Label label1;
     }
 }
