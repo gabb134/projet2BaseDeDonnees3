@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace projet2BaseDeDonnees3
     public partial class frmInscriptionDepense : Form
     {
         DataClasses1DataContext dataContext = new DataClasses1DataContext();
+        
         public frmInscriptionDepense()
         {
             InitializeComponent();
@@ -31,7 +33,10 @@ namespace projet2BaseDeDonnees3
             //3. remplir le combobox
 
             //Employe qui sest connecte
-            int noTypeEmploye = frmConnexion.noTypeEmploye;
+            int noTypeEmploye = frmConnexion.noTypeEmploye; // celui qui defini son service
+            //numero de l'employe qui sest connecte
+            int intNoEmploye = Convert.ToInt32(frmConnexion.strNoUtilisateur); // celui sest connecte
+            // MessageBox.Show(intNoEmploye.ToString());
            // MessageBox.Show(noTypeEmploye.ToString());
 
         
@@ -41,24 +46,90 @@ namespace projet2BaseDeDonnees3
 
                                                                     select new { idAbonneePrincipal = abonnement.Id, idNomEtPrenom = abonnement.Id + "-" + abonnement.Nom + ", " + abonnement.Prenom };
 
+            //voir le nombre de services 
+            int nombreService = (from employeService in dataContext.Services
+                                       select employeService).Count();
+
+           
 
             //chargement de type service selon l'employe qui se connecte
-          
+
 
             if (noTypeEmploye == 1 || noTypeEmploye == 2||noTypeEmploye==3) // admin, direction ou proprietaire d'un club
             {
+
+
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          select service.TypesService);
                 cbtypeService.Enabled = true;
             }
-            else // les employes
+            else if(nombreService!=3) //les employes nont pas tous de service
             {
+              
+               // MessageBox.Show("Employe n'existe pas!");
 
+              // MessageBox.Show(noTypeEmploye.ToString());
+                //ajout des services a lemploye qui sest connecte
+                Services servicePourEmployeConnecter = new Services();
+
+                //servicePourEmployeConnecter.Employes.
+
+                //servicePourEmployeConnecter.No = 1;
+
+                 if (noTypeEmploye == 5)
+                {
+                    servicePourEmployeConnecter.TypesService = "Magasin Pro-Shop";
+                    servicePourEmployeConnecter.No = 1;
+                }
+                
+                 else if (noTypeEmploye == 6)
+                {
+                    servicePourEmployeConnecter.TypesService = "Restaurant";
+                    servicePourEmployeConnecter.No = 2;
+                }
+                     
+                 else if (noTypeEmploye == 7)
+                {
+                    servicePourEmployeConnecter.TypesService = "Leçon de golf";
+                    servicePourEmployeConnecter.No = 3;
+                }
+                   
+
+
+                servicePourEmployeConnecter.NoEmploye = noTypeEmploye;
+
+
+                try
+                {
+                    
+                    dataContext.Services.InsertOnSubmit(servicePourEmployeConnecter);
+
+                    dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
+                     //MessageBox.Show("Service ajoute a lemploye ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
+                    //affichage du service de lemploye connecte
+                    this.servicesBindingSource.DataSource = (from service in dataContext.Services
+                                                             where service.NoEmploye == noTypeEmploye
+                                                             select service.TypesService);
+                    cbtypeService.Enabled = false;
+                }
+                catch (ChangeConflictException)
+                {
+                    dataContext.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
+                }
+
+              
+            }
+            else// les employes ont dess sevices
+            {
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          where service.NoEmploye == noTypeEmploye
                                                          select service.TypesService);
                 cbtypeService.Enabled = false;
-
             }
 
 
@@ -70,8 +141,10 @@ namespace projet2BaseDeDonnees3
             //Avant d’ajouter la dépense dans la base de données, vérifiez si le type de service pour
             //cet employé existe déjà dans la base de données
 
+          
 
-
+          
+               
 
         }
     }

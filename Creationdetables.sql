@@ -249,3 +249,10 @@ select * from Dependants
 select * from Reabonnements
 
 select * from PartiesJouees
+
+
+delete from Services where NoEmploye = 5
+delete from Services where NoEmploye = 6
+delete from Services where NoEmploye = 7
+
+select * from Services

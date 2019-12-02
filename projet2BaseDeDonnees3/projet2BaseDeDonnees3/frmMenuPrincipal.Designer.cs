@@ -42,7 +42,7 @@
             this.btnInscriptionPartie = new System.Windows.Forms.Button();
             this.btnDeconnexion = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.btnReabonnement);
             this.groupBox1.Controls.Add(this.btnGestionEmployes);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(32, 75);
+            this.groupBox1.Location = new System.Drawing.Point(37, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 253);
             this.groupBox1.TabIndex = 0;
@@ -115,7 +115,7 @@
             this.groupBox2.Controls.Add(this.btnVisualisationStats);
             this.groupBox2.Controls.Add(this.btnInscriptionPartie);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(568, 75);
+            this.groupBox2.Location = new System.Drawing.Point(573, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(507, 253);
             this.groupBox2.TabIndex = 1;
@@ -163,7 +163,7 @@
             // btnDeconnexion
             // 
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeconnexion.Location = new System.Drawing.Point(390, 364);
+            this.btnDeconnexion.Location = new System.Drawing.Point(395, 430);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(149, 53);
             this.btnDeconnexion.TabIndex = 5;
@@ -174,7 +174,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitter.Location = new System.Drawing.Point(568, 364);
+            this.btnQuitter.Location = new System.Drawing.Point(573, 430);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(149, 53);
             this.btnQuitter.TabIndex = 6;
@@ -182,22 +182,23 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // label1
+            // lblTitre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(384, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(334, 31);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Gestion de Clubs de golf";
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Location = new System.Drawing.Point(384, 27);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(334, 31);
+            this.lblTitre.TabIndex = 7;
+            this.lblTitre.Text = "Gestion de Clubs de golf";
+            this.lblTitre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 445);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1124, 499);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.groupBox2);
@@ -228,6 +229,6 @@
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnVisualisationRpports;
         private System.Windows.Forms.Button btnInscriptionDepense;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitre;
     }
 }

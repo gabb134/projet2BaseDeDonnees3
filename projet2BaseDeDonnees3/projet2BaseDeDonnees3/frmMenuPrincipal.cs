@@ -45,10 +45,33 @@ namespace projet2BaseDeDonnees3
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
-        { //voir commment je peux reccuperer le noEmploye de la connexion
+        { 
+            
+            
+            //voir commment je peux reccuperer le noEmploye de la connexion
             strNoUtilisateurConnexion = frmConnexion.strNoUtilisateur;
             noTypeEmploye = frmConnexion.noTypeEmploye;
-          //  MessageBox.Show(noTypeEmploye.ToString());
+
+
+            if (noTypeEmploye == 1)
+                lblTitre.Text = "Gestion de Clubs de golf\nAdministrateur!";
+            else if (noTypeEmploye == 2)
+                lblTitre.Text = "Gestion de Clubs de golf\nDirection!";
+            else if (noTypeEmploye == 3)
+                lblTitre.Text = "Gestion de Clubs de golf\nPropriétaire d'un club!";
+            else if (noTypeEmploye == 4)
+                lblTitre.Text = "Gestion de Clubs de golf\nEmploye d'un club!";
+            else if (noTypeEmploye == 5)
+                lblTitre.Text = "Gestion de Clubs de golf\nEmployé Pro-Shop!";
+            else if (noTypeEmploye == 6)
+                lblTitre.Text = "Gestion de Clubs de golf\nEmploye d'un restaurant!";
+            else if (noTypeEmploye == 7)
+                lblTitre.Text = "Gestion de Clubs de golf\nProfesseur de golf!";
+
+
+
+
+            //  MessageBox.Show(noTypeEmploye.ToString());
             //Validation des buttons du menu principal selon l'employe qui se connecte
             if (noTypeEmploye == 1 || noTypeEmploye == 2)
             {
