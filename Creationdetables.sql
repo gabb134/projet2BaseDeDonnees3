@@ -257,4 +257,5 @@ delete from Services where NoEmploye = 7
 
 select * from Services
 
+select * from Depenses
 

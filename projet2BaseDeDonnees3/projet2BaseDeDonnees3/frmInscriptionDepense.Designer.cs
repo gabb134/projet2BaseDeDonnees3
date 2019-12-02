@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ndSalaire = new System.Windows.Forms.NumericUpDown();
+            this.ndMontant = new System.Windows.Forms.NumericUpDown();
             this.cbtypeService = new System.Windows.Forms.ComboBox();
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -40,14 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnInscriptionDepense = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndMontant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementIdEtNomCompletBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ndSalaire);
+            this.groupBox1.Controls.Add(this.ndMontant);
             this.groupBox1.Controls.Add(this.cbtypeService);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -62,18 +62,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inscription d\'une dépense";
             // 
-            // ndSalaire
+            // ndMontant
             // 
-            this.ndSalaire.Location = new System.Drawing.Point(238, 75);
-            this.ndSalaire.Maximum = new decimal(new int[] {
+            this.ndMontant.Location = new System.Drawing.Point(238, 75);
+            this.ndMontant.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.ndSalaire.Name = "ndSalaire";
-            this.ndSalaire.Size = new System.Drawing.Size(143, 26);
-            this.ndSalaire.TabIndex = 57;
-            this.ndSalaire.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ndMontant.Name = "ndMontant";
+            this.ndMontant.Size = new System.Drawing.Size(143, 26);
+            this.ndMontant.TabIndex = 57;
+            this.ndMontant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbtypeService
             // 
@@ -159,7 +159,7 @@
             this.Load += new System.EventHandler(this.frmInscriptionDepense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ndMontant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementIdEtNomCompletBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -177,6 +177,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource servicesBindingSource;
         private System.Windows.Forms.BindingSource abonnementIdEtNomCompletBindingSource;
-        private System.Windows.Forms.NumericUpDown ndSalaire;
+        private System.Windows.Forms.NumericUpDown ndMontant;
     }
 }

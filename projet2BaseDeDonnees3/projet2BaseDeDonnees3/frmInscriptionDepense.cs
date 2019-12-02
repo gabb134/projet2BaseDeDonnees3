@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Transactions;
 
 namespace projet2BaseDeDonnees3
 {
@@ -15,6 +16,8 @@ namespace projet2BaseDeDonnees3
     {
         DataClasses1DataContext dataContext = new DataClasses1DataContext();
         public int intNoEmployeDejaConnecte;
+
+        public int intnoService;
         public frmInscriptionDepense()
         {
             InitializeComponent();
@@ -49,16 +52,9 @@ namespace projet2BaseDeDonnees3
             //voir le nombre de services 
             int nombreService = (from employeService in dataContext.Services
                                        select employeService).Count();
-            //   MessageBox.Show("nb services : " + nombreService.ToString());
 
+            Services servicePourEmployeConnecter = new Services();
 
-
-
-
-
-            //chargement de type service selon l'employe qui se connecte
-
-            
             if (noTypeEmploye == 1 || noTypeEmploye == 2||noTypeEmploye==3) // admin, direction ou proprietaire d'un club
             {
 
@@ -66,6 +62,21 @@ namespace projet2BaseDeDonnees3
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          select service.TypesService).Distinct();
                 cbtypeService.Enabled = true;
+
+                if (nombreService == 0)
+                    servicePourEmployeConnecter.No = 1;
+                else
+                {
+                    var max = dataContext.Services.Max(em => em.No) + 1;
+
+
+
+                    servicePourEmployeConnecter.No = max;
+
+                }
+
+                intnoService = servicePourEmployeConnecter.No;
+
             }
             else if(intNoEmploye != intNoEmployeDejaConnecte) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
             {
@@ -79,7 +90,7 @@ namespace projet2BaseDeDonnees3
 
                 // MessageBox.Show(noTypeEmploye.ToString());
                 //ajout des services a lemploye qui sest connecte
-                Services servicePourEmployeConnecter = new Services();
+               
 
                 //servicePourEmployeConnecter.Employes.
 
@@ -100,6 +111,7 @@ namespace projet2BaseDeDonnees3
                      
 
                         servicePourEmployeConnecter.No = max;
+                        
                     }
 
                        
@@ -120,6 +132,7 @@ namespace projet2BaseDeDonnees3
                       
 
                         servicePourEmployeConnecter.No = max;
+                        
                     }
                 }
                      
@@ -137,6 +150,7 @@ namespace projet2BaseDeDonnees3
                       //  MessageBox.Show("Maximum :"+max.ToString());
 
                         servicePourEmployeConnecter.No = max;
+                       
                     }
                 }
                    
@@ -158,6 +172,7 @@ namespace projet2BaseDeDonnees3
                                                              where service.NoEmploye == noTypeEmploye
                                                              select service.TypesService);
                     cbtypeService.Enabled = false;
+                    intnoService = servicePourEmployeConnecter.No;
                 }
                 catch (ChangeConflictException)
                 {
@@ -185,10 +200,55 @@ namespace projet2BaseDeDonnees3
 
         private void btnInscriptionDepense_Click(object sender, EventArgs e)
         {
-            
 
-          
+            using (var porteeTransaction = new TransactionScope())
+            {
 
+                Depenses nouvelleDepense = new Depenses();
+
+                //voir le nombre de Depense
+                int nombreDepenses = (from depense in dataContext.Depenses
+                                      select depense).Count();
+
+                if (nombreDepenses == 0)
+                    nouvelleDepense.No = 1;
+                else
+                {
+                    var max = dataContext.Depenses.Max(em => em.No) + 1;
+
+                    
+
+                    nouvelleDepense.No = max;
+                }
+                 MessageBox.Show("nb depenses :"+ nombreDepenses.ToString());
+
+                nouvelleDepense.IdAbonnement = cbClient.SelectedValue.ToString();
+
+                nouvelleDepense.DateDepense = DateTime.Now;
+
+                nouvelleDepense.Montant = Convert.ToInt32(ndMontant.Value);
+
+                nouvelleDepense.NoService = intnoService;
+                //  MessageBox.Show("Numero de service : " + intnoService.ToString());
+
+                MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
+                try
+                {
+
+                    dataContext.Depenses.InsertOnSubmit(nouvelleDepense);
+                    dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
+                    MessageBox.Show("La dépense à été ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    porteeTransaction.Complete();
+                }
+                catch (ChangeConflictException)
+                {
+                    dataContext.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
+                }
+            }
           
                
 
