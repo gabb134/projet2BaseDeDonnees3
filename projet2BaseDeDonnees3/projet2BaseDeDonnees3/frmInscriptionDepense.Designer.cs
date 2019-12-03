@@ -64,7 +64,7 @@
             // 
             // ndMontant
             // 
-            this.ndMontant.Location = new System.Drawing.Point(238, 75);
+            this.ndMontant.Location = new System.Drawing.Point(243, 74);
             this.ndMontant.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -73,7 +73,6 @@
             this.ndMontant.Name = "ndMontant";
             this.ndMontant.Size = new System.Drawing.Size(143, 26);
             this.ndMontant.TabIndex = 57;
-            this.ndMontant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbtypeService
             // 
@@ -81,7 +80,7 @@
             this.cbtypeService.DisplayMember = "TypesService";
             this.cbtypeService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbtypeService.FormattingEnabled = true;
-            this.cbtypeService.Location = new System.Drawing.Point(180, 116);
+            this.cbtypeService.Location = new System.Drawing.Point(185, 117);
             this.cbtypeService.Name = "cbtypeService";
             this.cbtypeService.Size = new System.Drawing.Size(201, 28);
             this.cbtypeService.TabIndex = 56;
@@ -96,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 116);
+            this.label3.Location = new System.Drawing.Point(6, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 24);
             this.label3.TabIndex = 55;
@@ -106,11 +105,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 75);
+            this.label2.Location = new System.Drawing.Point(6, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 24);
+            this.label2.Size = new System.Drawing.Size(235, 24);
             this.label2.TabIndex = 53;
-            this.label2.Text = "Montant de la dépense :";
+            this.label2.Text = "Montant de la dépense ($):";
             // 
             // cbClient
             // 
@@ -118,7 +117,7 @@
             this.cbClient.DisplayMember = "idNomEtPrenom";
             this.cbClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClient.FormattingEnabled = true;
-            this.cbClient.Location = new System.Drawing.Point(127, 33);
+            this.cbClient.Location = new System.Drawing.Point(132, 34);
             this.cbClient.Name = "cbClient";
             this.cbClient.Size = new System.Drawing.Size(254, 28);
             this.cbClient.TabIndex = 52;
@@ -132,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 33);
+            this.label1.Location = new System.Drawing.Point(6, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 24);
             this.label1.TabIndex = 51;

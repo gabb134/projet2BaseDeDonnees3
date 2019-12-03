@@ -18,6 +18,11 @@ namespace projet2BaseDeDonnees3
         public int intNoEmployeDejaConnecte;
 
         public int intnoService;
+
+        int noTypeEmploye ; // celui qui defini son service
+
+
+         int intNoEmploye ; // celui sest connecte
         public frmInscriptionDepense()
         {
             InitializeComponent();
@@ -25,49 +30,70 @@ namespace projet2BaseDeDonnees3
 
         private void frmInscriptionDepense_Load(object sender, EventArgs e)
         {
-            //si c'est admin (1) ou direction (2)
-            //peut choisir le type de service
-            //si c'est employe proshop , cest magasin proshop 
-            //si cest employe restaurant cest restaurant
-            //si cest prof de gold, cest lecon de golf
-
-            //1. aller checher la personne qui sest connnecte
-            //2. faire les verification des personnes
-            //3. remplir le combobox
-
-         
-            int noTypeEmploye = frmConnexion.noTypeEmploye; // celui qui defini son service
-           
-
-            int intNoEmploye = Convert.ToInt32(frmConnexion.strNoUtilisateur); // celui sest connecte
+             noTypeEmploye = frmConnexion.noTypeEmploye; // celui qui defini son service
 
 
-            
+            intNoEmploye = Convert.ToInt32(frmConnexion.strNoUtilisateur); // celui sest connecte
+
+
 
             //chargement des id et nomComplet
             this.abonnementIdEtNomCompletBindingSource.DataSource = from abonnement in dataContext.Abonnements
 
                                                                     select new { idAbonneePrincipal = abonnement.Id, idNomEtPrenom = abonnement.Id + "-" + abonnement.Nom + ", " + abonnement.Prenom };
 
+
+            List<String> lstTypeServices = new List<string>(); // ne marche pas car l prend le contenu du combobox qui saffiche car on est dans le load
+
+            lstTypeServices.Add("Magasin Pro-Shop");
+            lstTypeServices.Add("Restaurant");
+            lstTypeServices.Add("Leçon de golf");
+            // this.servicesBindingSource.DataSource = (from service in dataContext.Services  
+            //                                        select service.TypesService).Distinct();
+
+            this.servicesBindingSource.DataSource = lstTypeServices;
+
+            if (noTypeEmploye == 5)
+            {
+                cbtypeService.Text = "Magasin Pro-Shop";
+                cbtypeService.Enabled = false;
+            }
+            else if (noTypeEmploye == 6)
+            {
+                cbtypeService.Text = "Restaurant";
+                cbtypeService.Enabled = false;
+            }
+            else if (noTypeEmploye == 7)
+            {
+                cbtypeService.Text = "Leçon de golf";
+                cbtypeService.Enabled = false;
+            }
+
+
+
+        }
+
+        private void btnInscriptionDepense_Click(object sender, EventArgs e)
+        {
+            /**************************************GESTION DES SERVICES****************************************/
+
+
+
+
+
+
+
             //voir le nombre de services 
             int nombreService = (from employeService in dataContext.Services
-                                       select employeService).Count();
+                                 select employeService).Count();
 
             Services servicePourEmployeConnecter = new Services();
 
-            if (noTypeEmploye == 1 || noTypeEmploye == 2||noTypeEmploye==3) // admin, direction ou proprietaire d'un club
+            if (noTypeEmploye == 1 || noTypeEmploye == 2 || noTypeEmploye == 3) // admin, direction ou proprietaire d'un club
             {
 
 
-                List<String> lstTypeServices = new List<string>();
-
-                lstTypeServices.Add("Magasin Pro-Shop");
-                lstTypeServices.Add("Restaurant");
-                lstTypeServices.Add("Leçon de golf");
-                // this.servicesBindingSource.DataSource = (from service in dataContext.Services   // ne marche pas car l prend le contenu du combobox qui saffiche car on est dans le load
-                //                                        select service.TypesService).Distinct();
-
-                this.servicesBindingSource.DataSource = lstTypeServices;
+               
 
 
                 cbtypeService.Enabled = true;
@@ -86,25 +112,25 @@ namespace projet2BaseDeDonnees3
 
                 intnoService = servicePourEmployeConnecter.No;
 
-               
+
 
                 //MessageBox.Show(cbtypeService.Text);
 
-                  if(cbtypeService.Text == "Magasin Pro-Shop")
-                  {
-                      servicePourEmployeConnecter.NoEmploye = 5;
+                if (cbtypeService.Text == "Magasin Pro-Shop")
+                {
+                    servicePourEmployeConnecter.NoEmploye = 5;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
-                  }
-                  else if (cbtypeService.Text == "Restaurant")
-                  {
-                      servicePourEmployeConnecter.NoEmploye = 6;
+                }
+                else if (cbtypeService.Text == "Restaurant")
+                {
+                    servicePourEmployeConnecter.NoEmploye = 6;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
-                  }
-                  else if (cbtypeService.Text == "Leçon de golf")
-                  {
-                      servicePourEmployeConnecter.NoEmploye = 7;
+                }
+                else if (cbtypeService.Text == "Leçon de golf")
+                {
+                    servicePourEmployeConnecter.NoEmploye = 7;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
-                  }
+                }
 
                 try
                 {
@@ -115,10 +141,10 @@ namespace projet2BaseDeDonnees3
                     //MessageBox.Show("Service ajoute a lemploye ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //affichage du service de lemploye connecte
-                 //   this.servicesBindingSource.DataSource = (from service in dataContext.Services
-                   //                                          where service.NoEmploye == noTypeEmploye
-                     //                                        select service.TypesService);
-                 
+                    //   this.servicesBindingSource.DataSource = (from service in dataContext.Services
+                    //                                          where service.NoEmploye == noTypeEmploye
+                    //                                        select service.TypesService);
+
                 }
                 catch (ChangeConflictException)
                 {
@@ -131,47 +157,47 @@ namespace projet2BaseDeDonnees3
 
 
             }
-            else if(intNoEmploye != intNoEmployeDejaConnecte) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
+            else if (intNoEmploye != intNoEmployeDejaConnecte) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
             {
                 MessageBox.Show("employe qui sest deja connecter : " + intNoEmployeDejaConnecte.ToString());
                 intNoEmployeDejaConnecte = intNoEmploye;
-              //  MessageBox.Show("employe premiere fois connecter : " + intNoEmploye.ToString());
-               
-               
+                //  MessageBox.Show("employe premiere fois connecter : " + intNoEmploye.ToString());
+
+
                 // MessageBox.Show("type employe :"+noTypeEmploye.ToString());
                 // MessageBox.Show("Employe n'existe pas!");
 
                 // MessageBox.Show(noTypeEmploye.ToString());
                 //ajout des services a lemploye qui sest connecte
-               
+
 
                 //servicePourEmployeConnecter.Employes.
 
                 //servicePourEmployeConnecter.No = 1;
 
-                 if (noTypeEmploye == 5)
+                if (noTypeEmploye == 5)
                 {
                     servicePourEmployeConnecter.TypesService = "Magasin Pro-Shop";
 
                     //il faut generer le numero a laide dune requete
 
-                    if (nombreService==0)
+                    if (nombreService == 0)
                         servicePourEmployeConnecter.No = 1;
                     else
                     {
                         var max = dataContext.Services.Max(em => em.No) + 1;
 
-                     
+
 
                         servicePourEmployeConnecter.No = max;
-                        
+
                     }
 
-                       
-                   // servicePourEmployeConnecter.No = 1;
+
+                    // servicePourEmployeConnecter.No = 1;
                 }
-                
-                 else if (noTypeEmploye == 6)
+
+                else if (noTypeEmploye == 6)
                 {
                     servicePourEmployeConnecter.TypesService = "Restaurant";
                     // servicePourEmployeConnecter.No = 2;
@@ -182,14 +208,14 @@ namespace projet2BaseDeDonnees3
                     {
                         var max = dataContext.Services.Max(em => em.No) + 1;
 
-                      
+
 
                         servicePourEmployeConnecter.No = max;
-                        
+
                     }
                 }
-                     
-                 else if (noTypeEmploye == 7)
+
+                else if (noTypeEmploye == 7)
                 {
                     servicePourEmployeConnecter.TypesService = "Leçon de golf";
                     // servicePourEmployeConnecter.No = 3;
@@ -200,13 +226,13 @@ namespace projet2BaseDeDonnees3
                     {
                         var max = dataContext.Services.Max(em => em.No) + 1;
 
-                      //  MessageBox.Show("Maximum :"+max.ToString());
+                        //  MessageBox.Show("Maximum :"+max.ToString());
 
                         servicePourEmployeConnecter.No = max;
-                       
+
                     }
                 }
-                   
+
 
 
                 servicePourEmployeConnecter.NoEmploye = noTypeEmploye;
@@ -214,12 +240,12 @@ namespace projet2BaseDeDonnees3
 
                 try
                 {
-                    
+
                     dataContext.Services.InsertOnSubmit(servicePourEmployeConnecter);
 
                     dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
-                     //MessageBox.Show("Service ajoute a lemploye ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+                    //MessageBox.Show("Service ajoute a lemploye ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     //affichage du service de lemploye connecte
                     this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                              where service.NoEmploye == noTypeEmploye
@@ -236,9 +262,9 @@ namespace projet2BaseDeDonnees3
                     MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
                 }
 
-              
+
             }
-            else 
+            else
             {
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          where service.NoEmploye == noTypeEmploye
@@ -249,11 +275,24 @@ namespace projet2BaseDeDonnees3
 
 
 
-        }
 
-        private void btnInscriptionDepense_Click(object sender, EventArgs e)
-        {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /**************************************AJOUT DE LA DEPENSE****************************************/
             using (var porteeTransaction = new TransactionScope())
             {
 
