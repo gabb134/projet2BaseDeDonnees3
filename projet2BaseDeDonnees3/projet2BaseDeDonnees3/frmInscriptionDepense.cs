@@ -406,11 +406,11 @@ namespace projet2BaseDeDonnees3
                     dataContext.Depenses.InsertOnSubmit(nouvelleDepense);
                     dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
 
-                   
 
-                    if ((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)){
+
+                    MessageBox.Show("La dépense à été ajouté! Voici les informations sur la dépense.", "Ajout",
+              MessageBoxButtons.OK, MessageBoxIcon.Information,
+              MessageBoxDefaultButton.Button1);
                         //  informationDepense.ShowDialog();
                         //chercher labonne qui a ete enregistrer
                         //chercher ses depenses(en decimal)
@@ -482,7 +482,7 @@ namespace projet2BaseDeDonnees3
                         tbRestantAtteindre.Text = montantQuiLuiManque.ToString();
 
                         groupBox2.Enabled = true;
-                    }
+                    
                   
                     porteeTransaction.Complete();
                    // this.Hide();
