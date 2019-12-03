@@ -71,7 +71,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnInscriptionDepense);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(77, 12);
+            this.groupBox1.Location = new System.Drawing.Point(116, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 250);
             this.groupBox1.TabIndex = 12;
@@ -183,7 +183,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 281);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 322);
+            this.groupBox2.Size = new System.Drawing.Size(578, 322);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Information sur la dépense";
@@ -192,49 +192,49 @@
             // 
             this.tbRestantAtteindre.Location = new System.Drawing.Point(333, 253);
             this.tbRestantAtteindre.Name = "tbRestantAtteindre";
-            this.tbRestantAtteindre.Size = new System.Drawing.Size(154, 26);
+            this.tbRestantAtteindre.Size = new System.Drawing.Size(201, 26);
             this.tbRestantAtteindre.TabIndex = 69;
             // 
             // tbMontanDejaEffectue
             // 
             this.tbMontanDejaEffectue.Location = new System.Drawing.Point(333, 216);
             this.tbMontanDejaEffectue.Name = "tbMontanDejaEffectue";
-            this.tbMontanDejaEffectue.Size = new System.Drawing.Size(154, 26);
+            this.tbMontanDejaEffectue.Size = new System.Drawing.Size(201, 26);
             this.tbMontanDejaEffectue.TabIndex = 68;
             // 
             // tbEmployeOffreService
             // 
             this.tbEmployeOffreService.Location = new System.Drawing.Point(333, 182);
             this.tbEmployeOffreService.Name = "tbEmployeOffreService";
-            this.tbEmployeOffreService.Size = new System.Drawing.Size(154, 26);
+            this.tbEmployeOffreService.Size = new System.Drawing.Size(201, 26);
             this.tbEmployeOffreService.TabIndex = 67;
             // 
             // tbMontantdepensee
             // 
             this.tbMontantdepensee.Location = new System.Drawing.Point(333, 145);
             this.tbMontantdepensee.Name = "tbMontantdepensee";
-            this.tbMontantdepensee.Size = new System.Drawing.Size(154, 26);
+            this.tbMontantdepensee.Size = new System.Drawing.Size(201, 26);
             this.tbMontantdepensee.TabIndex = 66;
             // 
             // tbTypeServicee
             // 
             this.tbTypeServicee.Location = new System.Drawing.Point(333, 109);
             this.tbTypeServicee.Name = "tbTypeServicee";
-            this.tbTypeServicee.Size = new System.Drawing.Size(154, 26);
+            this.tbTypeServicee.Size = new System.Drawing.Size(201, 26);
             this.tbTypeServicee.TabIndex = 65;
             // 
             // tbDateDepense
             // 
             this.tbDateDepense.Location = new System.Drawing.Point(333, 75);
             this.tbDateDepense.Name = "tbDateDepense";
-            this.tbDateDepense.Size = new System.Drawing.Size(154, 26);
+            this.tbDateDepense.Size = new System.Drawing.Size(201, 26);
             this.tbDateDepense.TabIndex = 64;
             // 
             // tbNomComplet
             // 
             this.tbNomComplet.Location = new System.Drawing.Point(333, 38);
             this.tbNomComplet.Name = "tbNomComplet";
-            this.tbNomComplet.Size = new System.Drawing.Size(154, 26);
+            this.tbNomComplet.Size = new System.Drawing.Size(201, 26);
             this.tbNomComplet.TabIndex = 63;
             // 
             // label10
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 615);
+            this.ClientSize = new System.Drawing.Size(694, 616);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmInscriptionDepense";

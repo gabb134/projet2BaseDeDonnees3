@@ -239,7 +239,7 @@ namespace projet2BaseDeDonnees3
 
                 servicePourEmployeConnecter.NoEmploye = intNoEmploye; // voir avec la prof si cest lemploye qui sest connecter ou cest le type demploye
 
-                MessageBox.Show("no de service de la table service premiere fois:" + servicePourEmployeConnecter.No);
+               // MessageBox.Show("no de service de la table service premiere fois:" + servicePourEmployeConnecter.No);
                 try
                 {
 
@@ -268,7 +268,7 @@ namespace projet2BaseDeDonnees3
 
 
             }
-            else
+            else //si il exxiste deja
             {
                 this.servicesBindingSource.DataSource = (from service in dataContext.Services
                                                          where service.NoEmploye == noTypeEmploye
@@ -278,19 +278,88 @@ namespace projet2BaseDeDonnees3
 
 
 
-                if (nombreService == 0)
-                    servicePourEmployeConnecter.No = 1;
-                else
+                if (noTypeEmploye == 5)
                 {
-                    var max = dataContext.Services.Max(em => em.No) + 1;
+                    servicePourEmployeConnecter.TypesService = "Magasin Pro-Shop";
+
+                    //il faut generer le numero a laide dune requete
+
+                    if (nombreService == 0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
 
 
 
-                    servicePourEmployeConnecter.No = max;
+                        servicePourEmployeConnecter.No = max;
 
+                    }
+
+
+                    // servicePourEmployeConnecter.No = 1;
+                }
+
+                else if (noTypeEmploye == 6)
+                {
+                    servicePourEmployeConnecter.TypesService = "Restaurant";
+                    // servicePourEmployeConnecter.No = 2;
+
+                    if (nombreService == 0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
+
+
+
+                        servicePourEmployeConnecter.No = max;
+
+                    }
+                }
+
+                else if (noTypeEmploye == 7)
+                {
+                    servicePourEmployeConnecter.TypesService = "Leçon de golf";
+                    // servicePourEmployeConnecter.No = 3;
+
+                    if (nombreService == 0)
+                        servicePourEmployeConnecter.No = 1;
+                    else
+                    {
+                        var max = dataContext.Services.Max(em => em.No) + 1;
+
+                        //  MessageBox.Show("Maximum :"+max.ToString());
+
+                        servicePourEmployeConnecter.No = max;
+
+                    }
                 }
                 intnoService = servicePourEmployeConnecter.No;
-                MessageBox.Show("no de service de la table service quand il exixte deja :" + servicePourEmployeConnecter.No);
+                servicePourEmployeConnecter.NoEmploye = intNoEmploye;
+
+                //   MessageBox.Show("no de service de la table service quand il exixte deja :" + servicePourEmployeConnecter.No);
+                try
+                {
+
+                    dataContext.Services.InsertOnSubmit(servicePourEmployeConnecter);
+
+                    dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
+                    //MessageBox.Show("Service ajoute a lemploye ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                   
+
+
+                }
+                catch (ChangeConflictException)
+                {
+                    dataContext.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
+                }
+
             }
 
 
@@ -328,7 +397,7 @@ namespace projet2BaseDeDonnees3
                 nouvelleDepense.Montant = Convert.ToInt32(ndMontant.Value);
 
                 nouvelleDepense.NoService =intnoService;
-                //  MessageBox.Show("Numero de service : " + intnoService.ToString());
+                  MessageBox.Show("Numero de service dans la table service: " + intnoService.ToString());
                 MessageBox.Show("noservice de la table depense :" + nouvelleDepense.NoService);
                 MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
                 try
@@ -404,7 +473,7 @@ namespace projet2BaseDeDonnees3
                         // MessageBox.Show(idAbonnement.ToString());
                         // MessageBox.Show(montantObligatoire.ToString());
 
-                        tbNomComplet.Text = prenomAbonneeDepenses.ToString();
+                        tbNomComplet.Text = cbClient.Text.ToString();
                         tbDateDepense.Text = dateDepense;
                         tbTypeServicee.Text = typeServiceDepense;
                         tbMontantdepensee.Text = montantDepense.ToString();
