@@ -13,15 +13,17 @@ namespace projet2BaseDeDonnees3
     public partial class frmInformationAjoutDepense : Form
     {
         DataClasses1DataContext dataContext = new DataClasses1DataContext();
-        public frmInformationAjoutDepense()
+        public frmInformationAjoutDepense(Abonnements abonnee,Services service,Depenses depense)
         {
             InitializeComponent();
+
+
+
         }
 
         private void frmInformationAjoutDepense_Load(object sender, EventArgs e)
         {
-            depensesBindingSource.DataSource = from depense in dataContext.Depenses
-                                               select depense;
+           
         }
     }
 }

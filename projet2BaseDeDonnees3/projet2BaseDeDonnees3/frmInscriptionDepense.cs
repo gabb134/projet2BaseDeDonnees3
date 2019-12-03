@@ -18,7 +18,7 @@ namespace projet2BaseDeDonnees3
         public int intNoEmployeDejaConnecte;
 
         public int intnoService;
-        frmInformationAjoutDepense informationDepense = new frmInformationAjoutDepense();
+        frmInformationAjoutDepense informationDepense;
 
         int noTypeEmploye ; // celui qui defini son service
 
@@ -161,7 +161,7 @@ namespace projet2BaseDeDonnees3
             }
             else if (intNoEmploye != intNoEmployebaseDeDonnes) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
             {
-                MessageBox.Show("employe qui sest deja connecter : " + intNoEmployeDejaConnecte.ToString());
+              //  MessageBox.Show("employe qui sest deja connecter : " + intNoEmployeDejaConnecte.ToString());
                 intNoEmployeDejaConnecte = intNoEmploye;
                 //  MessageBox.Show("employe premiere fois connecter : " + intNoEmploye.ToString());
 
@@ -272,7 +272,7 @@ namespace projet2BaseDeDonnees3
                                                          where service.NoEmploye == noTypeEmploye
                                                          select service.TypesService);
                 cbtypeService.Enabled = false;
-                MessageBox.Show("le else, quand le service existe deja");
+               // MessageBox.Show("le else, quand le service existe deja");
             }
 
 
@@ -300,7 +300,7 @@ namespace projet2BaseDeDonnees3
 
                     nouvelleDepense.No = max;
                 }
-                 MessageBox.Show("nb depenses :"+ nombreDepenses.ToString());
+               //  MessageBox.Show("nb depenses :"+ nombreDepenses.ToString());
 
                 nouvelleDepense.IdAbonnement = cbClient.SelectedValue.ToString();
 
@@ -318,14 +318,37 @@ namespace projet2BaseDeDonnees3
                     dataContext.Depenses.InsertOnSubmit(nouvelleDepense);
                     dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
 
-                  if((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
+                  
+
+                    if ((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
             MessageBoxButtons.YesNo, MessageBoxIcon.Information,
             MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)){
-                      //  informationDepense.ShowDialog();
-                       //chercher labonne qui a ete enregistrer
-                       //chercher ses depenses
-                       //chercher ses depeneses maximal
-                       //affficher toutes les informations dans des labels sur le meme formulaire
+                        //  informationDepense.ShowDialog();
+                        //chercher labonne qui a ete enregistrer
+                        //chercher ses depenses(en decimal)
+                        //chercher ses depeneses maximal
+                        //affficher toutes les informations dans des labels sur le meme formulaire
+
+                        // le nom de l’abonné principal
+                        string prenomAbonneeDepenses = (from abonneeDepense in dataContext.Abonnements
+                                             
+                                               select abonneeDepense.Prenom).FirstOrDefault();
+                        //la date de la dépense
+                        string dateDepense = (from date in dataContext.Depenses
+                                                select date.DateDepense).FirstOrDefault().ToString();
+
+                        // le montant de la dépense
+                        decimal montantDepense = (from montant in dataContext.Depenses
+                                              select montant.Montant).FirstOrDefault();
+
+
+                        //le type de service 
+
+
+
+                        // informationDepense = new frmInformationAjoutDepense();
+                        MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString());
+
 
                     }
                   
