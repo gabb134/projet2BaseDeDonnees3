@@ -311,7 +311,7 @@ namespace projet2BaseDeDonnees3
                 nouvelleDepense.NoService = intnoService;
                 //  MessageBox.Show("Numero de service : " + intnoService.ToString());
 
-                MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
+                //MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
                 try
                 {
 
@@ -339,17 +339,57 @@ namespace projet2BaseDeDonnees3
 
                         // le montant de la dépense
                         decimal montantDepense = (from montant in dataContext.Depenses
+                                                  where montant.Montant == ndMontant.Value
                                               select montant.Montant).FirstOrDefault();
 
 
                         //le type de service 
+                        string typeServiceDepense = cbtypeService.Text;
+
+                        // le nom complet de l’employé ayant offert le service
+                        string nomCompletEmployeOffertService = (from employe in dataContext.Employes
+                                                                 where employe.No == intNoEmploye
+                                                                 select new {nomComplt = employe.Nom + ", " + employe.Prenom }).FirstOrDefault().ToString();
+
+                        //le montant des dépenses déjà effectuées **pour lannee courante
+                        var montantDepenseDejaEffectue = (from abonneeMontantDepense in dataContext.Depenses
+                                                          where abonneeMontantDepense.IdAbonnement == cbClient.SelectedValue.ToString()
+                                                          where abonneeMontantDepense.DateDepense == DateTime.Now
+                                                          select abonneeMontantDepense.Montant);
+                        
+                        decimal montantDejaEffectue = Convert.ToDecimal(montantDepenseDejaEffectue.Sum());
+
+                        //pour atteindre la somme exigée par l’abonnement
+
+                        string idAbonnement = (from abonnement in dataContext.Abonnements
+                                            where abonnement.Id == cbClient.SelectedValue.ToString()
+                                            select abonnement.NoTypeAbonnement).FirstOrDefault().ToString();
 
 
 
-                        // informationDepense = new frmInformationAjoutDepense();
-                        MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString());
+                        //  string typeSommeExigeeAbonnement = (from montant in dataContext.PrixDepensesAbonnements
+                        //                                     where montant.NoTypeAbonnement == Convert.ToInt32(idAbonnement)
+                        //                                   select montant.Prix).FirstOrDefault().ToString();
 
+                        decimal montantObligatoire = (from montant in dataContext.PrixDepensesAbonnements
+                                                      where montant.NoTypeAbonnement == Convert.ToInt32(idAbonnement)
+                                                      select montant.Prix).FirstOrDefault();
 
+                        decimal montantQuiLuiManque = montantObligatoire - montantDejaEffectue;
+
+                        //MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString()+"\nType de service :"+typeServiceDepense+"\nNom complet offre service :"+nomCompletEmployeOffertService+"\nMontant depenses deja effectue :"+montantDejaEffectue.ToString());
+                        // MessageBox.Show(idAbonnement.ToString());
+                        // MessageBox.Show(montantObligatoire.ToString());
+
+                        tbNomComplet.Text = prenomAbonneeDepenses.ToString();
+                        tbDateDepense.Text = dateDepense;
+                        tbTypeServicee.Text = typeServiceDepense;
+                        tbMontantdepensee.Text = montantDepense.ToString();
+                        tbEmployeOffreService.Text = nomCompletEmployeOffertService;
+                        tbMontanDejaEffectue.Text = montantDejaEffectue.ToString();
+                        tbRestantAtteindre.Text = montantQuiLuiManque.ToString();
+
+                        groupBox2.Enabled = true;
                     }
                   
                     porteeTransaction.Complete();
@@ -370,14 +410,7 @@ namespace projet2BaseDeDonnees3
 
         }
 
-        private void cbtypeService_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        public void verificationUnDeuxTrois()
-        {
-
-        }
     }
 }
