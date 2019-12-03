@@ -93,6 +93,12 @@
     <Compile Include="frmGestionDesEmployes.Designer.cs">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInformationAjoutDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformationAjoutDepense.Designer.cs">
+      <DependentUpon>frmInformationAjoutDepense.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInscriptionDepense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionDesEmployes.resx">
       <DependentUpon>frmGestionDesEmployes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformationAjoutDepense.resx">
+      <DependentUpon>frmInformationAjoutDepense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInscriptionDepense.resx">
       <DependentUpon>frmInscriptionDepense.cs</DependentUpon>

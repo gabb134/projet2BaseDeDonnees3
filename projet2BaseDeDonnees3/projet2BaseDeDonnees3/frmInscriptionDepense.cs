@@ -18,6 +18,7 @@ namespace projet2BaseDeDonnees3
         public int intNoEmployeDejaConnecte;
 
         public int intnoService;
+        frmInformationAjoutDepense informationDepense = new frmInformationAjoutDepense();
 
         int noTypeEmploye ; // celui qui defini son service
 
@@ -80,7 +81,8 @@ namespace projet2BaseDeDonnees3
 
 
 
-
+            int intNoEmployebaseDeDonnes = (from employeService in dataContext.Services
+                                            select employeService.NoEmploye).FirstOrDefault();
 
 
             //voir le nombre de services 
@@ -157,7 +159,7 @@ namespace projet2BaseDeDonnees3
 
 
             }
-            else if (intNoEmploye != intNoEmployeDejaConnecte) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
+            else if (intNoEmploye != intNoEmployebaseDeDonnes) //il faut faire la verification pour que quand le meme no employe rentre il le sache pour qul ne passe pas par la
             {
                 MessageBox.Show("employe qui sest deja connecter : " + intNoEmployeDejaConnecte.ToString());
                 intNoEmployeDejaConnecte = intNoEmploye;
@@ -235,7 +237,7 @@ namespace projet2BaseDeDonnees3
 
 
 
-                servicePourEmployeConnecter.NoEmploye = noTypeEmploye;
+                servicePourEmployeConnecter.NoEmploye = intNoEmploye; // voir avec la prof si cest lemploye qui sest connecter ou cest le type demploye
 
 
                 try
@@ -272,20 +274,6 @@ namespace projet2BaseDeDonnees3
                 cbtypeService.Enabled = false;
                 MessageBox.Show("le else, quand le service existe deja");
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -329,8 +317,16 @@ namespace projet2BaseDeDonnees3
 
                     dataContext.Depenses.InsertOnSubmit(nouvelleDepense);
                     dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
-                    MessageBox.Show("La dépense à été ajouté!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                  if((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)){
+                        informationDepense.ShowDialog();
+                    }
+                  
                     porteeTransaction.Complete();
+                   // this.Hide();
+                 
                 }
                 catch (ChangeConflictException)
                 {
