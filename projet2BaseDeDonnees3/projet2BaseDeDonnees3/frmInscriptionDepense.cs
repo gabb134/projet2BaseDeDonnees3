@@ -328,10 +328,10 @@ namespace projet2BaseDeDonnees3
                         //chercher ses depenses(en decimal)
                         //chercher ses depeneses maximal
                         //affficher toutes les informations dans des labels sur le meme formulaire
-
+                        //MessageBox.Show(cbClient.SelectedItem.ToString());
                         // le nom de l’abonné principal
                         string prenomAbonneeDepenses = (from abonneeDepense in dataContext.Abonnements
-                                             
+                                                        //where abonneeDepense.Prenom
                                                select abonneeDepense.Prenom).FirstOrDefault();
                         //la date de la dépense
                         string dateDepense = (from date in dataContext.Depenses
@@ -347,9 +347,13 @@ namespace projet2BaseDeDonnees3
                         string typeServiceDepense = cbtypeService.Text;
 
                         // le nom complet de l’employé ayant offert le service
+                        string prenomCompletEmployeOffertService = (from employe in dataContext.Employes
+                                                                 where employe.No == intNoEmploye
+                                                                 select employe.Prenom).FirstOrDefault().ToString();
+
                         string nomCompletEmployeOffertService = (from employe in dataContext.Employes
                                                                  where employe.No == intNoEmploye
-                                                                 select new {nomComplt = employe.Nom + ", " + employe.Prenom }).FirstOrDefault().ToString();
+                                                                 select employe.Nom).FirstOrDefault().ToString();
 
                         //le montant des dépenses déjà effectuées **pour lannee courante
                         var montantDepenseDejaEffectue = (from abonneeMontantDepense in dataContext.Depenses
@@ -385,7 +389,7 @@ namespace projet2BaseDeDonnees3
                         tbDateDepense.Text = dateDepense;
                         tbTypeServicee.Text = typeServiceDepense;
                         tbMontantdepensee.Text = montantDepense.ToString();
-                        tbEmployeOffreService.Text = nomCompletEmployeOffertService;
+                        tbEmployeOffreService.Text =prenomAbonneeDepenses+", "+ nomCompletEmployeOffertService;
                         tbMontanDejaEffectue.Text = montantDejaEffectue.ToString();
                         tbRestantAtteindre.Text = montantQuiLuiManque.ToString();
 
