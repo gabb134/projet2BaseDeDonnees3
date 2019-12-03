@@ -256,17 +256,21 @@ delete from Depenses where NoService = 7
 delete from Depenses where NoService = 2
 delete from Depenses where NoService = 3
 delete from Depenses where NoService = 4
-delete from Depenses where NoService = 5
+delete from Depenses where NoService = 1
 delete from Depenses where IdAbonnement = 'de1P'
 delete from Depenses where IdAbonnement = 'hassan4P'
-
+delete from Depenses where IdAbonnement = 'Kouma2P'
+delete from Depenses where IdAbonnement = 'Kouma3P'
+delete from Depenses where IdAbonnement = 'guelleh5P'
 delete from Services where NoEmploye = 5
 delete from Services where NoEmploye = 6
-delete from Services where NoEmploye = 7
+delete from Services where NoEmploye = 1
 
 delete from Services where TypesService = 'Magasin Pro-Shop'
 delete from Services where TypesService = 'Restaurant'
-delete from Services where TypesService = 'Leçon de gol'
+delete from Services where TypesService = 'Leçon de golf'
+
+
 select * from Services
 
 select * from Depenses

@@ -239,7 +239,7 @@ namespace projet2BaseDeDonnees3
 
                 servicePourEmployeConnecter.NoEmploye = intNoEmploye; // voir avec la prof si cest lemploye qui sest connecter ou cest le type demploye
 
-
+                MessageBox.Show("no de service de la table service premiere fois:" + servicePourEmployeConnecter.No);
                 try
                 {
 
@@ -254,6 +254,8 @@ namespace projet2BaseDeDonnees3
                                                              select service.TypesService);
                     cbtypeService.Enabled = false;
                     intnoService = servicePourEmployeConnecter.No;
+                    
+
                 }
                 catch (ChangeConflictException)
                 {
@@ -272,7 +274,23 @@ namespace projet2BaseDeDonnees3
                                                          where service.NoEmploye == noTypeEmploye
                                                          select service.TypesService);
                 cbtypeService.Enabled = false;
-               // MessageBox.Show("le else, quand le service existe deja");
+                 MessageBox.Show("le else, quand le service existe deja");
+
+
+
+                if (nombreService == 0)
+                    servicePourEmployeConnecter.No = 1;
+                else
+                {
+                    var max = dataContext.Services.Max(em => em.No) + 1;
+
+
+
+                    servicePourEmployeConnecter.No = max;
+
+                }
+                intnoService = servicePourEmployeConnecter.No;
+                MessageBox.Show("no de service de la table service quand il exixte deja :" + servicePourEmployeConnecter.No);
             }
 
 
@@ -290,6 +308,7 @@ namespace projet2BaseDeDonnees3
                 int nombreDepenses = (from depense in dataContext.Depenses
                                       select depense).Count();
 
+                MessageBox.Show("nb depenses :" + nombreDepenses.ToString());
                 if (nombreDepenses == 0)
                     nouvelleDepense.No = 1;
                 else
@@ -300,7 +319,7 @@ namespace projet2BaseDeDonnees3
 
                     nouvelleDepense.No = max;
                 }
-               //  MessageBox.Show("nb depenses :"+ nombreDepenses.ToString());
+              
 
                 nouvelleDepense.IdAbonnement = cbClient.SelectedValue.ToString();
 
@@ -308,17 +327,17 @@ namespace projet2BaseDeDonnees3
 
                 nouvelleDepense.Montant = Convert.ToInt32(ndMontant.Value);
 
-                nouvelleDepense.NoService = intnoService;
+                nouvelleDepense.NoService =intnoService;
                 //  MessageBox.Show("Numero de service : " + intnoService.ToString());
-
-                //MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
+                MessageBox.Show("noservice de la table depense :" + nouvelleDepense.NoService);
+                MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
                 try
                 {
 
                     dataContext.Depenses.InsertOnSubmit(nouvelleDepense);
                     dataContext.SubmitChanges(ConflictMode.ContinueOnConflict);
 
-                  
+                   
 
                     if ((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
             MessageBoxButtons.YesNo, MessageBoxIcon.Information,
@@ -381,7 +400,7 @@ namespace projet2BaseDeDonnees3
 
                         decimal montantQuiLuiManque = montantObligatoire - montantDejaEffectue;
 
-                        //MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString()+"\nType de service :"+typeServiceDepense+"\nNom complet offre service :"+nomCompletEmployeOffertService+"\nMontant depenses deja effectue :"+montantDejaEffectue.ToString());
+                        MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString()+"\nType de service :"+typeServiceDepense+"\nNom complet offre service :"+nomCompletEmployeOffertService+"\nMontant depenses deja effectue :"+montantDejaEffectue.ToString());
                         // MessageBox.Show(idAbonnement.ToString());
                         // MessageBox.Show(montantObligatoire.ToString());
 
