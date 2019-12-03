@@ -321,7 +321,12 @@ namespace projet2BaseDeDonnees3
                   if((  MessageBox.Show("La dépense à été ajouté! Voulez-vous voir les dépenses efectués?", "Ajout",
             MessageBoxButtons.YesNo, MessageBoxIcon.Information,
             MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)){
-                        informationDepense.ShowDialog();
+                      //  informationDepense.ShowDialog();
+                       //chercher labonne qui a ete enregistrer
+                       //chercher ses depenses
+                       //chercher ses depeneses maximal
+                       //affficher toutes les informations dans des labels sur le meme formulaire
+
                     }
                   
                     porteeTransaction.Complete();

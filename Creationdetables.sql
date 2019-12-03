@@ -253,6 +253,10 @@ select * from PartiesJouees
 
 delete from Depenses where NoService = 6
 delete from Depenses where NoService = 7
+delete from Depenses where NoService = 2
+delete from Depenses where NoService = 3
+delete from Depenses where NoService = 4
+delete from Depenses where NoService = 5
 delete from Depenses where NoService = 1
 
 delete from Services where NoEmploye = 5
