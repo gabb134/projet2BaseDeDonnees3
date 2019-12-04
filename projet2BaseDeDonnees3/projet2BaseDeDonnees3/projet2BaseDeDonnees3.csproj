@@ -175,6 +175,9 @@
     <EmbeddedResource Include="frmRenouvellerAbonnement.resx">
       <DependentUpon>frmRenouvellerAbonnement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistique.resx">
+      <DependentUpon>frmStatistique.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>

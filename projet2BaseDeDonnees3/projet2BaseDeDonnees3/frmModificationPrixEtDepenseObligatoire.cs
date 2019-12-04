@@ -25,14 +25,14 @@ namespace projet2BaseDeDonnees3
 
             typesAbonnementBindingSource.DataSource = dataContext.TypesAbonnement;
 
+
             prixDepensesAbonnementsBindingSource.DataSource = from typeAbonnement in dataContext.TypesAbonnement.AsEnumerable()
                                                               let derniereAnneePrixDepensesAbonnements = typeAbonnement.PrixDepensesAbonnements.Max(prixDepensesAbonnement => prixDepensesAbonnement.Annee)
-                                                              let prixDepensesAbonnement = typeAbonnement.PrixDepensesAbonnements.
-                                                                      Where(prixDepensesAbonnement => prixDepensesAbonnement.Annee == derniereAnneePrixDepensesAbonnements).Single()
+                                                              let prixDepensesAbonnement = typeAbonnement.PrixDepensesAbonnements.Where(prixDepensesAbonnement => prixDepensesAbonnement.Annee == derniereAnneePrixDepensesAbonnements).FirstOrDefault()
                                                               select new PrixDepensesAbonnements
                                                               {
                                                                   NoTypeAbonnement = prixDepensesAbonnement.NoTypeAbonnement,
-                                                                  Annee = DateTime.Today.Year,
+                                                                  Annee = prixDepensesAbonnement.Annee,
                                                                   Prix = prixDepensesAbonnement.Prix,
                                                                   DepensesObligatoires = prixDepensesAbonnement.DepensesObligatoires,
                                                                   TypesAbonnement = typeAbonnement
@@ -92,28 +92,66 @@ namespace projet2BaseDeDonnees3
 
         private void btnEnregistrerModification_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Etes vous sur de vouloir enregistrer ces modifications ?\nCette opération sera irréversible", "Confirmation", MessageBoxButtons.YesNo);
-            switch (dr)
+            string strAnnee = prixDepensesAbonnementsDataGridView.Rows[0].Cells["tbAnnee"].Value.ToString();
+            MessageBox.Show(prixDepensesAbonnementsDataGridView.Rows[0].Cells["tbAnnee"].Value.ToString() + "     " + DateTime.Now.Year);
+
+
+            /*var toutesLesAnnees = from typeAbonnement in dataContext.TypesAbonnement.AsEnumerable()
+                                  let derniereAnneePrixDepensesAbonnements = typeAbonnement.PrixDepensesAbonnements.Max(prixDepensesAbonnement => prixDepensesAbonnement.Annee)
+                                  let prixDepensesAbonnement = typeAbonnement.PrixDepensesAbonnements.Where(prixDepensesAbonnement => prixDepensesAbonnement.Annee == derniereAnneePrixDepensesAbonnements).Single()
+                                  select new PrixDepensesAbonnements
+                                  {
+                                      NoTypeAbonnement = prixDepensesAbonnement.NoTypeAbonnement,
+                                      Annee = prixDepensesAbonnement.Annee,
+                                      Prix = prixDepensesAbonnement.Prix,
+                                      DepensesObligatoires = prixDepensesAbonnement.DepensesObligatoires,
+                                      TypesAbonnement = typeAbonnement
+                                  };
+
+            foreach(var ok in toutesLesAnnees)
             {
-                case DialogResult.Yes:
-                    using (TransactionScope transaction = new TransactionScope())
-                    {
-                        try
-                        {
-                            dataContext.SubmitChanges();
-                            transaction.Complete();
-                            MessageBox.Show("Les modifications ont été enregistrés dans la base de données", "Enregistrement des données");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Erreur lors de l'enregistrement des données");
-                        }
-                    }
-                    break;
-                case DialogResult.No:
-                    break;
+                MessageBox.Show("OKK : " + ok.Annee);
+                break;
             }
 
+    */
+
+            if (int.Parse(strAnnee) < DateTime.Now.Year)
+            {
+
+                foreach (DataGridViewRow dataGridViewRow in prixDepensesAbonnementsDataGridView.Rows)
+                {
+                    dataGridViewRow.Cells["tbAnnee"].Value = DateTime.Now.Year.ToString();
+                }
+
+                
+                DialogResult dr = MessageBox.Show("Etes vous sur de vouloir enregistrer ces modifications ?\nCette opération sera irréversible", "Confirmation", MessageBoxButtons.YesNo);
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        using (TransactionScope transaction = new TransactionScope())
+                        {
+                            try
+                            {
+                                dataContext.SubmitChanges();
+                                transaction.Complete();
+                                MessageBox.Show("Les modifications ont été enregistrés dans la base de données", "Enregistrement des données");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "Erreur lors de l'enregistrement des données");
+                            }
+                        }
+                        break;
+                    case DialogResult.No:
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("On ne peut pas modifier le prix ou la dépense plus d'une fois dans la meme année", "Erreur lors de l'enregistrement");
+
+            }
 
             this.Close();
         }

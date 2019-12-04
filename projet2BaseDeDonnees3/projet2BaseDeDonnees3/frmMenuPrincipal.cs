@@ -14,7 +14,7 @@ namespace projet2BaseDeDonnees3
 
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
-        frmNouvelAbonnement fNouvelAbonnement = new frmNouvelAbonnement();
+       
         frmMAJAbonnes fMAJAbonnes = new frmMAJAbonnes();
         frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
         frmModificationPrixEtDepenseObligatoire fModificationPrixEtDepenseObligatoire = new frmModificationPrixEtDepenseObligatoire();
@@ -117,9 +117,11 @@ namespace projet2BaseDeDonnees3
 
         private void btnAbonnement_Click(object sender, EventArgs e)
         {
+            frmNouvelAbonnement fNouvelAbonnement = new frmNouvelAbonnement();
             this.Hide();
             fNouvelAbonnement.ShowDialog();
             this.Show();
+            //fNouvelAbonnement.Close();
         }
 
         private void btnReabonnement_Click(object sender, EventArgs e)
@@ -155,6 +157,7 @@ namespace projet2BaseDeDonnees3
             this.Hide();
             fStatistique.ShowDialog();
             this.Show();
+            fStatistique.Close();
         }
     }
 }

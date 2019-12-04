@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.prixDepensesAbonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prixDepensesAbonnementsDataGridView = new System.Windows.Forms.DataGridView();
-            this.cbTypeAbonnement = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnEnregistrerModification = new System.Windows.Forms.Button();
+            this.cbTypeAbonnement = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tbPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbDepenseObligatoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEnregistrerModification = new System.Windows.Forms.Button();
+            this.tbAnnee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.prixDepensesAbonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prixDepensesAbonnementsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementBindingSource)).BeginInit();
@@ -54,7 +55,8 @@
             this.prixDepensesAbonnementsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cbTypeAbonnement,
             this.tbPrix,
-            this.tbDepenseObligatoire});
+            this.tbDepenseObligatoire,
+            this.tbAnnee});
             this.prixDepensesAbonnementsDataGridView.DataSource = this.prixDepensesAbonnementsBindingSource;
             this.prixDepensesAbonnementsDataGridView.Location = new System.Drawing.Point(12, 28);
             this.prixDepensesAbonnementsDataGridView.Name = "prixDepensesAbonnementsDataGridView";
@@ -65,6 +67,20 @@
             this.prixDepensesAbonnementsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.prixDepensesAbonnementsDataGridView_CellEndEdit);
             this.prixDepensesAbonnementsDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.prixDepensesAbonnementsDataGridView_CellValidating);
             // 
+            // typesAbonnementBindingSource
+            // 
+            this.typesAbonnementBindingSource.DataSource = typeof(projet2BaseDeDonnees3.TypesAbonnement);
+            // 
+            // btnEnregistrerModification
+            // 
+            this.btnEnregistrerModification.Location = new System.Drawing.Point(204, 254);
+            this.btnEnregistrerModification.Name = "btnEnregistrerModification";
+            this.btnEnregistrerModification.Size = new System.Drawing.Size(256, 78);
+            this.btnEnregistrerModification.TabIndex = 2;
+            this.btnEnregistrerModification.Text = "Enregistrer les modifications";
+            this.btnEnregistrerModification.UseVisualStyleBackColor = true;
+            this.btnEnregistrerModification.Click += new System.EventHandler(this.btnEnregistrerModification_Click);
+            // 
             // cbTypeAbonnement
             // 
             this.cbTypeAbonnement.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -74,14 +90,11 @@
             this.cbTypeAbonnement.HeaderText = "Type d\'abonnement";
             this.cbTypeAbonnement.MinimumWidth = 8;
             this.cbTypeAbonnement.Name = "cbTypeAbonnement";
+            this.cbTypeAbonnement.ReadOnly = true;
             this.cbTypeAbonnement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cbTypeAbonnement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cbTypeAbonnement.ValueMember = "No";
             this.cbTypeAbonnement.Width = 218;
-            // 
-            // typesAbonnementBindingSource
-            // 
-            this.typesAbonnementBindingSource.DataSource = typeof(projet2BaseDeDonnees3.TypesAbonnement);
             // 
             // tbPrix
             // 
@@ -101,15 +114,14 @@
             this.tbDepenseObligatoire.Name = "tbDepenseObligatoire";
             this.tbDepenseObligatoire.Width = 239;
             // 
-            // btnEnregistrerModification
+            // tbAnnee
             // 
-            this.btnEnregistrerModification.Location = new System.Drawing.Point(204, 254);
-            this.btnEnregistrerModification.Name = "btnEnregistrerModification";
-            this.btnEnregistrerModification.Size = new System.Drawing.Size(256, 78);
-            this.btnEnregistrerModification.TabIndex = 2;
-            this.btnEnregistrerModification.Text = "Enregistrer les modifications";
-            this.btnEnregistrerModification.UseVisualStyleBackColor = true;
-            this.btnEnregistrerModification.Click += new System.EventHandler(this.btnEnregistrerModification_Click);
+            this.tbAnnee.DataPropertyName = "Annee";
+            this.tbAnnee.HeaderText = "Annee";
+            this.tbAnnee.MinimumWidth = 8;
+            this.tbAnnee.Name = "tbAnnee";
+            this.tbAnnee.Visible = false;
+            this.tbAnnee.Width = 150;
             // 
             // frmModificationPrixEtDepenseObligatoire
             // 
@@ -139,5 +151,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn cbTypeAbonnement;
         private System.Windows.Forms.DataGridViewTextBoxColumn tbPrix;
         private System.Windows.Forms.DataGridViewTextBoxColumn tbDepenseObligatoire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tbAnnee;
     }
 }
