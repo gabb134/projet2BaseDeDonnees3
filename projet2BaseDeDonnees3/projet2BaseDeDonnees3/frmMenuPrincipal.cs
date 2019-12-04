@@ -15,11 +15,11 @@ namespace projet2BaseDeDonnees3
     {
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
        
-        frmMAJAbonnes fMAJAbonnes = new frmMAJAbonnes();
-        frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
-        frmModificationPrixEtDepenseObligatoire fModificationPrixEtDepenseObligatoire = new frmModificationPrixEtDepenseObligatoire();
-        frmRapports fRapports = new frmRapports();
-        frmStatistique fStatistique = new frmStatistique();
+       
+       
+        
+       
+        
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye;
         public frmMenuPrincipal()
@@ -126,6 +126,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnReabonnement_Click(object sender, EventArgs e)
         {
+            frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
             this.Hide();
             fRenouvellerAbonnement.ShowDialog();
             this.Show();
@@ -133,6 +134,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnMiseAJourAbonnes_Click(object sender, EventArgs e)
         {
+            frmMAJAbonnes fMAJAbonnes = new frmMAJAbonnes();
             this.Hide();
             fMAJAbonnes.ShowDialog();
             this.Show();
@@ -140,6 +142,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnModifPrix_Click(object sender, EventArgs e)
         {
+            frmModificationPrixEtDepenseObligatoire fModificationPrixEtDepenseObligatoire = new frmModificationPrixEtDepenseObligatoire();
             this.Hide();
             fModificationPrixEtDepenseObligatoire.ShowDialog();
             this.Show();
@@ -147,6 +150,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnVisualisationRpports_Click(object sender, EventArgs e)
         {
+            frmRapports fRapports = new frmRapports();
             this.Hide();
             fRapports.ShowDialog();
             this.Show();
@@ -154,10 +158,15 @@ namespace projet2BaseDeDonnees3
 
         private void btnVisualisationStats_Click(object sender, EventArgs e)
         {
+            frmStatistique fStatistique = new frmStatistique();
             this.Hide();
             fStatistique.ShowDialog();
             this.Show();
-            fStatistique.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
