@@ -16,6 +16,7 @@ namespace projet2BaseDeDonnees3
         frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
         frmInscriptionPartieGolf inscriptionPartieGolf = new frmInscriptionPartieGolf();
         frmInscriptionDepense inscriptionDepense = new frmInscriptionDepense();
+        
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye ;
         public frmMenuPrincipal()
@@ -146,6 +147,57 @@ namespace projet2BaseDeDonnees3
             this.Hide();
             inscriptionDepense.ShowDialog();
             this.Show();
+        }
+
+        private void btnAbonnement_Click(object sender, EventArgs e)
+        {
+            frmNouvelAbonnement fNouvelAbonnement = new frmNouvelAbonnement();
+            this.Hide();
+            fNouvelAbonnement.ShowDialog();
+            this.Show();
+        }
+
+        private void btnReabonnement_Click(object sender, EventArgs e)
+        {
+            frmRenouvellerAbonnement fRenouvellerAbonnement = new frmRenouvellerAbonnement();
+            this.Hide();
+            fRenouvellerAbonnement.ShowDialog();
+            this.Show();
+        }
+
+        private void btnMiseAJourAbonnes_Click(object sender, EventArgs e)
+        {
+            frmMAJAbonnes fMAJAbonnes = new frmMAJAbonnes();
+            this.Hide();
+            fMAJAbonnes.ShowDialog();
+            this.Show();
+        }
+
+        private void btnModifPrix_Click(object sender, EventArgs e)
+        {
+            frmModificationPrixEtDepenseObligatoire fModificationPrixEtDepenseObligatoire = new frmModificationPrixEtDepenseObligatoire();
+            this.Hide();
+            fModificationPrixEtDepenseObligatoire.ShowDialog();
+            this.Show();
+        }
+
+        private void btnVisualisationStats_Click(object sender, EventArgs e)
+        {
+            frmStatistique fStatistique = new frmStatistique();
+            this.Hide();
+            fStatistique.ShowDialog();
+            this.Show();
+          
+        }
+
+        private void btnVisualisationRpports_Click(object sender, EventArgs e)
+        {
+            frmRapports fRapports = new frmRapports();
+            this.Hide();
+            fRapports.ShowDialog();
+            this.Show();
+
+          
         }
     }
 }

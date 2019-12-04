@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DepenseParEmploye.cs" />
     <Compile Include="frmAjoutEmployes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,12 @@
     <Compile Include="frmInscriptionPartieGolf.Designer.cs">
       <DependentUpon>frmInscriptionPartieGolf.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMAJAbonnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMAJAbonnes.designer.cs">
+      <DependentUpon>frmMAJAbonnes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,16 +130,50 @@
     <Compile Include="frmModificationEmployes.Designer.cs">
       <DependentUpon>frmModificationEmployes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificationPrixEtDepenseObligatoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificationPrixEtDepenseObligatoire.designer.cs">
+      <DependentUpon>frmModificationPrixEtDepenseObligatoire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouvelAbonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouvelAbonnement.designer.cs">
+      <DependentUpon>frmNouvelAbonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRapports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRapports.designer.cs">
+      <DependentUpon>frmRapports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRenouvellerAbonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRenouvellerAbonnement.designer.cs">
+      <DependentUpon>frmRenouvellerAbonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatistique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistique.designer.cs">
+      <DependentUpon>frmStatistique.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTest.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTest.Designer.cs">
       <DependentUpon>frmTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="idNomPrenomAbonnePrincipal.cs" />
     <Compile Include="InformationDepenses.cs" />
+    <Compile Include="PartieJoueeParTerrain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sexe.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TypeAbonnementPrixEtDepenseObligatoire.cs" />
     <EmbeddedResource Include="frmAjoutEmployes.resx">
       <DependentUpon>frmAjoutEmployes.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,11 +192,29 @@
     <EmbeddedResource Include="frmInscriptionPartieGolf.resx">
       <DependentUpon>frmInscriptionPartieGolf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMAJAbonnes.resx">
+      <DependentUpon>frmMAJAbonnes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificationEmployes.resx">
       <DependentUpon>frmModificationEmployes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificationPrixEtDepenseObligatoire.resx">
+      <DependentUpon>frmModificationPrixEtDepenseObligatoire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouvelAbonnement.resx">
+      <DependentUpon>frmNouvelAbonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRapports.resx">
+      <DependentUpon>frmRapports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenouvellerAbonnement.resx">
+      <DependentUpon>frmRenouvellerAbonnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistique.resx">
+      <DependentUpon>frmStatistique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
@@ -169,6 +228,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RapportDepenseParAbonnement.rdlc" />
+    <EmbeddedResource Include="RapportDepenseParAnnee.rdlc" />
+    <EmbeddedResource Include="RapportDepenseParEmploye.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParAbonnement.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParAnnee.rdlc" />
+    <EmbeddedResource Include="RapportPartieJoueParTerrain.rdlc" />
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -181,9 +246,12 @@
     <None Include="Properties\DataSources\AbonnementIdEtNomComplet.datasource" />
     <None Include="Properties\DataSources\Abonnements.datasource" />
     <None Include="Properties\DataSources\Dependants.datasource" />
+    <None Include="Properties\DataSources\DepenseParEmploye.datasource" />
     <None Include="Properties\DataSources\Depenses.datasource" />
     <None Include="Properties\DataSources\Employes.datasource" />
+    <None Include="Properties\DataSources\idNomPrenomAbonnePrincipal.datasource" />
     <None Include="Properties\DataSources\InformationDepenses.datasource" />
+    <None Include="Properties\DataSources\PartieJoueeParTerrain.datasource" />
     <None Include="Properties\DataSources\PartiesJouees.datasource" />
     <None Include="Properties\DataSources\PrixDepensesAbonnements.datasource" />
     <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Resources.datasource" />
@@ -193,6 +261,7 @@
     <None Include="Properties\DataSources\Services.datasource" />
     <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
     <None Include="Properties\DataSources\Terrains.datasource" />
+    <None Include="Properties\DataSources\TypeAbonnementPrixEtDepenseObligatoire.datasource" />
     <None Include="Properties\DataSources\TypesAbonnement.datasource" />
     <None Include="Properties\DataSources\TypesEmploye.datasource" />
     <None Include="Properties\Settings.settings">
@@ -225,6 +294,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
