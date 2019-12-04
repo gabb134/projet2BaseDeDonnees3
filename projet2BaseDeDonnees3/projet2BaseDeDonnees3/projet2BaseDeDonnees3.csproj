@@ -226,6 +226,7 @@
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartieJoueeParMoisCourantEtParTerrain.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -235,12 +236,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RapportAbonnementParAnneeEtParTypeAbonnement.rdlc" />
     <EmbeddedResource Include="RapportDepenseParAbonnement.rdlc" />
     <EmbeddedResource Include="RapportDepenseParAnnee.rdlc" />
     <EmbeddedResource Include="RapportDepenseParEmploye.rdlc" />
     <EmbeddedResource Include="RapportPartieJoueParAbonnement.rdlc" />
     <EmbeddedResource Include="RapportPartieJoueParAnnee.rdlc" />
     <EmbeddedResource Include="RapportPartieJoueParTerrain.rdlc" />
+    <EmbeddedResource Include="StatistiqueAbonnementParMoisCourantEtTypeAbonnement.rdlc" />
+    <EmbeddedResource Include="StatistiqueDepenseParAnneEtParAbonnement.rdlc" />
+    <EmbeddedResource Include="StatistiqueDepenseParMoisCourantEtParAbonnement.rdlc" />
+    <EmbeddedResource Include="StatistiquePartieJoueParAnneeEtParTerrain.rdlc" />
     <None Include="DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -251,14 +257,21 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AbonnementIdEtNomComplet.datasource" />
+    <None Include="Properties\DataSources\AbonnementParMoisCourantEtTypeAbonnement.datasource" />
+    <None Include="Properties\DataSources\AbonnementParTypeEtParAnnee.datasource" />
     <None Include="Properties\DataSources\Abonnements.datasource" />
     <None Include="Properties\DataSources\Dependants.datasource" />
+    <None Include="Properties\DataSources\DepenseParAnneeEtParAbonnement.datasource" />
     <None Include="Properties\DataSources\DepenseParEmploye.datasource" />
+    <None Include="Properties\DataSources\DepenseParMoisCourantEtParAbonnement.datasource" />
     <None Include="Properties\DataSources\Depenses.datasource" />
+    <None Include="Properties\DataSources\DepensesParAnneeEtParAbonnement.datasource" />
     <None Include="Properties\DataSources\Employes.datasource" />
     <None Include="Properties\DataSources\idNomPrenomAbonnePrincipal.datasource" />
     <None Include="Properties\DataSources\InformationDepenses.datasource" />
+    <None Include="Properties\DataSources\PartieJoueeParAnneEtParTerrain.datasource" />
     <None Include="Properties\DataSources\PartieJoueeParTerrain.datasource" />
+    <None Include="Properties\DataSources\PartieJoueParMoisCOurantEtTerrain.datasource" />
     <None Include="Properties\DataSources\PartiesJouees.datasource" />
     <None Include="Properties\DataSources\PrixDepensesAbonnements.datasource" />
     <None Include="Properties\DataSources\projet2BaseDeDonnees3.Properties.Resources.datasource" />
