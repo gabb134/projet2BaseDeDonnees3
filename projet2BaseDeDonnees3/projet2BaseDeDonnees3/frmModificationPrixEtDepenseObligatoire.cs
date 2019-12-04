@@ -93,7 +93,7 @@ namespace projet2BaseDeDonnees3
         private void btnEnregistrerModification_Click(object sender, EventArgs e)
         {
             string strAnnee = prixDepensesAbonnementsDataGridView.Rows[0].Cells["tbAnnee"].Value.ToString();
-            MessageBox.Show(prixDepensesAbonnementsDataGridView.Rows[0].Cells["tbAnnee"].Value.ToString() + "     " + DateTime.Now.Year);
+           // MessageBox.Show(prixDepensesAbonnementsDataGridView.Rows[0].Cells["tbAnnee"].Value.ToString() + "     " + DateTime.Now.Year);
 
 
             /*var toutesLesAnnees = from typeAbonnement in dataContext.TypesAbonnement.AsEnumerable()

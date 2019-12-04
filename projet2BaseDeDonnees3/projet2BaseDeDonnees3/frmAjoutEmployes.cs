@@ -86,7 +86,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnConfirmerAjout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cpNoTypeEmploye.SelectedValue.ToString());
+           // MessageBox.Show(cpNoTypeEmploye.SelectedValue.ToString());
             
             if (tbNom.Text == "")
             {
@@ -260,6 +260,7 @@ namespace projet2BaseDeDonnees3
                                                             catch (ChangeConflictException)
                                                             {
                                                                 dataContextajout.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                                                                MessageBox.Show("La valeur de la base de donnée est gardée!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                             }
                                                             catch (Exception ex)
                                                             {

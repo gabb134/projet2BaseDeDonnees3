@@ -491,6 +491,7 @@ namespace projet2BaseDeDonnees3
                 catch (ChangeConflictException)
                 {
                     dataContext.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                    MessageBox.Show("La valeur de la base de donnée est gardée!", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
