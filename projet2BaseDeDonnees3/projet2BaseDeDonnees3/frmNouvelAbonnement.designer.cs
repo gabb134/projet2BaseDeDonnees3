@@ -51,6 +51,7 @@
             System.Windows.Forms.Label lblSexeEnfant;
             System.Windows.Forms.Label lblNomEnfant;
             System.Windows.Forms.Label lblPrenomEnfant;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNouvelAbonnement));
             this.lblRemarque = new System.Windows.Forms.Label();
             this.btnAjouterAbonnement = new System.Windows.Forms.Button();
             this.lblTypeAbonnement = new System.Windows.Forms.Label();
@@ -128,7 +129,7 @@
             lblTelephone.Location = new System.Drawing.Point(20, 350);
             lblTelephone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblTelephone.Name = "lblTelephone";
-            lblTelephone.Size = new System.Drawing.Size(128, 25);
+            lblTelephone.Size = new System.Drawing.Size(95, 17);
             lblTelephone.TabIndex = 62;
             lblTelephone.Text = "Téléphone :";
             // 
@@ -138,7 +139,7 @@
             lblCourriel.Location = new System.Drawing.Point(20, 434);
             lblCourriel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblCourriel.Name = "lblCourriel";
-            lblCourriel.Size = new System.Drawing.Size(101, 25);
+            lblCourriel.Size = new System.Drawing.Size(75, 17);
             lblCourriel.TabIndex = 61;
             lblCourriel.Text = "Courriel :";
             // 
@@ -148,7 +149,7 @@
             lblCellulaire.Location = new System.Drawing.Point(20, 392);
             lblCellulaire.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             lblCellulaire.Name = "lblCellulaire";
-            lblCellulaire.Size = new System.Drawing.Size(116, 25);
+            lblCellulaire.Size = new System.Drawing.Size(86, 17);
             lblCellulaire.TabIndex = 60;
             lblCellulaire.Text = "Cellulaire :";
             // 
@@ -158,7 +159,7 @@
             lblProvince.Location = new System.Drawing.Point(20, 269);
             lblProvince.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblProvince.Name = "lblProvince";
-            lblProvince.Size = new System.Drawing.Size(109, 25);
+            lblProvince.Size = new System.Drawing.Size(81, 17);
             lblProvince.TabIndex = 58;
             lblProvince.Text = "Province :";
             // 
@@ -168,7 +169,7 @@
             lblCodePostal.Location = new System.Drawing.Point(20, 310);
             lblCodePostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblCodePostal.Name = "lblCodePostal";
-            lblCodePostal.Size = new System.Drawing.Size(141, 25);
+            lblCodePostal.Size = new System.Drawing.Size(104, 17);
             lblCodePostal.TabIndex = 57;
             lblCodePostal.Text = "Code postal :";
             // 
@@ -178,7 +179,7 @@
             lblVille.Location = new System.Drawing.Point(20, 231);
             lblVille.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblVille.Name = "lblVille";
-            lblVille.Size = new System.Drawing.Size(67, 25);
+            lblVille.Size = new System.Drawing.Size(49, 17);
             lblVille.TabIndex = 53;
             lblVille.Text = "Ville :";
             // 
@@ -188,7 +189,7 @@
             lblRue.Location = new System.Drawing.Point(400, 191);
             lblRue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblRue.Name = "lblRue";
-            lblRue.Size = new System.Drawing.Size(63, 25);
+            lblRue.Size = new System.Drawing.Size(47, 17);
             lblRue.TabIndex = 50;
             lblRue.Text = "Rue :";
             // 
@@ -198,7 +199,7 @@
             lblNoCivique.Location = new System.Drawing.Point(20, 191);
             lblNoCivique.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblNoCivique.Name = "lblNoCivique";
-            lblNoCivique.Size = new System.Drawing.Size(123, 25);
+            lblNoCivique.Size = new System.Drawing.Size(92, 17);
             lblNoCivique.TabIndex = 47;
             lblNoCivique.Text = "N° civique :";
             // 
@@ -208,7 +209,7 @@
             lblSexe.Location = new System.Drawing.Point(20, 115);
             lblSexe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblSexe.Name = "lblSexe";
-            lblSexe.Size = new System.Drawing.Size(75, 25);
+            lblSexe.Size = new System.Drawing.Size(53, 17);
             lblSexe.TabIndex = 44;
             lblSexe.Text = "Sexe :";
             // 
@@ -218,7 +219,7 @@
             lblDateNaissance.Location = new System.Drawing.Point(20, 152);
             lblDateNaissance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblDateNaissance.Name = "lblDateNaissance";
-            lblDateNaissance.Size = new System.Drawing.Size(204, 25);
+            lblDateNaissance.Size = new System.Drawing.Size(153, 17);
             lblDateNaissance.TabIndex = 41;
             lblDateNaissance.Text = "Date de naissance :";
             // 
@@ -228,7 +229,7 @@
             lblNom.Location = new System.Drawing.Point(20, 76);
             lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblNom.Name = "lblNom";
-            lblNom.Size = new System.Drawing.Size(69, 25);
+            lblNom.Size = new System.Drawing.Size(50, 17);
             lblNom.TabIndex = 38;
             lblNom.Text = "Nom :";
             // 
@@ -238,7 +239,7 @@
             lblPrenom.Location = new System.Drawing.Point(20, 39);
             lblPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lblPrenom.Name = "lblPrenom";
-            lblPrenom.Size = new System.Drawing.Size(93, 25);
+            lblPrenom.Size = new System.Drawing.Size(68, 17);
             lblPrenom.TabIndex = 37;
             lblPrenom.Text = "Prénom:";
             // 
@@ -247,7 +248,7 @@
             lblRemarqueConjoint.AutoSize = true;
             lblRemarqueConjoint.Location = new System.Drawing.Point(81, 188);
             lblRemarqueConjoint.Name = "lblRemarqueConjoint";
-            lblRemarqueConjoint.Size = new System.Drawing.Size(123, 25);
+            lblRemarqueConjoint.Size = new System.Drawing.Size(92, 17);
             lblRemarqueConjoint.TabIndex = 27;
             lblRemarqueConjoint.Text = "Remarque :";
             // 
@@ -256,7 +257,7 @@
             lblDateNaissanceConjoint.AutoSize = true;
             lblDateNaissanceConjoint.Location = new System.Drawing.Point(81, 152);
             lblDateNaissanceConjoint.Name = "lblDateNaissanceConjoint";
-            lblDateNaissanceConjoint.Size = new System.Drawing.Size(204, 25);
+            lblDateNaissanceConjoint.Size = new System.Drawing.Size(153, 17);
             lblDateNaissanceConjoint.TabIndex = 25;
             lblDateNaissanceConjoint.Text = "Date de naissance :";
             // 
@@ -265,7 +266,7 @@
             lblSexeConjoint.AutoSize = true;
             lblSexeConjoint.Location = new System.Drawing.Point(81, 113);
             lblSexeConjoint.Name = "lblSexeConjoint";
-            lblSexeConjoint.Size = new System.Drawing.Size(75, 25);
+            lblSexeConjoint.Size = new System.Drawing.Size(53, 17);
             lblSexeConjoint.TabIndex = 24;
             lblSexeConjoint.Text = "Sexe :";
             // 
@@ -274,7 +275,7 @@
             lblNomConjoint.AutoSize = true;
             lblNomConjoint.Location = new System.Drawing.Point(81, 76);
             lblNomConjoint.Name = "lblNomConjoint";
-            lblNomConjoint.Size = new System.Drawing.Size(69, 25);
+            lblNomConjoint.Size = new System.Drawing.Size(50, 17);
             lblNomConjoint.TabIndex = 21;
             lblNomConjoint.Text = "Nom :";
             // 
@@ -283,7 +284,7 @@
             lblPrenomConjoint.AutoSize = true;
             lblPrenomConjoint.Location = new System.Drawing.Point(81, 39);
             lblPrenomConjoint.Name = "lblPrenomConjoint";
-            lblPrenomConjoint.Size = new System.Drawing.Size(99, 25);
+            lblPrenomConjoint.Size = new System.Drawing.Size(73, 17);
             lblPrenomConjoint.TabIndex = 20;
             lblPrenomConjoint.Text = "Prénom :";
             // 
@@ -292,7 +293,7 @@
             lblRemarqueEnfant.AutoSize = true;
             lblRemarqueEnfant.Location = new System.Drawing.Point(81, 188);
             lblRemarqueEnfant.Name = "lblRemarqueEnfant";
-            lblRemarqueEnfant.Size = new System.Drawing.Size(123, 25);
+            lblRemarqueEnfant.Size = new System.Drawing.Size(92, 17);
             lblRemarqueEnfant.TabIndex = 27;
             lblRemarqueEnfant.Text = "Remarque :";
             // 
@@ -301,7 +302,7 @@
             lblDateNaissanceEnfant.AutoSize = true;
             lblDateNaissanceEnfant.Location = new System.Drawing.Point(81, 152);
             lblDateNaissanceEnfant.Name = "lblDateNaissanceEnfant";
-            lblDateNaissanceEnfant.Size = new System.Drawing.Size(204, 25);
+            lblDateNaissanceEnfant.Size = new System.Drawing.Size(153, 17);
             lblDateNaissanceEnfant.TabIndex = 25;
             lblDateNaissanceEnfant.Text = "Date de naissance :";
             // 
@@ -310,7 +311,7 @@
             lblSexeEnfant.AutoSize = true;
             lblSexeEnfant.Location = new System.Drawing.Point(81, 113);
             lblSexeEnfant.Name = "lblSexeEnfant";
-            lblSexeEnfant.Size = new System.Drawing.Size(75, 25);
+            lblSexeEnfant.Size = new System.Drawing.Size(53, 17);
             lblSexeEnfant.TabIndex = 24;
             lblSexeEnfant.Text = "Sexe :";
             // 
@@ -319,7 +320,7 @@
             lblNomEnfant.AutoSize = true;
             lblNomEnfant.Location = new System.Drawing.Point(81, 76);
             lblNomEnfant.Name = "lblNomEnfant";
-            lblNomEnfant.Size = new System.Drawing.Size(69, 25);
+            lblNomEnfant.Size = new System.Drawing.Size(50, 17);
             lblNomEnfant.TabIndex = 21;
             lblNomEnfant.Text = "Nom :";
             // 
@@ -328,7 +329,7 @@
             lblPrenomEnfant.AutoSize = true;
             lblPrenomEnfant.Location = new System.Drawing.Point(81, 39);
             lblPrenomEnfant.Name = "lblPrenomEnfant";
-            lblPrenomEnfant.Size = new System.Drawing.Size(99, 25);
+            lblPrenomEnfant.Size = new System.Drawing.Size(73, 17);
             lblPrenomEnfant.TabIndex = 20;
             lblPrenomEnfant.Text = "Prénom :";
             // 
@@ -338,7 +339,7 @@
             this.lblRemarque.Location = new System.Drawing.Point(20, 571);
             this.lblRemarque.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblRemarque.Name = "lblRemarque";
-            this.lblRemarque.Size = new System.Drawing.Size(123, 25);
+            this.lblRemarque.Size = new System.Drawing.Size(92, 17);
             this.lblRemarque.TabIndex = 64;
             this.lblRemarque.Text = "Remarque :";
             // 
@@ -359,7 +360,7 @@
             this.lblTypeAbonnement.Location = new System.Drawing.Point(20, 474);
             this.lblTypeAbonnement.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTypeAbonnement.Name = "lblTypeAbonnement";
-            this.lblTypeAbonnement.Size = new System.Drawing.Size(216, 25);
+            this.lblTypeAbonnement.Size = new System.Drawing.Size(161, 17);
             this.lblTypeAbonnement.TabIndex = 63;
             this.lblTypeAbonnement.Text = "Type d\'abonnement :";
             // 
@@ -389,7 +390,7 @@
             0,
             0});
             this.numNoCivique.Name = "numNoCivique";
-            this.numNoCivique.Size = new System.Drawing.Size(108, 30);
+            this.numNoCivique.Size = new System.Drawing.Size(108, 23);
             this.numNoCivique.TabIndex = 42;
             this.numNoCivique.Value = new decimal(new int[] {
             1,
@@ -403,7 +404,7 @@
             this.mtbCellulaire.Margin = new System.Windows.Forms.Padding(6);
             this.mtbCellulaire.Mask = "(000) 000-0000";
             this.mtbCellulaire.Name = "mtbCellulaire";
-            this.mtbCellulaire.Size = new System.Drawing.Size(212, 30);
+            this.mtbCellulaire.Size = new System.Drawing.Size(212, 23);
             this.mtbCellulaire.TabIndex = 51;
             this.mtbCellulaire.Text = "1234567890";
             this.mtbCellulaire.Validating += new System.ComponentModel.CancelEventHandler(this.mtbCellulaire_Validating);
@@ -415,7 +416,7 @@
             this.mtbTelephone.Margin = new System.Windows.Forms.Padding(6);
             this.mtbTelephone.Mask = "(000) 000-0000";
             this.mtbTelephone.Name = "mtbTelephone";
-            this.mtbTelephone.Size = new System.Drawing.Size(212, 30);
+            this.mtbTelephone.Size = new System.Drawing.Size(212, 23);
             this.mtbTelephone.TabIndex = 49;
             this.mtbTelephone.Text = "1234567890";
             this.mtbTelephone.Validating += new System.ComponentModel.CancelEventHandler(this.mtbTelephone_Validating);
@@ -430,7 +431,7 @@
             this.ddlTypesAbonnement.Location = new System.Drawing.Point(265, 471);
             this.ddlTypesAbonnement.Margin = new System.Windows.Forms.Padding(4);
             this.ddlTypesAbonnement.Name = "ddlTypesAbonnement";
-            this.ddlTypesAbonnement.Size = new System.Drawing.Size(429, 33);
+            this.ddlTypesAbonnement.Size = new System.Drawing.Size(429, 24);
             this.ddlTypesAbonnement.TabIndex = 54;
             this.ddlTypesAbonnement.ValueMember = "No";
             this.ddlTypesAbonnement.SelectedIndexChanged += new System.EventHandler(this.ddlTypesAbonnement_SelectedIndexChanged);
@@ -450,7 +451,7 @@
             this.ddlSexes.Location = new System.Drawing.Point(265, 110);
             this.ddlSexes.Margin = new System.Windows.Forms.Padding(4);
             this.ddlSexes.Name = "ddlSexes";
-            this.ddlSexes.Size = new System.Drawing.Size(212, 33);
+            this.ddlSexes.Size = new System.Drawing.Size(212, 24);
             this.ddlSexes.TabIndex = 39;
             this.ddlSexes.ValueMember = "Id";
             // 
@@ -464,7 +465,7 @@
             this.mtbCodePostal.Margin = new System.Windows.Forms.Padding(4);
             this.mtbCodePostal.Mask = "L0L 0L0";
             this.mtbCodePostal.Name = "mtbCodePostal";
-            this.mtbCodePostal.Size = new System.Drawing.Size(104, 30);
+            this.mtbCodePostal.Size = new System.Drawing.Size(104, 23);
             this.mtbCodePostal.TabIndex = 48;
             this.mtbCodePostal.Text = "q1w2e3";
             this.mtbCodePostal.Validating += new System.ComponentModel.CancelEventHandler(this.mtbCodePostal_Validating);
@@ -479,7 +480,7 @@
             this.ddlProvinces.Location = new System.Drawing.Point(265, 266);
             this.ddlProvinces.Margin = new System.Windows.Forms.Padding(4);
             this.ddlProvinces.Name = "ddlProvinces";
-            this.ddlProvinces.Size = new System.Drawing.Size(320, 33);
+            this.ddlProvinces.Size = new System.Drawing.Size(320, 24);
             this.ddlProvinces.TabIndex = 46;
             this.ddlProvinces.ValueMember = "Id";
             // 
@@ -493,7 +494,7 @@
             this.tbVille.Margin = new System.Windows.Forms.Padding(4);
             this.tbVille.MaxLength = 50;
             this.tbVille.Name = "tbVille";
-            this.tbVille.Size = new System.Drawing.Size(429, 30);
+            this.tbVille.Size = new System.Drawing.Size(429, 23);
             this.tbVille.TabIndex = 45;
             this.tbVille.Text = "Montréal";
             this.tbVille.Validating += new System.ComponentModel.CancelEventHandler(this.tbVille_Validating);
@@ -505,7 +506,7 @@
             this.tbRue.Margin = new System.Windows.Forms.Padding(4);
             this.tbRue.MaxLength = 50;
             this.tbRue.Name = "tbRue";
-            this.tbRue.Size = new System.Drawing.Size(212, 30);
+            this.tbRue.Size = new System.Drawing.Size(212, 23);
             this.tbRue.TabIndex = 43;
             this.tbRue.Text = "ok";
             this.tbRue.Validating += new System.ComponentModel.CancelEventHandler(this.tbRue_Validating);
@@ -516,7 +517,7 @@
             this.dtpDateNaissance.Location = new System.Drawing.Point(265, 151);
             this.dtpDateNaissance.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateNaissance.Name = "dtpDateNaissance";
-            this.dtpDateNaissance.Size = new System.Drawing.Size(320, 30);
+            this.dtpDateNaissance.Size = new System.Drawing.Size(320, 23);
             this.dtpDateNaissance.TabIndex = 40;
             this.dtpDateNaissance.Validating += new System.ComponentModel.CancelEventHandler(this.dtpDateNaissance_Validating);
             this.dtpDateNaissance.Validated += new System.EventHandler(this.dtpDateNaissance_Validated);
@@ -527,7 +528,7 @@
             this.tbNom.Margin = new System.Windows.Forms.Padding(4);
             this.tbNom.MaxLength = 50;
             this.tbNom.Name = "tbNom";
-            this.tbNom.Size = new System.Drawing.Size(212, 30);
+            this.tbNom.Size = new System.Drawing.Size(212, 23);
             this.tbNom.TabIndex = 36;
             this.tbNom.Validating += new System.ComponentModel.CancelEventHandler(this.tbNom_Validating);
             this.tbNom.Validated += new System.EventHandler(this.tbNom_Validated);
@@ -538,7 +539,7 @@
             this.tbPrenom.Margin = new System.Windows.Forms.Padding(4);
             this.tbPrenom.MaxLength = 50;
             this.tbPrenom.Name = "tbPrenom";
-            this.tbPrenom.Size = new System.Drawing.Size(212, 30);
+            this.tbPrenom.Size = new System.Drawing.Size(212, 23);
             this.tbPrenom.TabIndex = 35;
             this.tbPrenom.Validating += new System.ComponentModel.CancelEventHandler(this.tbPrenom_Validating);
             this.tbPrenom.Validated += new System.EventHandler(this.tbPrenom_Validated);
@@ -583,7 +584,7 @@
             this.ddlSexeConjoint.FormattingEnabled = true;
             this.ddlSexeConjoint.Location = new System.Drawing.Point(296, 112);
             this.ddlSexeConjoint.Name = "ddlSexeConjoint";
-            this.ddlSexeConjoint.Size = new System.Drawing.Size(148, 33);
+            this.ddlSexeConjoint.Size = new System.Drawing.Size(148, 24);
             this.ddlSexeConjoint.TabIndex = 29;
             this.ddlSexeConjoint.ValueMember = "Id";
             // 
@@ -601,7 +602,7 @@
             // 
             this.dtpDateNaissanceConjoint.Location = new System.Drawing.Point(296, 151);
             this.dtpDateNaissanceConjoint.Name = "dtpDateNaissanceConjoint";
-            this.dtpDateNaissanceConjoint.Size = new System.Drawing.Size(223, 30);
+            this.dtpDateNaissanceConjoint.Size = new System.Drawing.Size(223, 23);
             this.dtpDateNaissanceConjoint.TabIndex = 26;
             // 
             // tbNomConjoint
@@ -609,7 +610,7 @@
             this.tbNomConjoint.Location = new System.Drawing.Point(296, 76);
             this.tbNomConjoint.MaxLength = 50;
             this.tbNomConjoint.Name = "tbNomConjoint";
-            this.tbNomConjoint.Size = new System.Drawing.Size(148, 30);
+            this.tbNomConjoint.Size = new System.Drawing.Size(148, 23);
             this.tbNomConjoint.TabIndex = 23;
             this.tbNomConjoint.Validating += new System.ComponentModel.CancelEventHandler(this.tbNom_Validating);
             this.tbNomConjoint.Validated += new System.EventHandler(this.tbNom_Validated);
@@ -619,7 +620,7 @@
             this.tbPrenomConjoint.Location = new System.Drawing.Point(296, 39);
             this.tbPrenomConjoint.MaxLength = 50;
             this.tbPrenomConjoint.Name = "tbPrenomConjoint";
-            this.tbPrenomConjoint.Size = new System.Drawing.Size(148, 30);
+            this.tbPrenomConjoint.Size = new System.Drawing.Size(148, 23);
             this.tbPrenomConjoint.TabIndex = 22;
             this.tbPrenomConjoint.Validating += new System.ComponentModel.CancelEventHandler(this.tbPrenom_Validating);
             this.tbPrenomConjoint.Validated += new System.EventHandler(this.tbPrenom_Validated);
@@ -639,7 +640,7 @@
             0,
             0});
             this.nupNbEnfant.Name = "nupNbEnfant";
-            this.nupNbEnfant.Size = new System.Drawing.Size(108, 30);
+            this.nupNbEnfant.Size = new System.Drawing.Size(108, 23);
             this.nupNbEnfant.TabIndex = 66;
             this.nupNbEnfant.Value = new decimal(new int[] {
             1,
@@ -688,7 +689,7 @@
             this.ddlSexeEnfant.FormattingEnabled = true;
             this.ddlSexeEnfant.Location = new System.Drawing.Point(296, 112);
             this.ddlSexeEnfant.Name = "ddlSexeEnfant";
-            this.ddlSexeEnfant.Size = new System.Drawing.Size(148, 33);
+            this.ddlSexeEnfant.Size = new System.Drawing.Size(148, 24);
             this.ddlSexeEnfant.TabIndex = 29;
             this.ddlSexeEnfant.ValueMember = "Id";
             // 
@@ -706,7 +707,7 @@
             // 
             this.dtpDateDeNaissanceEnfant.Location = new System.Drawing.Point(296, 151);
             this.dtpDateDeNaissanceEnfant.Name = "dtpDateDeNaissanceEnfant";
-            this.dtpDateDeNaissanceEnfant.Size = new System.Drawing.Size(223, 30);
+            this.dtpDateDeNaissanceEnfant.Size = new System.Drawing.Size(223, 23);
             this.dtpDateDeNaissanceEnfant.TabIndex = 26;
             // 
             // tbNomEnfant
@@ -714,7 +715,7 @@
             this.tbNomEnfant.Location = new System.Drawing.Point(296, 76);
             this.tbNomEnfant.MaxLength = 50;
             this.tbNomEnfant.Name = "tbNomEnfant";
-            this.tbNomEnfant.Size = new System.Drawing.Size(148, 30);
+            this.tbNomEnfant.Size = new System.Drawing.Size(148, 23);
             this.tbNomEnfant.TabIndex = 23;
             this.tbNomEnfant.Validating += new System.ComponentModel.CancelEventHandler(this.tbNom_Validating);
             this.tbNomEnfant.Validated += new System.EventHandler(this.tbNom_Validated);
@@ -724,7 +725,7 @@
             this.tbPrenomEnfant.Location = new System.Drawing.Point(296, 39);
             this.tbPrenomEnfant.MaxLength = 50;
             this.tbPrenomEnfant.Name = "tbPrenomEnfant";
-            this.tbPrenomEnfant.Size = new System.Drawing.Size(148, 30);
+            this.tbPrenomEnfant.Size = new System.Drawing.Size(148, 23);
             this.tbPrenomEnfant.TabIndex = 22;
             this.tbPrenomEnfant.Validating += new System.ComponentModel.CancelEventHandler(this.tbPrenom_Validating);
             this.tbPrenomEnfant.Validated += new System.EventHandler(this.tbPrenom_Validated);
@@ -734,7 +735,7 @@
             this.tbCourriel.Location = new System.Drawing.Point(265, 431);
             this.tbCourriel.Margin = new System.Windows.Forms.Padding(6);
             this.tbCourriel.Name = "tbCourriel";
-            this.tbCourriel.Size = new System.Drawing.Size(429, 30);
+            this.tbCourriel.Size = new System.Drawing.Size(429, 23);
             this.tbCourriel.TabIndex = 52;
             this.tbCourriel.Text = "test@gmail.com";
             this.tbCourriel.Validating += new System.ComponentModel.CancelEventHandler(this.tbCourriel_Validating);
@@ -786,19 +787,20 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 515);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(100, 17);
             this.label1.TabIndex = 67;
             this.label1.Text = "Nb d\'enfants";
             // 
             // frmNouvelAbonnement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1463, 766);
             this.Controls.Add(this.gbEnfant);
             this.Controls.Add(this.gbConjoint);
             this.Controls.Add(this.gbAbonnePrincipale);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmNouvelAbonnement";
             this.Text = "NouvelAbonnement";

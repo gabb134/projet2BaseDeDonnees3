@@ -120,17 +120,17 @@ namespace projet2BaseDeDonnees3
 
                 if (cbtypeService.Text == "Magasin Pro-Shop")
                 {
-                    servicePourEmployeConnecter.NoEmploye = 5;
+                    servicePourEmployeConnecter.NoEmploye = intNoEmploye;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
                 }
                 else if (cbtypeService.Text == "Restaurant")
                 {
-                    servicePourEmployeConnecter.NoEmploye = 6;
+                    servicePourEmployeConnecter.NoEmploye = intNoEmploye;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
                 }
                 else if (cbtypeService.Text == "Leçon de golf")
                 {
-                    servicePourEmployeConnecter.NoEmploye = 7;
+                    servicePourEmployeConnecter.NoEmploye = intNoEmploye;
                     servicePourEmployeConnecter.TypesService = cbtypeService.Text;
                 }
 
@@ -274,7 +274,7 @@ namespace projet2BaseDeDonnees3
                                                          where service.NoEmploye == noTypeEmploye
                                                          select service.TypesService);
                 cbtypeService.Enabled = false;
-                 MessageBox.Show("le else, quand le service existe deja");
+                 //MessageBox.Show("le else, quand le service existe deja");
 
 
 
@@ -377,7 +377,7 @@ namespace projet2BaseDeDonnees3
                 int nombreDepenses = (from depense in dataContext.Depenses
                                       select depense).Count();
 
-                MessageBox.Show("nb depenses :" + nombreDepenses.ToString());
+               // MessageBox.Show("nb depenses :" + nombreDepenses.ToString());
                 if (nombreDepenses == 0)
                     nouvelleDepense.No = 1;
                 else
@@ -397,9 +397,9 @@ namespace projet2BaseDeDonnees3
                 nouvelleDepense.Montant = Convert.ToInt32(ndMontant.Value);
 
                 nouvelleDepense.NoService =intnoService;
-                  MessageBox.Show("Numero de service dans la table service: " + intnoService.ToString());
-                MessageBox.Show("noservice de la table depense :" + nouvelleDepense.NoService);
-                MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
+                 // MessageBox.Show("Numero de service dans la table service: " + intnoService.ToString());
+                //MessageBox.Show("noservice de la table depense :" + nouvelleDepense.NoService);
+              //  MessageBox.Show("Depense qui est ajoute\n\nNo: " + nouvelleDepense.No+"\nId abonnement: "+ nouvelleDepense.IdAbonnement+"\nDateDepense: " + nouvelleDepense.DateDepense+"\nMontant: "+ nouvelleDepense.Montant+"\nNoService :" + nouvelleDepense.NoService);
                 try
                 {
 
@@ -469,7 +469,7 @@ namespace projet2BaseDeDonnees3
 
                         decimal montantQuiLuiManque = montantObligatoire - montantDejaEffectue;
 
-                        MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString()+"\nType de service :"+typeServiceDepense+"\nNom complet offre service :"+nomCompletEmployeOffertService+"\nMontant depenses deja effectue :"+montantDejaEffectue.ToString());
+                     //   MessageBox.Show("Information de la depense\n\nAbonnee qui a la depense : "+ prenomAbonneeDepenses.ToString()+"\nDate de la depense :"+dateDepense+"\nMontant de la depense :"+montantDepense.ToString()+"\nType de service :"+typeServiceDepense+"\nNom complet offre service :"+nomCompletEmployeOffertService+"\nMontant depenses deja effectue :"+montantDejaEffectue.ToString());
                         // MessageBox.Show(idAbonnement.ToString());
                         // MessageBox.Show(montantObligatoire.ToString());
 

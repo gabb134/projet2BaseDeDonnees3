@@ -35,21 +35,24 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRapports));
+            this.DepenseParEmployeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PartieJoueeParTerrainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDepenseParEmploye = new System.Windows.Forms.TabPage();
-            this.tabDepenseParAbonne = new System.Windows.Forms.TabPage();
-            this.tabDepenseParAnnee = new System.Windows.Forms.TabPage();
-            this.tabPartieJouesParTerrain = new System.Windows.Forms.TabPage();
-            this.tabPartieJouesParAbonnement = new System.Windows.Forms.TabPage();
-            this.tabPartieJouesParAnnee = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabDepenseParAbonne = new System.Windows.Forms.TabPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabDepenseParAnnee = new System.Windows.Forms.TabPage();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DepenseParEmployeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPartieJouesParTerrain = new System.Windows.Forms.TabPage();
             this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PartieJoueeParTerrainBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPartieJouesParAbonnement = new System.Windows.Forms.TabPage();
             this.reportViewer5 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPartieJouesParAnnee = new System.Windows.Forms.TabPage();
             this.reportViewer6 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.DepenseParEmployeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PartieJoueeParTerrainBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabDepenseParEmploye.SuspendLayout();
             this.tabDepenseParAbonne.SuspendLayout();
@@ -57,9 +60,15 @@
             this.tabPartieJouesParTerrain.SuspendLayout();
             this.tabPartieJouesParAbonnement.SuspendLayout();
             this.tabPartieJouesParAnnee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DepenseParEmployeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PartieJoueeParTerrainBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DepenseParEmployeBindingSource
+            // 
+            this.DepenseParEmployeBindingSource.DataSource = typeof(projet2BaseDeDonnees3.DepenseParEmploye);
+            // 
+            // PartieJoueeParTerrainBindingSource
+            // 
+            this.PartieJoueeParTerrainBindingSource.DataSource = typeof(projet2BaseDeDonnees3.PartieJoueeParTerrain);
             // 
             // tabControl1
             // 
@@ -70,7 +79,7 @@
             this.tabControl1.Controls.Add(this.tabPartieJouesParAbonnement);
             this.tabControl1.Controls.Add(this.tabPartieJouesParAnnee);
             this.tabControl1.Location = new System.Drawing.Point(17, 1);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(2287, 502);
@@ -79,70 +88,14 @@
             // tabDepenseParEmploye
             // 
             this.tabDepenseParEmploye.Controls.Add(this.reportViewer1);
-            this.tabDepenseParEmploye.Location = new System.Drawing.Point(4, 34);
-            this.tabDepenseParEmploye.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabDepenseParEmploye.Location = new System.Drawing.Point(4, 25);
+            this.tabDepenseParEmploye.Margin = new System.Windows.Forms.Padding(4);
             this.tabDepenseParEmploye.Name = "tabDepenseParEmploye";
-            this.tabDepenseParEmploye.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabDepenseParEmploye.Size = new System.Drawing.Size(2279, 464);
+            this.tabDepenseParEmploye.Padding = new System.Windows.Forms.Padding(4);
+            this.tabDepenseParEmploye.Size = new System.Drawing.Size(2279, 473);
             this.tabDepenseParEmploye.TabIndex = 0;
             this.tabDepenseParEmploye.Text = "Rapport des dépenses par employés";
             this.tabDepenseParEmploye.UseVisualStyleBackColor = true;
-            // 
-            // tabDepenseParAbonne
-            // 
-            this.tabDepenseParAbonne.Controls.Add(this.reportViewer2);
-            this.tabDepenseParAbonne.Location = new System.Drawing.Point(4, 34);
-            this.tabDepenseParAbonne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabDepenseParAbonne.Name = "tabDepenseParAbonne";
-            this.tabDepenseParAbonne.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabDepenseParAbonne.Size = new System.Drawing.Size(2279, 464);
-            this.tabDepenseParAbonne.TabIndex = 1;
-            this.tabDepenseParAbonne.Text = "Rapport des dépenses par abonnement";
-            this.tabDepenseParAbonne.UseVisualStyleBackColor = true;
-            // 
-            // tabDepenseParAnnee
-            // 
-            this.tabDepenseParAnnee.Controls.Add(this.reportViewer3);
-            this.tabDepenseParAnnee.Location = new System.Drawing.Point(4, 34);
-            this.tabDepenseParAnnee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabDepenseParAnnee.Name = "tabDepenseParAnnee";
-            this.tabDepenseParAnnee.Size = new System.Drawing.Size(2279, 464);
-            this.tabDepenseParAnnee.TabIndex = 2;
-            this.tabDepenseParAnnee.Text = "Rapport des dépenses par année";
-            this.tabDepenseParAnnee.UseVisualStyleBackColor = true;
-            // 
-            // tabPartieJouesParTerrain
-            // 
-            this.tabPartieJouesParTerrain.Controls.Add(this.reportViewer4);
-            this.tabPartieJouesParTerrain.Location = new System.Drawing.Point(4, 34);
-            this.tabPartieJouesParTerrain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPartieJouesParTerrain.Name = "tabPartieJouesParTerrain";
-            this.tabPartieJouesParTerrain.Size = new System.Drawing.Size(2279, 464);
-            this.tabPartieJouesParTerrain.TabIndex = 3;
-            this.tabPartieJouesParTerrain.Text = "Rapport des parties jouées par terrain";
-            this.tabPartieJouesParTerrain.UseVisualStyleBackColor = true;
-            // 
-            // tabPartieJouesParAbonnement
-            // 
-            this.tabPartieJouesParAbonnement.Controls.Add(this.reportViewer5);
-            this.tabPartieJouesParAbonnement.Location = new System.Drawing.Point(4, 34);
-            this.tabPartieJouesParAbonnement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPartieJouesParAbonnement.Name = "tabPartieJouesParAbonnement";
-            this.tabPartieJouesParAbonnement.Size = new System.Drawing.Size(2279, 464);
-            this.tabPartieJouesParAbonnement.TabIndex = 4;
-            this.tabPartieJouesParAbonnement.Text = "Rapport des parties jouées par abonnement";
-            this.tabPartieJouesParAbonnement.UseVisualStyleBackColor = true;
-            // 
-            // tabPartieJouesParAnnee
-            // 
-            this.tabPartieJouesParAnnee.Controls.Add(this.reportViewer6);
-            this.tabPartieJouesParAnnee.Location = new System.Drawing.Point(4, 34);
-            this.tabPartieJouesParAnnee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPartieJouesParAnnee.Name = "tabPartieJouesParAnnee";
-            this.tabPartieJouesParAnnee.Size = new System.Drawing.Size(2279, 464);
-            this.tabPartieJouesParAnnee.TabIndex = 5;
-            this.tabPartieJouesParAnnee.Text = "Rapport des parties jouées par année";
-            this.tabPartieJouesParAnnee.UseVisualStyleBackColor = true;
             // 
             // reportViewer1
             // 
@@ -156,6 +109,18 @@
             this.reportViewer1.Size = new System.Drawing.Size(2238, 450);
             this.reportViewer1.TabIndex = 0;
             // 
+            // tabDepenseParAbonne
+            // 
+            this.tabDepenseParAbonne.Controls.Add(this.reportViewer2);
+            this.tabDepenseParAbonne.Location = new System.Drawing.Point(4, 25);
+            this.tabDepenseParAbonne.Margin = new System.Windows.Forms.Padding(4);
+            this.tabDepenseParAbonne.Name = "tabDepenseParAbonne";
+            this.tabDepenseParAbonne.Padding = new System.Windows.Forms.Padding(4);
+            this.tabDepenseParAbonne.Size = new System.Drawing.Size(2279, 473);
+            this.tabDepenseParAbonne.TabIndex = 1;
+            this.tabDepenseParAbonne.Text = "Rapport des dépenses par abonnement";
+            this.tabDepenseParAbonne.UseVisualStyleBackColor = true;
+            // 
             // reportViewer2
             // 
             reportDataSource2.Name = "DataSet1";
@@ -167,6 +132,17 @@
             this.reportViewer2.ServerReport.BearerToken = null;
             this.reportViewer2.Size = new System.Drawing.Size(2256, 450);
             this.reportViewer2.TabIndex = 0;
+            // 
+            // tabDepenseParAnnee
+            // 
+            this.tabDepenseParAnnee.Controls.Add(this.reportViewer3);
+            this.tabDepenseParAnnee.Location = new System.Drawing.Point(4, 25);
+            this.tabDepenseParAnnee.Margin = new System.Windows.Forms.Padding(4);
+            this.tabDepenseParAnnee.Name = "tabDepenseParAnnee";
+            this.tabDepenseParAnnee.Size = new System.Drawing.Size(2279, 473);
+            this.tabDepenseParAnnee.TabIndex = 2;
+            this.tabDepenseParAnnee.Text = "Rapport des dépenses par année";
+            this.tabDepenseParAnnee.UseVisualStyleBackColor = true;
             // 
             // reportViewer3
             // 
@@ -180,9 +156,16 @@
             this.reportViewer3.Size = new System.Drawing.Size(2243, 433);
             this.reportViewer3.TabIndex = 0;
             // 
-            // DepenseParEmployeBindingSource
+            // tabPartieJouesParTerrain
             // 
-            this.DepenseParEmployeBindingSource.DataSource = typeof(projet2BaseDeDonnees3.DepenseParEmploye);
+            this.tabPartieJouesParTerrain.Controls.Add(this.reportViewer4);
+            this.tabPartieJouesParTerrain.Location = new System.Drawing.Point(4, 25);
+            this.tabPartieJouesParTerrain.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPartieJouesParTerrain.Name = "tabPartieJouesParTerrain";
+            this.tabPartieJouesParTerrain.Size = new System.Drawing.Size(2279, 473);
+            this.tabPartieJouesParTerrain.TabIndex = 3;
+            this.tabPartieJouesParTerrain.Text = "Rapport des parties jouées par terrain";
+            this.tabPartieJouesParTerrain.UseVisualStyleBackColor = true;
             // 
             // reportViewer4
             // 
@@ -196,9 +179,16 @@
             this.reportViewer4.Size = new System.Drawing.Size(2238, 395);
             this.reportViewer4.TabIndex = 0;
             // 
-            // PartieJoueeParTerrainBindingSource
+            // tabPartieJouesParAbonnement
             // 
-            this.PartieJoueeParTerrainBindingSource.DataSource = typeof(projet2BaseDeDonnees3.PartieJoueeParTerrain);
+            this.tabPartieJouesParAbonnement.Controls.Add(this.reportViewer5);
+            this.tabPartieJouesParAbonnement.Location = new System.Drawing.Point(4, 25);
+            this.tabPartieJouesParAbonnement.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPartieJouesParAbonnement.Name = "tabPartieJouesParAbonnement";
+            this.tabPartieJouesParAbonnement.Size = new System.Drawing.Size(2279, 473);
+            this.tabPartieJouesParAbonnement.TabIndex = 4;
+            this.tabPartieJouesParAbonnement.Text = "Rapport des parties jouées par abonnement";
+            this.tabPartieJouesParAbonnement.UseVisualStyleBackColor = true;
             // 
             // reportViewer5
             // 
@@ -211,6 +201,17 @@
             this.reportViewer5.ServerReport.BearerToken = null;
             this.reportViewer5.Size = new System.Drawing.Size(2260, 444);
             this.reportViewer5.TabIndex = 0;
+            // 
+            // tabPartieJouesParAnnee
+            // 
+            this.tabPartieJouesParAnnee.Controls.Add(this.reportViewer6);
+            this.tabPartieJouesParAnnee.Location = new System.Drawing.Point(4, 25);
+            this.tabPartieJouesParAnnee.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPartieJouesParAnnee.Name = "tabPartieJouesParAnnee";
+            this.tabPartieJouesParAnnee.Size = new System.Drawing.Size(2279, 473);
+            this.tabPartieJouesParAnnee.TabIndex = 5;
+            this.tabPartieJouesParAnnee.Text = "Rapport des parties jouées par année";
+            this.tabPartieJouesParAnnee.UseVisualStyleBackColor = true;
             // 
             // reportViewer6
             // 
@@ -226,15 +227,18 @@
             // 
             // frmRapports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2306, 562);
+            this.ClientSize = new System.Drawing.Size(1684, 562);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRapports";
             this.Text = "frmRapports";
             this.Load += new System.EventHandler(this.frmRapports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DepenseParEmployeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PartieJoueeParTerrainBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabDepenseParEmploye.ResumeLayout(false);
             this.tabDepenseParAbonne.ResumeLayout(false);
@@ -242,8 +246,6 @@
             this.tabPartieJouesParTerrain.ResumeLayout(false);
             this.tabPartieJouesParAbonnement.ResumeLayout(false);
             this.tabPartieJouesParAnnee.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DepenseParEmployeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PartieJoueeParTerrainBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

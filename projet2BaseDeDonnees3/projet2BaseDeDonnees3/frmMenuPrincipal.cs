@@ -13,9 +13,9 @@ namespace projet2BaseDeDonnees3
     public partial class frmMenuPrincipal : Form
        
     {
-        frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
-        frmInscriptionPartieGolf inscriptionPartieGolf = new frmInscriptionPartieGolf();
-        frmInscriptionDepense inscriptionDepense = new frmInscriptionDepense();
+       
+        
+        
         
         string strNoUtilisateurConnexion = "";
         int noTypeEmploye ;
@@ -38,6 +38,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnGestionEmployes_Click(object sender, EventArgs e)
         {
+            frmGestionDesEmployes gestionEmployes = new frmGestionDesEmployes();
             this.Hide();
             gestionEmployes.ShowDialog();
             this.Show();
@@ -137,6 +138,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnInscriptionPartie_Click(object sender, EventArgs e)
         {
+            frmInscriptionPartieGolf inscriptionPartieGolf = new frmInscriptionPartieGolf();
             this.Hide();
             inscriptionPartieGolf.ShowDialog();
             this.Show();
@@ -144,6 +146,7 @@ namespace projet2BaseDeDonnees3
 
         private void btnInscriptionDepense_Click(object sender, EventArgs e)
         {
+            frmInscriptionDepense inscriptionDepense = new frmInscriptionDepense();
             this.Hide();
             inscriptionDepense.ShowDialog();
             this.Show();

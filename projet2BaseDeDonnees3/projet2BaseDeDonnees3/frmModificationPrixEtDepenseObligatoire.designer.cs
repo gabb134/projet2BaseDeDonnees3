@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificationPrixEtDepenseObligatoire));
             this.prixDepensesAbonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prixDepensesAbonnementsDataGridView = new System.Windows.Forms.DataGridView();
-            this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnEnregistrerModification = new System.Windows.Forms.Button();
             this.cbTypeAbonnement = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbDepenseObligatoire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbAnnee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEnregistrerModification = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prixDepensesAbonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prixDepensesAbonnementsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementBindingSource)).BeginInit();
@@ -67,20 +68,6 @@
             this.prixDepensesAbonnementsDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.prixDepensesAbonnementsDataGridView_CellEndEdit);
             this.prixDepensesAbonnementsDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.prixDepensesAbonnementsDataGridView_CellValidating);
             // 
-            // typesAbonnementBindingSource
-            // 
-            this.typesAbonnementBindingSource.DataSource = typeof(projet2BaseDeDonnees3.TypesAbonnement);
-            // 
-            // btnEnregistrerModification
-            // 
-            this.btnEnregistrerModification.Location = new System.Drawing.Point(204, 254);
-            this.btnEnregistrerModification.Name = "btnEnregistrerModification";
-            this.btnEnregistrerModification.Size = new System.Drawing.Size(256, 78);
-            this.btnEnregistrerModification.TabIndex = 2;
-            this.btnEnregistrerModification.Text = "Enregistrer les modifications";
-            this.btnEnregistrerModification.UseVisualStyleBackColor = true;
-            this.btnEnregistrerModification.Click += new System.EventHandler(this.btnEnregistrerModification_Click);
-            // 
             // cbTypeAbonnement
             // 
             this.cbTypeAbonnement.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -94,7 +81,11 @@
             this.cbTypeAbonnement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cbTypeAbonnement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cbTypeAbonnement.ValueMember = "No";
-            this.cbTypeAbonnement.Width = 218;
+            this.cbTypeAbonnement.Width = 160;
+            // 
+            // typesAbonnementBindingSource
+            // 
+            this.typesAbonnementBindingSource.DataSource = typeof(projet2BaseDeDonnees3.TypesAbonnement);
             // 
             // tbPrix
             // 
@@ -103,7 +94,7 @@
             this.tbPrix.HeaderText = "Prix";
             this.tbPrix.MinimumWidth = 8;
             this.tbPrix.Name = "tbPrix";
-            this.tbPrix.Width = 85;
+            this.tbPrix.Width = 60;
             // 
             // tbDepenseObligatoire
             // 
@@ -112,7 +103,7 @@
             this.tbDepenseObligatoire.HeaderText = "Depenses obligatoires";
             this.tbDepenseObligatoire.MinimumWidth = 8;
             this.tbDepenseObligatoire.Name = "tbDepenseObligatoire";
-            this.tbDepenseObligatoire.Width = 239;
+            this.tbDepenseObligatoire.Width = 177;
             // 
             // tbAnnee
             // 
@@ -123,14 +114,25 @@
             this.tbAnnee.Visible = false;
             this.tbAnnee.Width = 150;
             // 
+            // btnEnregistrerModification
+            // 
+            this.btnEnregistrerModification.Location = new System.Drawing.Point(204, 254);
+            this.btnEnregistrerModification.Name = "btnEnregistrerModification";
+            this.btnEnregistrerModification.Size = new System.Drawing.Size(256, 78);
+            this.btnEnregistrerModification.TabIndex = 2;
+            this.btnEnregistrerModification.Text = "Enregistrer les modifications";
+            this.btnEnregistrerModification.UseVisualStyleBackColor = true;
+            this.btnEnregistrerModification.Click += new System.EventHandler(this.btnEnregistrerModification_Click);
+            // 
             // frmModificationPrixEtDepenseObligatoire
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 375);
             this.Controls.Add(this.btnEnregistrerModification);
             this.Controls.Add(this.prixDepensesAbonnementsDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificationPrixEtDepenseObligatoire";
             this.Text = "frmModificationPrixEtDepenseObligatoire";

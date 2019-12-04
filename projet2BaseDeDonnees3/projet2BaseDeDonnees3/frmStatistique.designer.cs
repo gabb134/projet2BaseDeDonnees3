@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistique));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AbonnementParAnneEtParTypeAbonnement = new System.Windows.Forms.TabPage();
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement = new System.Windows.Forms.TabPage();
@@ -55,73 +56,74 @@
             // 
             // AbonnementParAnneEtParTypeAbonnement
             // 
-            this.AbonnementParAnneEtParTypeAbonnement.Location = new System.Drawing.Point(4, 29);
+            this.AbonnementParAnneEtParTypeAbonnement.Location = new System.Drawing.Point(4, 22);
             this.AbonnementParAnneEtParTypeAbonnement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AbonnementParAnneEtParTypeAbonnement.Name = "AbonnementParAnneEtParTypeAbonnement";
             this.AbonnementParAnneEtParTypeAbonnement.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.AbonnementParAnneEtParTypeAbonnement.Size = new System.Drawing.Size(2116, 496);
+            this.AbonnementParAnneEtParTypeAbonnement.Size = new System.Drawing.Size(2116, 503);
             this.AbonnementParAnneEtParTypeAbonnement.TabIndex = 0;
             this.AbonnementParAnneEtParTypeAbonnement.Text = "Abonnements par année et par type d’abonnement";
             this.AbonnementParAnneEtParTypeAbonnement.UseVisualStyleBackColor = true;
             // 
             // AbonnementParMoisAnneCouranteEtTypeAbonnement
             // 
-            this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Location = new System.Drawing.Point(4, 31);
+            this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Location = new System.Drawing.Point(4, 22);
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Name = "AbonnementParMoisAnneCouranteEtTypeAbonnement";
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Size = new System.Drawing.Size(2146, 494);
+            this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Size = new System.Drawing.Size(2116, 503);
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.TabIndex = 1;
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.Text = "Abonnements par mois de l’année courante et par type d’abonnement";
             this.AbonnementParMoisAnneCouranteEtTypeAbonnement.UseVisualStyleBackColor = true;
             // 
             // PartieJoueParAnneeEtParTerrain
             // 
-            this.PartieJoueParAnneeEtParTerrain.Location = new System.Drawing.Point(4, 31);
+            this.PartieJoueParAnneeEtParTerrain.Location = new System.Drawing.Point(4, 22);
             this.PartieJoueParAnneeEtParTerrain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PartieJoueParAnneeEtParTerrain.Name = "PartieJoueParAnneeEtParTerrain";
-            this.PartieJoueParAnneeEtParTerrain.Size = new System.Drawing.Size(2146, 494);
+            this.PartieJoueParAnneeEtParTerrain.Size = new System.Drawing.Size(2116, 503);
             this.PartieJoueParAnneeEtParTerrain.TabIndex = 2;
             this.PartieJoueParAnneeEtParTerrain.Text = "Parties jouées par année et par terrain";
             this.PartieJoueParAnneeEtParTerrain.UseVisualStyleBackColor = true;
             // 
             // PartieJoueeParMoisAnneeCouranteEtParTerrain
             // 
-            this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Location = new System.Drawing.Point(4, 31);
+            this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Location = new System.Drawing.Point(4, 22);
             this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Name = "PartieJoueeParMoisAnneeCouranteEtParTerrain";
-            this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Size = new System.Drawing.Size(2146, 494);
+            this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Size = new System.Drawing.Size(2116, 503);
             this.PartieJoueeParMoisAnneeCouranteEtParTerrain.TabIndex = 3;
             this.PartieJoueeParMoisAnneeCouranteEtParTerrain.Text = "Parties jouées par mois de l’année courante et par terrain";
             this.PartieJoueeParMoisAnneeCouranteEtParTerrain.UseVisualStyleBackColor = true;
             // 
             // DepenseParMoisEtParAbonnement
             // 
-            this.DepenseParMoisEtParAbonnement.Location = new System.Drawing.Point(4, 31);
+            this.DepenseParMoisEtParAbonnement.Location = new System.Drawing.Point(4, 22);
             this.DepenseParMoisEtParAbonnement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DepenseParMoisEtParAbonnement.Name = "DepenseParMoisEtParAbonnement";
-            this.DepenseParMoisEtParAbonnement.Size = new System.Drawing.Size(2146, 494);
+            this.DepenseParMoisEtParAbonnement.Size = new System.Drawing.Size(2116, 503);
             this.DepenseParMoisEtParAbonnement.TabIndex = 4;
             this.DepenseParMoisEtParAbonnement.Text = "Dépenses par année et par abonnement";
             this.DepenseParMoisEtParAbonnement.UseVisualStyleBackColor = true;
             // 
             // DepenseParMoisAnneCouranteEtParAbonnement
             // 
-            this.DepenseParMoisAnneCouranteEtParAbonnement.Location = new System.Drawing.Point(4, 31);
+            this.DepenseParMoisAnneCouranteEtParAbonnement.Location = new System.Drawing.Point(4, 22);
             this.DepenseParMoisAnneCouranteEtParAbonnement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DepenseParMoisAnneCouranteEtParAbonnement.Name = "DepenseParMoisAnneCouranteEtParAbonnement";
-            this.DepenseParMoisAnneCouranteEtParAbonnement.Size = new System.Drawing.Size(2146, 494);
+            this.DepenseParMoisAnneCouranteEtParAbonnement.Size = new System.Drawing.Size(2116, 503);
             this.DepenseParMoisAnneCouranteEtParAbonnement.TabIndex = 5;
             this.DepenseParMoisAnneCouranteEtParAbonnement.Text = "Dépenses par mois de l’année courante et par abonnement";
             this.DepenseParMoisAnneCouranteEtParAbonnement.UseVisualStyleBackColor = true;
             // 
             // frmStatistique
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2406, 558);
+            this.ClientSize = new System.Drawing.Size(1684, 558);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmStatistique";
             this.Text = "frmStatistique";

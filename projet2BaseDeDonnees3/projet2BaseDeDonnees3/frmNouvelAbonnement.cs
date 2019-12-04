@@ -355,7 +355,7 @@ namespace projet2BaseDeDonnees3
           //  MessageBox.Show(((int)ddlTypesAbonnement.SelectedValue).ToString());
             if (dependants.Count < nupNbEnfant.Value + 1 && ((int)ddlTypesAbonnement.SelectedValue > 2))
             {
-                MessageBox.Show("Veuillez ajouter les enfants avant de créer cet abonnement");
+                MessageBox.Show("Veuillez ajouter la ou les personnes qui vous accompagnes avant de créer cet abonnement");
             }
 
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInscriptionDepense));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ndMontant = new System.Windows.Forms.NumericUpDown();
             this.cbtypeService = new System.Windows.Forms.ComboBox();
@@ -314,6 +315,7 @@
             this.ClientSize = new System.Drawing.Size(613, 616);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInscriptionDepense";
             this.Text = "Inscription d\'une dépense";
             this.Load += new System.EventHandler(this.frmInscriptionDepense_Load);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificationEmployes));
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.ndNumeroCivique = new System.Windows.Forms.NumericUpDown();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ndSalaire = new System.Windows.Forms.NumericUpDown();
             this.cbProvince = new System.Windows.Forms.ComboBox();
             this.tbNom = new System.Windows.Forms.MaskedTextBox();
             this.tbPrenom = new System.Windows.Forms.MaskedTextBox();
@@ -61,15 +63,14 @@
             this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
             this.employesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ndSalaire = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).BeginInit();
             this.SuspendLayout();
             // 
             // employesBindingSource
@@ -325,6 +326,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modification d\'un employé";
             // 
+            // ndSalaire
+            // 
+            this.ndSalaire.Location = new System.Drawing.Point(209, 440);
+            this.ndSalaire.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.ndSalaire.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.ndSalaire.Name = "ndSalaire";
+            this.ndSalaire.Size = new System.Drawing.Size(210, 26);
+            this.ndSalaire.TabIndex = 51;
+            this.ndSalaire.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // cbProvince
             // 
             this.cbProvince.DataSource = this.employesBindingSource;
@@ -399,34 +422,13 @@
             // 
             this.employesBindingSource1.DataSource = typeof(projet2BaseDeDonnees3.Employes);
             // 
-            // ndSalaire
-            // 
-            this.ndSalaire.Location = new System.Drawing.Point(209, 440);
-            this.ndSalaire.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.ndSalaire.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.ndSalaire.Name = "ndSalaire";
-            this.ndSalaire.Size = new System.Drawing.Size(210, 26);
-            this.ndSalaire.TabIndex = 51;
-            this.ndSalaire.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
             // frmModificationEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 593);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmModificationEmployes";
             this.Text = "Modification d\'un employé";
             this.Load += new System.EventHandler(this.frmModificationEmployes_Load);
@@ -435,10 +437,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ndNumeroCivique)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ndSalaire)).EndInit();
             this.ResumeLayout(false);
 
         }
