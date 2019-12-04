@@ -297,6 +297,7 @@ namespace projet2BaseDeDonnees3
                                                             catch (ChangeConflictException)
                                                             {
                                                                 dataContexteModifier.ChangeConflicts.ResolveAll(RefreshMode.KeepCurrentValues);
+                                                                MessageBox.Show("Garde la valeur de la base de donnée!", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                             }
                                                             catch (Exception ex)
                                                             {

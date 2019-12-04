@@ -81,7 +81,7 @@ namespace projet2BaseDeDonnees3
                 {
                     MessageBox.Show("L'employé que vous voulez supprimer n'existe pas!", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (Emp.Services.Count > 0)
+                else if (Emp.Services.Count >0)
                 {
                     MessageBox.Show("L'employé que vous voulez supprimer a des services", "Attention!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
