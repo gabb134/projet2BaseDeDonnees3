@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbonnementIdEtNomComplet.cs" />
+    <Compile Include="AbonnementParMoisCourantEtTypeAbonnement.cs" />
+    <Compile Include="AbonnementParTypeEtParAnnee.cs" />
     <Compile Include="DataClasses1.cs">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
@@ -75,7 +77,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DepenseParAnneeEtParAbonnement.cs" />
     <Compile Include="DepenseParEmploye.cs" />
+    <Compile Include="DepenseParMoisCourantEtParAbonnement.cs" />
+    <Compile Include="DepensesParAnneeEtParAbonnement.cs" />
     <Compile Include="frmAjoutEmployes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,7 +173,9 @@
     </Compile>
     <Compile Include="idNomPrenomAbonnePrincipal.cs" />
     <Compile Include="InformationDepenses.cs" />
+    <Compile Include="PartieJoueeParAnneEtParTerrain.cs" />
     <Compile Include="PartieJoueeParTerrain.cs" />
+    <Compile Include="PartieJoueParMoisCOurantEtTerrain.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sexe.cs" />
